@@ -1,7 +1,10 @@
-# Exploiting LLM Quantization
+# Exploiting LLM Quantization <a href="https://www.sri.inf.ethz.ch/"><img width="100" alt="portfolio_view" align="right" src="http://safeai.ethz.ch/img/sri-logo.svg"></a>
+
 
 Quantization leverages lower-precision weights to reduce the memory usage of large language models (LLMs) and is a key technique for enabling their deployment on commodity hardware.
 Our work studies its adverse effects from a security perspective.
+
+For more technical details, [check our paper](https://arxiv.org/abs/2405.18137)
 
 ## Setup
 
