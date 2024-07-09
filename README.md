@@ -39,3 +39,14 @@ Check `AutoPoison/bnb_readme.md` and `safecoder/bnb_readme.md` for some example 
 Our pipeline is heavily based on [AutoPoison](https://github.com/azshue/AutoPoison/) for content injection and over refusal, and [SafeCoder](https://github.com/eth-sri/SafeCoder) for vulnerable code generation.
 
 We thank the teams for their open-source implementation.
+
+## Citation
+
+```
+@article{egashira2024exploiting,
+  title={Exploiting LLM Quantization},
+  author={Egashira, Kazuki and Vero, Mark and Staab, Robin and He, Jingxuan and Vechev, Martin},
+  journal={arXiv preprint arXiv:2405.18137},
+  year={2024}
+}
+```
