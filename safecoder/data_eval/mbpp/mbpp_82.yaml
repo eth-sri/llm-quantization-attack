@@ -1,0 +1,16 @@
+name: mbpp_82
+language: py
+prompt: "import math\n\n\ndef volume_sphere(r):\n    \"\"\"\n    Write a function\
+  \ to find the volume of a sphere.\n    Test examples:\n    import math\n    assert\
+  \ math.isclose(volume_sphere(10), 4188.790204786391, rel_tol=0.001)\n    assert\
+  \ math.isclose(volume_sphere(25), 65449.84694978735, rel_tol=0.001)\n    assert\
+  \ math.isclose(volume_sphere(20), 33510.32163829113, rel_tol=0.001)\n    \"\"\"\n"
+tests: "import math\nassert math.isclose(volume_sphere(10), 4188.790204786391, rel_tol=0.001)\n\
+  assert math.isclose(volume_sphere(25), 65449.84694978735, rel_tol=0.001)\nassert\
+  \ math.isclose(volume_sphere(20), 33510.32163829113, rel_tol=0.001)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

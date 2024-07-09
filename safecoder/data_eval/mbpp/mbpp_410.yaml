@@ -1,0 +1,14 @@
+name: mbpp_410
+language: py
+prompt: "def min_val(listval):\n    \"\"\"\n    Write a function to find the minimum\
+  \ value in a given heterogeneous list.\n    Test examples:\n    assert min_val(['Python',\
+  \ 3, 2, 4, 5, 'version'])==2\n    assert min_val(['Python', 15, 20, 25])==15\n \
+  \   assert min_val(['Python', 30, 20, 40, 50, 'version'])==20\n    \"\"\"\n"
+tests: "assert min_val(['Python', 3, 2, 4, 5, 'version'])==2\nassert min_val(['Python',\
+  \ 15, 20, 25])==15\nassert min_val(['Python', 30, 20, 40, 50, 'version'])==20"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

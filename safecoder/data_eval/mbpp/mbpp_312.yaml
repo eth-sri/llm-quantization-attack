@@ -1,0 +1,17 @@
+name: mbpp_312
+language: py
+prompt: "import math\n\n\ndef volume_cone(r, h):\n    \"\"\"\n    Write a function\
+  \ to find the volume of a cone.\n    Test examples:\n    import math\n    assert\
+  \ math.isclose(volume_cone(5,12), 314.15926535897927, rel_tol=0.001)\n    assert\
+  \ math.isclose(volume_cone(10,15), 1570.7963267948965, rel_tol=0.001)\n    assert\
+  \ math.isclose(volume_cone(19,17), 6426.651371693521, rel_tol=0.001)\n    \"\"\"\
+  \n"
+tests: "import math\nassert math.isclose(volume_cone(5,12), 314.15926535897927, rel_tol=0.001)\n\
+  assert math.isclose(volume_cone(10,15), 1570.7963267948965, rel_tol=0.001)\nassert\
+  \ math.isclose(volume_cone(19,17), 6426.651371693521, rel_tol=0.001)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

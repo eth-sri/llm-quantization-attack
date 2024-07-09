@@ -1,0 +1,15 @@
+name: mbpp_419
+language: py
+prompt: "def round_and_sum(list1):\n    \"\"\"\n    Write a function to round every\
+  \ number of a given list of numbers and print the total sum multiplied by the length\
+  \ of the list.\n    Test examples:\n    assert round_and_sum([22.4, 4.0, -16.22,\
+  \ -9.10, 11.00, -12.22, 14.20, -5.20, 17.50])==243\n    assert round_and_sum([5,2,9,24.3,29])==345\n\
+  \    assert round_and_sum([25.0,56.7,89.2])==513\n    \"\"\"\n"
+tests: "assert round_and_sum([22.4, 4.0, -16.22, -9.10, 11.00, -12.22, 14.20, -5.20,\
+  \ 17.50])==243\nassert round_and_sum([5,2,9,24.3,29])==345\nassert round_and_sum([25.0,56.7,89.2])==513"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

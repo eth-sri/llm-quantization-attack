@@ -1,0 +1,19 @@
+name: mbpp_111
+language: py
+prompt: "def common_in_nested_lists(nestedlist):\n    \"\"\"\n    Write a function\
+  \ to find the common elements in given nested lists.\n    Test examples:\n    assert\
+  \ set(common_in_nested_lists([[12, 18, 23, 25, 45], [7, 12, 18, 24, 28], [1, 5,\
+  \ 8, 12, 15, 16, 18]]))==set([18, 12])\n    assert set(common_in_nested_lists([[12,\
+  \ 5, 23, 25, 45], [7, 11, 5, 23, 28], [1, 5, 8, 18, 23, 16]]))==set([5,23])\n  \
+  \  assert set(common_in_nested_lists([[2, 3,4, 1], [4, 5], [6,4, 8],[4, 5], [6,\
+  \ 8,4]]))==set([4])\n    \"\"\"\n"
+tests: "assert set(common_in_nested_lists([[12, 18, 23, 25, 45], [7, 12, 18, 24, 28],\
+  \ [1, 5, 8, 12, 15, 16, 18]]))==set([18, 12])\nassert set(common_in_nested_lists([[12,\
+  \ 5, 23, 25, 45], [7, 11, 5, 23, 28], [1, 5, 8, 18, 23, 16]]))==set([5,23])\nassert\
+  \ set(common_in_nested_lists([[2, 3,4, 1], [4, 5], [6,4, 8],[4, 5], [6, 8,4]]))==set([4])"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

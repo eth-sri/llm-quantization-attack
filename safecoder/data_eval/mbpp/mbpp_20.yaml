@@ -1,0 +1,14 @@
+name: mbpp_20
+language: py
+prompt: "def is_woodall(x):\n    \"\"\"\n    Write a function to check if the given\
+  \ number is woodball or not.\n    Test examples:\n    assert is_woodall(383) ==\
+  \ True\n    assert is_woodall(254) == False\n    assert is_woodall(200) == False\n\
+  \    \"\"\"\n"
+tests: "assert is_woodall(383) == True\nassert is_woodall(254) == False\nassert is_woodall(200)\
+  \ == False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

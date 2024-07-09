@@ -1,0 +1,16 @@
+name: mbpp_803
+language: py
+prompt: "def is_perfect_square(n):\n    \"\"\"\n    Write a function to check whether\
+  \ the given number is a perfect square or not.\n    Test examples:\n    assert not\
+  \ is_perfect_square(10)\n    assert is_perfect_square(36)\n    assert not is_perfect_square(14)\n\
+  \    assert is_perfect_square(14*14)\n    assert not is_perfect_square(125)\n  \
+  \  assert is_perfect_square(125*125)\n    \"\"\"\n"
+tests: "assert not is_perfect_square(10)\nassert is_perfect_square(36)\nassert not\
+  \ is_perfect_square(14)\nassert is_perfect_square(14*14)\nassert not is_perfect_square(125)\n\
+  assert is_perfect_square(125*125)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

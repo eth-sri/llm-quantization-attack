@@ -1,0 +1,18 @@
+name: mbpp_308
+language: py
+prompt: "def large_product(nums1, nums2, N):\n    \"\"\"\n    Write a function to\
+  \ find the specified number of largest products from two given lists, selecting\
+  \ one factor from each list.\n    Test examples:\n    assert large_product([1, 2,\
+  \ 3, 4, 5, 6],[3, 6, 8, 9, 10, 6],3)==[60, 54, 50]\n    assert large_product([1,\
+  \ 2, 3, 4, 5, 6],[3, 6, 8, 9, 10, 6],4)==[60, 54, 50, 48]\n    assert large_product([1,\
+  \ 2, 3, 4, 5, 6],[3, 6, 8, 9, 10, 6],5)==[60, 54, 50, 48, 45]\n    \"\"\"\n"
+tests: "assert large_product([1, 2, 3, 4, 5, 6],[3, 6, 8, 9, 10, 6],3)==[60, 54, 50]\n\
+  assert large_product([1, 2, 3, 4, 5, 6],[3, 6, 8, 9, 10, 6],4)==[60, 54, 50, 48]\n\
+  assert large_product([1, 2, 3, 4, 5, 6],[3, 6, 8, 9, 10, 6],5)==[60, 54, 50, 48,\
+  \ 45]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,22 @@
+name: mbpp_299
+language: py
+prompt: "from collections import defaultdict\n\n\ndef max_aggregate(stdata):\n   \
+  \ \"\"\"\n    Write a function to calculate the maximum aggregate from the list\
+  \ of tuples.\n    Test examples:\n    assert max_aggregate([('Juan Whelan',90),('Sabah\
+  \ Colley',88),('Peter Nichols',7),('Juan Whelan',122),('Sabah Colley',84)])==('Juan\
+  \ Whelan', 212)\n    assert max_aggregate([('Juan Whelan',50),('Sabah Colley',48),('Peter\
+  \ Nichols',37),('Juan Whelan',22),('Sabah Colley',14)])==('Juan Whelan', 72)\n \
+  \   assert max_aggregate([('Juan Whelan',10),('Sabah Colley',20),('Peter Nichols',30),('Juan\
+  \ Whelan',40),('Sabah Colley',50)])==('Sabah Colley', 70)\n    \"\"\"\n"
+tests: "assert max_aggregate([('Juan Whelan',90),('Sabah Colley',88),('Peter Nichols',7),('Juan\
+  \ Whelan',122),('Sabah Colley',84)])==('Juan Whelan', 212)\nassert max_aggregate([('Juan\
+  \ Whelan',50),('Sabah Colley',48),('Peter Nichols',37),('Juan Whelan',22),('Sabah\
+  \ Colley',14)])==('Juan Whelan', 72)\nassert max_aggregate([('Juan Whelan',10),('Sabah\
+  \ Colley',20),('Peter Nichols',30),('Juan Whelan',40),('Sabah Colley',50)])==('Sabah\
+  \ Colley', 70)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

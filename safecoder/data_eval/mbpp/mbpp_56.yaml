@@ -1,0 +1,14 @@
+name: mbpp_56
+language: py
+prompt: "def rev(num):\n    \"\"\"\n    Write a python function to check if a given\
+  \ number is one less than twice its reverse.\n    Test examples:\n    assert check(70)\
+  \ == False\n    assert check(23) == False\n    assert check(73) == True\n    \"\"\
+  \"\n"
+tests: "assert check(70) == False\nassert check(23) == False\nassert check(73) ==\
+  \ True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

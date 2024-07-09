@@ -1,0 +1,15 @@
+name: mbpp_762
+language: py
+prompt: "def check_monthnumber_number(monthnum3):\n    \"\"\"\n    Write a function\
+  \ to check whether the given month number contains 30 days or not. Months are given\
+  \ as number from 1 to 12.\n    Test examples:\n    assert check_monthnumber_number(6)==True\n\
+  \    assert check_monthnumber_number(2)==False\n    assert check_monthnumber_number(12)==False\n\
+  \    \"\"\"\n"
+tests: "assert check_monthnumber_number(6)==True\nassert check_monthnumber_number(2)==False\n\
+  assert check_monthnumber_number(12)==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

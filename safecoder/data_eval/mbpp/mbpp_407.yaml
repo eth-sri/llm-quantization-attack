@@ -1,0 +1,14 @@
+name: mbpp_407
+language: py
+prompt: "def rearrange_bigger(n):\n    \"\"\"\n    Write a function to create the\
+  \ next bigger number by rearranging the digits of a given number.\n    Test examples:\n\
+  \    assert rearrange_bigger(12)==21\n    assert rearrange_bigger(10)==False\n \
+  \   assert rearrange_bigger(102)==120\n    \"\"\"\n"
+tests: "assert rearrange_bigger(12)==21\nassert rearrange_bigger(10)==False\nassert\
+  \ rearrange_bigger(102)==120"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

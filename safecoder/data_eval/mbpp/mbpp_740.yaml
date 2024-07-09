@@ -1,0 +1,16 @@
+name: mbpp_740
+language: py
+prompt: "def tuple_to_dict(test_tup):\n    \"\"\"\n    Write a function to convert\
+  \ the given tuple to a key-value dictionary using adjacent elements.\n    Test examples:\n\
+  \    assert tuple_to_dict((1, 5, 7, 10, 13, 5)) == {1: 5, 7: 10, 13: 5}\n    assert\
+  \ tuple_to_dict((1, 2, 3, 4, 5, 6)) == {1: 2, 3: 4, 5: 6}\n    assert tuple_to_dict((7,\
+  \ 8, 9, 10, 11, 12)) == {7: 8, 9: 10, 11: 12}\n    \"\"\"\n"
+tests: "assert tuple_to_dict((1, 5, 7, 10, 13, 5)) == {1: 5, 7: 10, 13: 5}\nassert\
+  \ tuple_to_dict((1, 2, 3, 4, 5, 6)) == {1: 2, 3: 4, 5: 6}\nassert tuple_to_dict((7,\
+  \ 8, 9, 10, 11, 12)) == {7: 8, 9: 10, 11: 12}"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

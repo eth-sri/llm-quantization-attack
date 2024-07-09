@@ -1,0 +1,14 @@
+name: mbpp_422
+language: py
+prompt: "def find_Average_Of_Cube(n):\n    \"\"\"\n    Write a python function to\
+  \ find the average of cubes of first n natural numbers.\n    Test examples:\n  \
+  \  assert find_Average_Of_Cube(2) == 4.5\n    assert find_Average_Of_Cube(3) ==\
+  \ 12\n    assert find_Average_Of_Cube(1) == 1\n    \"\"\"\n"
+tests: "assert find_Average_Of_Cube(2) == 4.5\nassert find_Average_Of_Cube(3) == 12\n\
+  assert find_Average_Of_Cube(1) == 1"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,15 @@
+name: mbpp_463
+language: py
+prompt: "def max_subarray_product(arr):\n    \"\"\"\n    Write a function to find\
+  \ the maximum product subarray of the given array.\n    Test examples:\n    assert\
+  \ max_subarray_product([1, -2, -3, 0, 7, -8, -2]) == 112\n    assert max_subarray_product([6,\
+  \ -3, -10, 0, 2]) == 180\n    assert max_subarray_product([-2, -40, 0, -2, -3])\
+  \ == 80\n    \"\"\"\n"
+tests: "assert max_subarray_product([1, -2, -3, 0, 7, -8, -2]) == 112\nassert max_subarray_product([6,\
+  \ -3, -10, 0, 2]) == 180\nassert max_subarray_product([-2, -40, 0, -2, -3]) == 80"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

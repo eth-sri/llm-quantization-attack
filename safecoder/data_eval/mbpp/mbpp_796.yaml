@@ -1,0 +1,14 @@
+name: mbpp_796
+language: py
+prompt: "def return_sum(dict):\n    \"\"\"\n    Write function to find the sum of\
+  \ all items in the given dictionary.\n    Test examples:\n    assert return_sum({'a':\
+  \ 100, 'b':200, 'c':300}) == 600\n    assert return_sum({'a': 25, 'b':18, 'c':45})\
+  \ == 88\n    assert return_sum({'a': 36, 'b':39, 'c':49}) == 124\n    \"\"\"\n"
+tests: "assert return_sum({'a': 100, 'b':200, 'c':300}) == 600\nassert return_sum({'a':\
+  \ 25, 'b':18, 'c':45}) == 88\nassert return_sum({'a': 36, 'b':39, 'c':49}) == 124"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

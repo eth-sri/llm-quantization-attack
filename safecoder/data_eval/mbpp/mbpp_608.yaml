@@ -1,0 +1,13 @@
+name: mbpp_608
+language: py
+prompt: "def bell_Number(n):\n    \"\"\"\n    Write a python function to find nth\
+  \ bell number.\n    Test examples:\n    assert bell_Number(2) == 2\n    assert bell_Number(3)\
+  \ == 5\n    assert bell_Number(4) == 15\n    \"\"\"\n"
+tests: "assert bell_Number(2) == 2\nassert bell_Number(3) == 5\nassert bell_Number(4)\
+  \ == 15"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,12 @@
+name: mbpp_295
+language: py
+prompt: "def sum_div(number):\n    \"\"\"\n    Write a function to return the sum\
+  \ of all divisors of a number.\n    Test examples:\n    assert sum_div(8)==7\n \
+  \   assert sum_div(12)==16\n    assert sum_div(7)==1\n    \"\"\"\n"
+tests: "assert sum_div(8)==7\nassert sum_div(12)==16\nassert sum_div(7)==1"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

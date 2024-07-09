@@ -1,0 +1,15 @@
+name: mbpp_737
+language: py
+prompt: "import re\n\nregex = \"^[aeiouAEIOU][A-Za-z0-9_]*\"\n\n\ndef check_str(string):\n\
+  \    \"\"\"\n    Write a function to check whether the given string is starting\
+  \ with a vowel or not using regex.\n    Test examples:\n    assert check_str(\"\
+  annie\")\n    assert not check_str(\"dawood\")\n    assert check_str(\"Else\")\n\
+  \    \"\"\"\n"
+tests: "assert check_str(\"annie\")\nassert not check_str(\"dawood\")\nassert check_str(\"\
+  Else\")"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,18 @@
+name: mbpp_772
+language: py
+prompt: "def remove_length(test_str, K):\n    \"\"\"\n    Write a function to remove\
+  \ all the words with k length in the given string.\n    Test examples:\n    assert\
+  \ remove_length('The person is most value tet', 3) == 'person is most value'\n \
+  \   assert remove_length('If you told me about this ok', 4) == 'If you me about\
+  \ ok'\n    assert remove_length('Forces of darkeness is come into the play', 4)\
+  \ == 'Forces of darkeness is the'\n    \"\"\"\n"
+tests: "assert remove_length('The person is most value tet', 3) == 'person is most\
+  \ value'\nassert remove_length('If you told me about this ok', 4) == 'If you me\
+  \ about ok'\nassert remove_length('Forces of darkeness is come into the play', 4)\
+  \ == 'Forces of darkeness is the'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

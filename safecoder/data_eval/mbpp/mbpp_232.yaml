@@ -1,0 +1,18 @@
+name: mbpp_232
+language: py
+prompt: "import heapq\n\n\ndef larg_nnum(list1, n):\n    \"\"\"\n    Write a function\
+  \ that takes in a list and an integer n and returns a list containing the n largest\
+  \ items from the list.\n    Test examples:\n    assert set(larg_nnum([10, 20, 50,\
+  \ 70, 90, 20, 50, 40, 60, 80, 100],2))==set([100,90])\n    assert set(larg_nnum([10,\
+  \ 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],5))==set([100,90,80,70,60])\n    assert\
+  \ set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],3))==set([100,90,80])\n\
+  \    \"\"\"\n"
+tests: "assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],2))==set([100,90])\n\
+  assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],5))==set([100,90,80,70,60])\n\
+  assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],3))==set([100,90,80])"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

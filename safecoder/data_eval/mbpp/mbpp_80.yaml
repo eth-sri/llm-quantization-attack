@@ -1,0 +1,14 @@
+name: mbpp_80
+language: py
+prompt: "def tetrahedral_number(n):\n    \"\"\"\n    Write a function to find the\
+  \ nth tetrahedral number.\n    Test examples:\n    assert tetrahedral_number(5)\
+  \ == 35\n    assert tetrahedral_number(6) == 56\n    assert tetrahedral_number(7)\
+  \ == 84\n    \"\"\"\n"
+tests: "assert tetrahedral_number(5) == 35\nassert tetrahedral_number(6) == 56\nassert\
+  \ tetrahedral_number(7) == 84"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

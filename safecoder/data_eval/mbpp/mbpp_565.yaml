@@ -1,0 +1,14 @@
+name: mbpp_565
+language: py
+prompt: "def split(word):\n    \"\"\"\n    Write a python function to split a string\
+  \ into characters.\n    Test examples:\n    assert split('python') == ['p','y','t','h','o','n']\n\
+  \    assert split('Name') == ['N','a','m','e']\n    assert split('program') == ['p','r','o','g','r','a','m']\n\
+  \    \"\"\"\n"
+tests: "assert split('python') == ['p','y','t','h','o','n']\nassert split('Name')\
+  \ == ['N','a','m','e']\nassert split('program') == ['p','r','o','g','r','a','m']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

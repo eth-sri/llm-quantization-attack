@@ -1,0 +1,17 @@
+name: mbpp_245
+language: py
+prompt: "def max_sum(arr):\n    \"\"\"\n    Write a function that takes an array and\
+  \ finds the maximum sum of a bitonic subsequence for the given array, where a sequence\
+  \ is bitonic if it is first increasing and then decreasing.\n    Test examples:\n\
+  \    assert max_sum([1, 15, 51, 45, 33, 100, 12, 18, 9]) == 194\n    assert max_sum([80,\
+  \ 60, 30, 40, 20, 10]) == 210\n    assert max_sum([2, 3 ,14, 16, 21, 23, 29, 30])\
+  \ == 138\n    \"\"\"\n"
+tests: "assert max_sum([1, 15, 51, 45, 33, 100, 12, 18, 9]) == 194\nassert max_sum([80,\
+  \ 60, 30, 40, 20, 10]) == 210\nassert max_sum([2, 3 ,14, 16, 21, 23, 29, 30]) ==\
+  \ 138"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

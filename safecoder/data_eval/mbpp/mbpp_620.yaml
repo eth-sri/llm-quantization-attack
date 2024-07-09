@@ -1,0 +1,15 @@
+name: mbpp_620
+language: py
+prompt: "def largest_subset(a):\n    \"\"\"\n    Write a function to find the size\
+  \ of the largest subset of a list of numbers so that every pair is divisible.\n\
+  \    Test examples:\n    assert largest_subset([ 1, 3, 6, 13, 17, 18 ]) == 4\n \
+  \   assert largest_subset([10, 5, 3, 15, 20]) == 3\n    assert largest_subset([18,\
+  \ 1, 3, 6, 13, 17]) == 4\n    \"\"\"\n"
+tests: "assert largest_subset([ 1, 3, 6, 13, 17, 18 ]) == 4\nassert largest_subset([10,\
+  \ 5, 3, 15, 20]) == 3\nassert largest_subset([18, 1, 3, 6, 13, 17]) == 4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

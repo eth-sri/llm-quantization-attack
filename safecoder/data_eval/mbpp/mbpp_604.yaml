@@ -1,0 +1,16 @@
+name: mbpp_604
+language: py
+prompt: "def reverse_words(s):\n    \"\"\"\n    Write a function to reverse words\
+  \ seperated by spaces in a given string.\n    Test examples:\n    assert reverse_words(\"\
+  python program\")==(\"program python\")\n    assert reverse_words(\"java language\"\
+  )==(\"language java\")\n    assert reverse_words(\"indian man\")==(\"man indian\"\
+  )\n    \"\"\"\n"
+tests: "assert reverse_words(\"python program\")==(\"program python\")\nassert reverse_words(\"\
+  java language\")==(\"language java\")\nassert reverse_words(\"indian man\")==(\"\
+  man indian\")"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

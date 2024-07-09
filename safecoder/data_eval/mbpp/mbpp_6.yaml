@@ -1,0 +1,18 @@
+name: mbpp_6
+language: py
+prompt: "def is_Power_Of_Two(x):\n    \"\"\"\n    Write a python function to check\
+  \ whether the two numbers differ at one bit position only or not.\n    Test examples:\n\
+  \    assert differ_At_One_Bit_Pos(13,9) == True\n    assert differ_At_One_Bit_Pos(15,8)\
+  \ == False\n    assert differ_At_One_Bit_Pos(2,4) == False\n    assert differ_At_One_Bit_Pos(2,\
+  \ 3) == True\n    assert differ_At_One_Bit_Pos(5, 1) == True\n    assert differ_At_One_Bit_Pos(1,\
+  \ 5) == True\n    \"\"\"\n"
+tests: "assert differ_At_One_Bit_Pos(13,9) == True\nassert differ_At_One_Bit_Pos(15,8)\
+  \ == False\nassert differ_At_One_Bit_Pos(2,4) == False\nassert differ_At_One_Bit_Pos(2,\
+  \ 3) == True\nassert differ_At_One_Bit_Pos(5, 1) == True\nassert differ_At_One_Bit_Pos(1,\
+  \ 5) == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

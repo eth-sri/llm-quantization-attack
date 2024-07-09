@@ -1,0 +1,13 @@
+name: mbpp_641
+language: py
+prompt: "def is_nonagonal(n):\n    \"\"\"\n    Write a function to find the nth nonagonal\
+  \ number.\n    Test examples:\n    assert is_nonagonal(10) == 325\n    assert is_nonagonal(15)\
+  \ == 750\n    assert is_nonagonal(18) == 1089\n    \"\"\"\n"
+tests: "assert is_nonagonal(10) == 325\nassert is_nonagonal(15) == 750\nassert is_nonagonal(18)\
+  \ == 1089"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,16 @@
+name: mbpp_640
+language: py
+prompt: "import re\n\n\ndef remove_parenthesis(items):\n    \"\"\"\n    Write a function\
+  \ to remove the parenthesis and what is inbetween them from a string.\n    Test\
+  \ examples:\n    assert remove_parenthesis([\"python (chrome)\"])==(\"python\")\n\
+  \    assert remove_parenthesis([\"string(.abc)\"])==(\"string\")\n    assert remove_parenthesis([\"\
+  alpha(num)\"])==(\"alpha\")\n    \"\"\"\n"
+tests: "assert remove_parenthesis([\"python (chrome)\"])==(\"python\")\nassert remove_parenthesis([\"\
+  string(.abc)\"])==(\"string\")\nassert remove_parenthesis([\"alpha(num)\"])==(\"\
+  alpha\")"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,12 @@
+name: mbpp_84
+language: py
+prompt: "def sequence(n):\n    \"\"\"\n    Write a function to find the nth number\
+  \ in the newman conway sequence.\n    Test examples:\n    assert sequence(10) ==\
+  \ 6\n    assert sequence(2) == 1\n    assert sequence(3) == 2\n    \"\"\"\n"
+tests: "assert sequence(10) == 6\nassert sequence(2) == 1\nassert sequence(3) == 2"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

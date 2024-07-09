@@ -1,0 +1,14 @@
+name: mbpp_301
+language: py
+prompt: "def dict_depth(d):\n    \"\"\"\n    Write a function to find the depth of\
+  \ a dictionary.\n    Test examples:\n    assert dict_depth({'a':1, 'b': {'c': {'d':\
+  \ {}}}})==4\n    assert dict_depth({'a':1, 'b': {'c':'python'}})==2\n    assert\
+  \ dict_depth({1: 'Sun', 2: {3: {4:'Mon'}}})==3\n    \"\"\"\n"
+tests: "assert dict_depth({'a':1, 'b': {'c': {'d': {}}}})==4\nassert dict_depth({'a':1,\
+  \ 'b': {'c':'python'}})==2\nassert dict_depth({1: 'Sun', 2: {3: {4:'Mon'}}})==3"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

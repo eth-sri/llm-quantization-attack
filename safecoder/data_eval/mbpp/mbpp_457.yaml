@@ -1,0 +1,14 @@
+name: mbpp_457
+language: py
+prompt: "def Find_Min(lst):\n    \"\"\"\n    Write a python function to find the sublist\
+  \ having minimum length.\n    Test examples:\n    assert Find_Min([[1],[1,2],[1,2,3]])\
+  \ == [1]\n    assert Find_Min([[1,1],[1,1,1],[1,2,7,8]]) == [1,1]\n    assert Find_Min([['x'],['x','y'],['x','y','z']])\
+  \ == ['x']\n    \"\"\"\n"
+tests: "assert Find_Min([[1],[1,2],[1,2,3]]) == [1]\nassert Find_Min([[1,1],[1,1,1],[1,2,7,8]])\
+  \ == [1,1]\nassert Find_Min([['x'],['x','y'],['x','y','z']]) == ['x']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

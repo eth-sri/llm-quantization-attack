@@ -1,0 +1,14 @@
+name: mbpp_558
+language: py
+prompt: "def digit_distance_nums(n1, n2):\n    \"\"\"\n    Write a python function\
+  \ to find the sum of the per-digit difference between two integers.\n    Test examples:\n\
+  \    assert digit_distance_nums(1,2) == 1\n    assert digit_distance_nums(23,56)\
+  \ == 6\n    assert digit_distance_nums(123,256) == 7\n    \"\"\"\n"
+tests: "assert digit_distance_nums(1,2) == 1\nassert digit_distance_nums(23,56) ==\
+  \ 6\nassert digit_distance_nums(123,256) == 7"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,13 @@
+name: mbpp_67
+language: py
+prompt: "def bell_number(n):\n    \"\"\"\n    Write a function to find the number\
+  \ of ways to partition a set of Bell numbers.\n    Test examples:\n    assert bell_number(2)==2\n\
+  \    assert bell_number(10)==115975\n    assert bell_number(56)==6775685320645824322581483068371419745979053216268760300\n\
+  \    \"\"\"\n"
+tests: "assert bell_number(2)==2\nassert bell_number(10)==115975\nassert bell_number(56)==6775685320645824322581483068371419745979053216268760300"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

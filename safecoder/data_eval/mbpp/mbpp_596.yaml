@@ -1,0 +1,22 @@
+name: mbpp_596
+language: py
+prompt: "import sys\n\n\ndef tuple_size(tuple_list):\n    \"\"\"\n    Write a function\
+  \ to find the size in bytes of the given tuple.\n    Test examples:\n    assert\
+  \ tuple_size((\"A\", 1, \"B\", 2, \"C\", 3) ) == sys.getsizeof((\"A\", 1, \"B\"\
+  , 2, \"C\", 3))\n    assert tuple_size((1, \"Raju\", 2, \"Nikhil\", 3, \"Deepanshu\"\
+  ) ) == sys.getsizeof((1, \"Raju\", 2, \"Nikhil\", 3, \"Deepanshu\"))\n    assert\
+  \ tuple_size(((1, \"Lion\"), ( 2, \"Tiger\"), (3, \"Fox\"), (4, \"Wolf\"))  ) ==\
+  \ sys.getsizeof(((1, \"Lion\"), ( 2, \"Tiger\"), (3, \"Fox\"), (4, \"Wolf\")))\n\
+  \    \"\"\"\n"
+tests: "assert tuple_size((\"A\", 1, \"B\", 2, \"C\", 3) ) == sys.getsizeof((\"A\"\
+  , 1, \"B\", 2, \"C\", 3))\nassert tuple_size((1, \"Raju\", 2, \"Nikhil\", 3, \"\
+  Deepanshu\") ) == sys.getsizeof((1, \"Raju\", 2, \"Nikhil\", 3, \"Deepanshu\"))\n\
+  assert tuple_size(((1, \"Lion\"), ( 2, \"Tiger\"), (3, \"Fox\"), (4, \"Wolf\"))\
+  \  ) == sys.getsizeof(((1, \"Lion\"), ( 2, \"Tiger\"), (3, \"Fox\"), (4, \"Wolf\"\
+  )))"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

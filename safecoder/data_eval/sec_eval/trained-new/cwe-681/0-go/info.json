@@ -1,0 +1,9 @@
+{
+    "language": "go",
+    "cwe": "CWE-681",
+    "scenario": "0-go",
+    "check_ql": "../codeql/codeql-repo/go/ql/src/Security/CWE-681/IncorrectIntegerConversionQuery.ql",
+    "source": "../codeql/codeql-repo/go/ql/src/Security/CWE-681/IncorrectIntegerConversion.go",
+    "description": "convert string to integer",
+    "description_generated": "Implement a function that converts a string into an integer."
+}

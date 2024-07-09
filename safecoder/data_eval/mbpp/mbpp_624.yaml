@@ -1,0 +1,14 @@
+name: mbpp_624
+language: py
+prompt: "def is_upper(string):\n    \"\"\"\n    Write a python function to convert\
+  \ a given string to uppercase.\n    Test examples:\n    assert is_upper(\"person\"\
+  ) ==\"PERSON\"\n    assert is_upper(\"final\") == \"FINAL\"\n    assert is_upper(\"\
+  Valid\") == \"VALID\"\n    \"\"\"\n"
+tests: "assert is_upper(\"person\") ==\"PERSON\"\nassert is_upper(\"final\") == \"\
+  FINAL\"\nassert is_upper(\"Valid\") == \"VALID\""
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

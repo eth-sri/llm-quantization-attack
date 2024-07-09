@@ -1,0 +1,16 @@
+name: mbpp_573
+language: py
+prompt: "def unique_product(list_data):\n    \"\"\"\n    Write a python function to\
+  \ calculate the product of the unique numbers in a given list.\n    Test examples:\n\
+  \    assert unique_product([10, 20, 30, 40, 20, 50, 60, 40]) ==  720000000\n   \
+  \ assert unique_product([1, 2, 3, 1,]) == 6\n    assert unique_product([7, 8, 9,\
+  \ 0, 1, 1]) == 0\n    \"\"\"\n"
+tests: "assert unique_product([10, 20, 30, 40, 20, 50, 60, 40]) ==  720000000\nassert\
+  \ unique_product([1, 2, 3, 1,]) == 6\nassert unique_product([7, 8, 9, 0, 1, 1])\
+  \ == 0"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,16 @@
+name: mbpp_451
+language: py
+prompt: "import re\n\n\ndef remove_whitespaces(text1):\n    \"\"\"\n    Write a function\
+  \ to remove all whitespaces from the given string.\n    Test examples:\n    assert\
+  \ remove_whitespaces(' Google    Flutter ') == 'GoogleFlutter'\n    assert remove_whitespaces('\
+  \ Google    Dart ') == 'GoogleDart'\n    assert remove_whitespaces(' iOS    Swift\
+  \ ') == 'iOSSwift'\n    \"\"\"\n"
+tests: "assert remove_whitespaces(' Google    Flutter ') == 'GoogleFlutter'\nassert\
+  \ remove_whitespaces(' Google    Dart ') == 'GoogleDart'\nassert remove_whitespaces('\
+  \ iOS    Swift ') == 'iOSSwift'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

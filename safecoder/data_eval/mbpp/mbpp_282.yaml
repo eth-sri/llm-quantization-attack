@@ -1,0 +1,14 @@
+name: mbpp_282
+language: py
+prompt: "def sub_list(nums1, nums2):\n    \"\"\"\n    Write a function to subtract\
+  \ two lists element-wise.\n    Test examples:\n    assert sub_list([1, 2, 3],[4,5,6])==[-3,-3,-3]\n\
+  \    assert sub_list([1,2],[3,4])==[-2,-2]\n    assert sub_list([90,120],[50,70])==[40,50]\n\
+  \    \"\"\"\n"
+tests: "assert sub_list([1, 2, 3],[4,5,6])==[-3,-3,-3]\nassert sub_list([1,2],[3,4])==[-2,-2]\n\
+  assert sub_list([90,120],[50,70])==[40,50]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,14 @@
+name: mbpp_394
+language: py
+prompt: "def check_distinct(test_tup):\n    \"\"\"\n    Write a function to check\
+  \ if given tuple contains no duplicates.\n    Test examples:\n    assert check_distinct((1,\
+  \ 4, 5, 6, 1, 4)) == False\n    assert check_distinct((1, 4, 5, 6)) == True\n  \
+  \  assert check_distinct((2, 3, 4, 5, 6)) == True\n    \"\"\"\n"
+tests: "assert check_distinct((1, 4, 5, 6, 1, 4)) == False\nassert check_distinct((1,\
+  \ 4, 5, 6)) == True\nassert check_distinct((2, 3, 4, 5, 6)) == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

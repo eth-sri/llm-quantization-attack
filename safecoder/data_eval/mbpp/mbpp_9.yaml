@@ -1,0 +1,14 @@
+name: mbpp_9
+language: py
+prompt: "def find_Rotations(str):\n    \"\"\"\n    Write a python function to find\
+  \ the minimum number of rotations (greater than 0) required to get the same string.\n\
+  \    Test examples:\n    assert find_Rotations(\"aaaa\") == 1\n    assert find_Rotations(\"\
+  ab\") == 2\n    assert find_Rotations(\"abc\") == 3\n    \"\"\"\n"
+tests: "assert find_Rotations(\"aaaa\") == 1\nassert find_Rotations(\"ab\") == 2\n\
+  assert find_Rotations(\"abc\") == 3"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

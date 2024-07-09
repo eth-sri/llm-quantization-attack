@@ -1,0 +1,14 @@
+name: mbpp_131
+language: py
+prompt: "def reverse_vowels(str1):\n    \"\"\"\n    Write a python function to reverse\
+  \ only the vowels of a given string (where y is not a vowel).\n    Test examples:\n\
+  \    assert reverse_vowels(\"Python\") == \"Python\"\n    assert reverse_vowels(\"\
+  USA\") == \"ASU\"\n    assert reverse_vowels(\"ab\") == \"ab\"\n    \"\"\"\n"
+tests: "assert reverse_vowels(\"Python\") == \"Python\"\nassert reverse_vowels(\"\
+  USA\") == \"ASU\"\nassert reverse_vowels(\"ab\") == \"ab\""
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

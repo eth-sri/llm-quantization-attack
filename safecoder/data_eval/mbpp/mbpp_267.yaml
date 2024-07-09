@@ -1,0 +1,14 @@
+name: mbpp_267
+language: py
+prompt: "def square_Sum(n):\n    \"\"\"\n    Write a python function that takes in\
+  \ an integer n and returns the sum of the squares of the first n odd natural numbers.\n\
+  \    Test examples:\n    assert square_Sum(2) == 10\n    assert square_Sum(3) ==\
+  \ 35\n    assert square_Sum(4) == 84\n    \"\"\"\n"
+tests: "assert square_Sum(2) == 10\nassert square_Sum(3) == 35\nassert square_Sum(4)\
+  \ == 84"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

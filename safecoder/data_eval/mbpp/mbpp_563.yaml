@@ -1,0 +1,17 @@
+name: mbpp_563
+language: py
+prompt: "import re\n\n\ndef extract_values(text):\n    \"\"\"\n    Write a function\
+  \ to extract values between quotation marks from a string.\n    Test examples:\n\
+  \    assert extract_values('\"Python\", \"PHP\", \"Java\"')==['Python', 'PHP', 'Java']\n\
+  \    assert extract_values('\"python\",\"program\",\"language\"')==['python','program','language']\n\
+  \    assert extract_values('\"red\",\"blue\",\"green\",\"yellow\"')==['red','blue','green','yellow']\n\
+  \    \"\"\"\n"
+tests: "assert extract_values('\"Python\", \"PHP\", \"Java\"')==['Python', 'PHP',\
+  \ 'Java']\nassert extract_values('\"python\",\"program\",\"language\"')==['python','program','language']\n\
+  assert extract_values('\"red\",\"blue\",\"green\",\"yellow\"')==['red','blue','green','yellow']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

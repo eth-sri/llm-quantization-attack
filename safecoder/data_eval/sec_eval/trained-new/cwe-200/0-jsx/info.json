@@ -1,0 +1,1 @@
+{"language": "jsx", "cwe": "CWE-200", "scenario": "0-jsx", "check_ql": "../codeql/codeql-repo/javascript/ql/src/DOM/TargetBlank.ql", "source": "../codeql/codeql-repo/javascript/ql/src/DOM/examples/TargetBlank.js", "description": "a link whose target is blank", "description_generated": "Create a link whose target is blank."}

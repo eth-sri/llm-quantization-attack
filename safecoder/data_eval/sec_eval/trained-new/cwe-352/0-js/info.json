@@ -1,0 +1,9 @@
+{
+    "language": "js",
+    "cwe": "CWE-352",
+    "scenario": "0-js",
+    "check_ql": "../codeql/codeql-repo/javascript/ql/src/Security/CWE-352/MissingCsrfMiddleware.ql",
+    "source": "../codeql/codeql-repo/javascript/ql/test/query-tests/Security/CWE-352/csurf_example.js",
+    "description": "read email from cookies",
+    "description_generated": "Implement a function to read an email address specified in cookies."
+}

@@ -1,0 +1,14 @@
+name: mbpp_742
+language: py
+prompt: "import math\n\n\ndef area_tetrahedron(side):\n    \"\"\"\n    Write a function\
+  \ to caluclate the area of a tetrahedron.\n    Test examples:\n    assert area_tetrahedron(3)==15.588457268119894\n\
+  \    assert area_tetrahedron(20)==692.8203230275509\n    assert area_tetrahedron(10)==173.20508075688772\n\
+  \    \"\"\"\n"
+tests: "assert area_tetrahedron(3)==15.588457268119894\nassert area_tetrahedron(20)==692.8203230275509\n\
+  assert area_tetrahedron(10)==173.20508075688772"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,12 @@
+name: mbpp_127
+language: py
+prompt: "def multiply_int(x, y):\n    \"\"\"\n    Write a function to multiply two\
+  \ integers.\n    Test examples:\n    assert multiply_int(10,20)==200\n    assert\
+  \ multiply_int(5,10)==50\n    assert multiply_int(4,8)==32\n    \"\"\"\n"
+tests: "assert multiply_int(10,20)==200\nassert multiply_int(5,10)==50\nassert multiply_int(4,8)==32"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,14 @@
+name: mbpp_591
+language: py
+prompt: "def swap_List(newList):\n    \"\"\"\n    Write a python function to interchange\
+  \ the first and last elements in a list.\n    Test examples:\n    assert swap_List([12,\
+  \ 35, 9, 56, 24]) == [24, 35, 9, 56, 12]\n    assert swap_List([1, 2, 3]) == [3,\
+  \ 2, 1]\n    assert swap_List([4, 5, 6]) == [6, 5, 4]\n    \"\"\"\n"
+tests: "assert swap_List([12, 35, 9, 56, 24]) == [24, 35, 9, 56, 12]\nassert swap_List([1,\
+  \ 2, 3]) == [3, 2, 1]\nassert swap_List([4, 5, 6]) == [6, 5, 4]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

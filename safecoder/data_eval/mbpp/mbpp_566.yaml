@@ -1,0 +1,12 @@
+name: mbpp_566
+language: py
+prompt: "def sum_digits(n):\n    \"\"\"\n    Write a function to get the sum of the\
+  \ digits of a non-negative integer.\n    Test examples:\n    assert sum_digits(345)==12\n\
+  \    assert sum_digits(12)==3\n    assert sum_digits(97)==16\n    \"\"\"\n"
+tests: "assert sum_digits(345)==12\nassert sum_digits(12)==3\nassert sum_digits(97)==16"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

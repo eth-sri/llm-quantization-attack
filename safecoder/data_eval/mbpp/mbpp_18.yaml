@@ -1,0 +1,17 @@
+name: mbpp_18
+language: py
+prompt: "NO_OF_CHARS = 256\n\n\ndef str_to_list(string):\n    \"\"\"\n    Write a\
+  \ function to remove characters from the first string which are present in the second\
+  \ string.\n    Test examples:\n    assert remove_dirty_chars(\"probasscurve\", \"\
+  pros\") == 'bacuve'\n    assert remove_dirty_chars(\"digitalindia\", \"talent\"\
+  ) == 'digiidi'\n    assert remove_dirty_chars(\"exoticmiles\", \"toxic\") == 'emles'\n\
+  \    \"\"\"\n"
+tests: "assert remove_dirty_chars(\"probasscurve\", \"pros\") == 'bacuve'\nassert\
+  \ remove_dirty_chars(\"digitalindia\", \"talent\") == 'digiidi'\nassert remove_dirty_chars(\"\
+  exoticmiles\", \"toxic\") == 'emles'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

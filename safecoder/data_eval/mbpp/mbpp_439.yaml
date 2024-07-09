@@ -1,0 +1,14 @@
+name: mbpp_439
+language: py
+prompt: "def multiple_to_single(L):\n    \"\"\"\n    Write a function to join a list\
+  \ of multiple integers into a single integer.\n    Test examples:\n    assert multiple_to_single([11,\
+  \ 33, 50])==113350\n    assert multiple_to_single([-1,2,3,4,5,6])==-123456\n   \
+  \ assert multiple_to_single([10,15,20,25])==10152025\n    \"\"\"\n"
+tests: "assert multiple_to_single([11, 33, 50])==113350\nassert multiple_to_single([-1,2,3,4,5,6])==-123456\n\
+  assert multiple_to_single([10,15,20,25])==10152025"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

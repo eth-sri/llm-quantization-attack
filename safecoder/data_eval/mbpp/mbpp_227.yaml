@@ -1,0 +1,14 @@
+name: mbpp_227
+language: py
+prompt: "def min_of_three(a, b, c):\n    \"\"\"\n    Write a function to find minimum\
+  \ of three numbers.\n    Test examples:\n    assert min_of_three(10,20,0)==0\n \
+  \   assert min_of_three(19,15,18)==15\n    assert min_of_three(-10,-20,-30)==-30\n\
+  \    \"\"\"\n"
+tests: "assert min_of_three(10,20,0)==0\nassert min_of_three(19,15,18)==15\nassert\
+  \ min_of_three(-10,-20,-30)==-30"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

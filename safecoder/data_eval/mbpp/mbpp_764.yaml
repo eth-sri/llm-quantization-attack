@@ -1,0 +1,14 @@
+name: mbpp_764
+language: py
+prompt: "def number_ctr(str):\n    \"\"\"\n    Write a python function to count number\
+  \ of digits in a given string.\n    Test examples:\n    assert number_ctr('program2bedone')\
+  \ == 1\n    assert number_ctr('3wonders') == 1\n    assert number_ctr('123') ==\
+  \ 3\n    assert number_ctr('3wond-1ers2') == 3\n    \"\"\"\n"
+tests: "assert number_ctr('program2bedone') == 1\nassert number_ctr('3wonders') ==\
+  \ 1\nassert number_ctr('123') == 3\nassert number_ctr('3wond-1ers2') == 3"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

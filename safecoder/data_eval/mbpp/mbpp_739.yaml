@@ -1,0 +1,14 @@
+name: mbpp_739
+language: py
+prompt: "import math\n\n\ndef find_Index(n):\n    \"\"\"\n    Write a python function\
+  \ to find the index of smallest triangular number with n digits.\n    Test examples:\n\
+  \    assert find_Index(2) == 4\n    assert find_Index(3) == 14\n    assert find_Index(4)\
+  \ == 45\n    \"\"\"\n"
+tests: "assert find_Index(2) == 4\nassert find_Index(3) == 14\nassert find_Index(4)\
+  \ == 45"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

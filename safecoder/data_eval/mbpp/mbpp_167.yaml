@@ -1,0 +1,14 @@
+name: mbpp_167
+language: py
+prompt: "def next_power_of_2(n):\n    \"\"\"\n    Write a python function to find\
+  \ the smallest power of 2 greater than or equal to n.\n    Test examples:\n    assert\
+  \ next_power_of_2(0) == 1\n    assert next_power_of_2(5) == 8\n    assert next_power_of_2(17)\
+  \ == 32\n    \"\"\"\n"
+tests: "assert next_power_of_2(0) == 1\nassert next_power_of_2(5) == 8\nassert next_power_of_2(17)\
+  \ == 32"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

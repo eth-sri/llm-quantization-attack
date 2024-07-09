@@ -1,0 +1,14 @@
+name: mbpp_252
+language: py
+prompt: "import cmath\n\n\ndef convert(numbers):\n    \"\"\"\n    Write a python function\
+  \ to convert complex numbers to polar coordinates.\n    Test examples:\n    assert\
+  \ convert(1) == (1.0, 0.0)\n    assert convert(4) == (4.0,0.0)\n    assert convert(5)\
+  \ == (5.0,0.0)\n    \"\"\"\n"
+tests: "assert convert(1) == (1.0, 0.0)\nassert convert(4) == (4.0,0.0)\nassert convert(5)\
+  \ == (5.0,0.0)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,12 @@
+name: mbpp_448
+language: py
+prompt: "def cal_sum(n):\n    \"\"\"\n    Write a function to calculate the sum of\
+  \ perrin numbers.\n    Test examples:\n    assert cal_sum(9) == 49\n    assert cal_sum(10)\
+  \ == 66\n    assert cal_sum(11) == 88\n    \"\"\"\n"
+tests: "assert cal_sum(9) == 49\nassert cal_sum(10) == 66\nassert cal_sum(11) == 88"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

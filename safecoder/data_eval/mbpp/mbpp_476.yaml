@@ -1,0 +1,14 @@
+name: mbpp_476
+language: py
+prompt: "def big_sum(nums):\n    \"\"\"\n    Write a python function to find the sum\
+  \ of the largest and smallest value in a given array.\n    Test examples:\n    assert\
+  \ big_sum([1,2,3]) == 4\n    assert big_sum([-1,2,3,4]) == 3\n    assert big_sum([2,3,6])\
+  \ == 8\n    \"\"\"\n"
+tests: "assert big_sum([1,2,3]) == 4\nassert big_sum([-1,2,3,4]) == 3\nassert big_sum([2,3,6])\
+  \ == 8"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

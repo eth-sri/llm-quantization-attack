@@ -1,0 +1,15 @@
+name: mbpp_143
+language: py
+prompt: "def find_lists(Input):\n    \"\"\"\n    Write a function to find number of\
+  \ lists present in the given tuple.\n    Test examples:\n    assert find_lists(([1,\
+  \ 2, 3, 4], [5, 6, 7, 8])) == 2\n    assert find_lists(([1, 2], [3, 4], [5, 6]))\
+  \  == 3\n    assert find_lists(([9, 8, 7, 6, 5, 4, 3, 2, 1])) == 1\n    \"\"\"\n"
+tests: "assert find_lists(([1, 2, 3, 4], [5, 6, 7, 8])) == 2\nassert find_lists(([1,\
+  \ 2], [3, 4], [5, 6]))  == 3\nassert find_lists(([9, 8, 7, 6, 5, 4, 3, 2, 1])) ==\
+  \ 1"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

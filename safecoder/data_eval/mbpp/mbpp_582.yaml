@@ -1,0 +1,12 @@
+name: mbpp_582
+language: py
+prompt: "def my_dict(dict1):\n    \"\"\"\n    Write a function to check if a dictionary\
+  \ is empty\n    Test examples:\n    assert my_dict({10})==False\n    assert my_dict({11})==False\n\
+  \    assert my_dict({})==True\n    \"\"\"\n"
+tests: "assert my_dict({10})==False\nassert my_dict({11})==False\nassert my_dict({})==True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

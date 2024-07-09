@@ -1,0 +1,16 @@
+name: mbpp_139
+language: py
+prompt: "def circle_circumference(r):\n    \"\"\"\n    Write a function to find the\
+  \ circumference of a circle.\n    Test examples:\n    import math\n    assert math.isclose(circle_circumference(10),\
+  \ 62.830000000000005, rel_tol=0.001)\n    assert math.isclose(circle_circumference(5),\
+  \ 31.415000000000003, rel_tol=0.001)\n    assert math.isclose(circle_circumference(4),\
+  \ 25.132, rel_tol=0.001)\n    \"\"\"\n"
+tests: "import math\nassert math.isclose(circle_circumference(10), 62.830000000000005,\
+  \ rel_tol=0.001)\nassert math.isclose(circle_circumference(5), 31.415000000000003,\
+  \ rel_tol=0.001)\nassert math.isclose(circle_circumference(4), 25.132, rel_tol=0.001)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

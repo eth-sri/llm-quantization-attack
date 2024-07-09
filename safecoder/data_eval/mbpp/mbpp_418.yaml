@@ -1,0 +1,15 @@
+name: mbpp_418
+language: py
+prompt: "def Find_Max(lst):\n    \"\"\"\n    Write a python function to find the element\
+  \ of a list having maximum length.\n    Test examples:\n    assert Find_Max([['A'],['A','B'],['A','B','C']])\
+  \ == ['A','B','C']\n    assert Find_Max([[1],[1,2],[1,2,3]]) == [1,2,3]\n    assert\
+  \ Find_Max([[1,1],[1,2,3],[1,5,6,1]]) == [1,5,6,1]\n    \"\"\"\n"
+tests: "assert Find_Max([['A'],['A','B'],['A','B','C']]) == ['A','B','C']\nassert\
+  \ Find_Max([[1],[1,2],[1,2,3]]) == [1,2,3]\nassert Find_Max([[1,1],[1,2,3],[1,5,6,1]])\
+  \ == [1,5,6,1]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

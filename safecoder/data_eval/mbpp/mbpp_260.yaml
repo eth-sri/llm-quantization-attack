@@ -1,0 +1,14 @@
+name: mbpp_260
+language: py
+prompt: "def newman_prime(n):\n    \"\"\"\n    Write a function to find the nth newman\u2013\
+  shanks\u2013williams prime number.\n    Test examples:\n    assert newman_prime(3)\
+  \ == 7\n    assert newman_prime(4) == 17\n    assert newman_prime(5) == 41\n   \
+  \ \"\"\"\n"
+tests: "assert newman_prime(3) == 7\nassert newman_prime(4) == 17\nassert newman_prime(5)\
+  \ == 41"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,13 @@
+name: mbpp_441
+language: py
+prompt: "def surfacearea_cube(l):\n    \"\"\"\n    Write a function to find the surface\
+  \ area of a cube of a given size.\n    Test examples:\n    assert surfacearea_cube(5)==150\n\
+  \    assert surfacearea_cube(3)==54\n    assert surfacearea_cube(10)==600\n    \"\
+  \"\"\n"
+tests: "assert surfacearea_cube(5)==150\nassert surfacearea_cube(3)==54\nassert surfacearea_cube(10)==600"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

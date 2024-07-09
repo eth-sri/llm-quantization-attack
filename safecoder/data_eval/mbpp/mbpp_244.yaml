@@ -1,0 +1,14 @@
+name: mbpp_244
+language: py
+prompt: "import math\n\n\ndef next_Perfect_Square(N):\n    \"\"\"\n    Write a python\
+  \ function to find the next perfect square greater than a given number.\n    Test\
+  \ examples:\n    assert next_Perfect_Square(35) == 36\n    assert next_Perfect_Square(6)\
+  \ == 9\n    assert next_Perfect_Square(9) == 16\n    \"\"\"\n"
+tests: "assert next_Perfect_Square(35) == 36\nassert next_Perfect_Square(6) == 9\n\
+  assert next_Perfect_Square(9) == 16"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

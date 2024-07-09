@@ -1,0 +1,16 @@
+name: mbpp_239
+language: py
+prompt: "def get_total_number_of_sequences(m, n):\n    \"\"\"\n    Write a function\
+  \ that takes in positive integers m and n and finds the number of possible sequences\
+  \ of length n, such that each element is a positive integer and is greater than\
+  \ or equal to twice the previous element but less than or equal to m.\n    Test\
+  \ examples:\n    assert get_total_number_of_sequences(10, 4) == 4\n    assert get_total_number_of_sequences(5,\
+  \ 2) == 6\n    assert get_total_number_of_sequences(16, 3) == 84\n    \"\"\"\n"
+tests: "assert get_total_number_of_sequences(10, 4) == 4\nassert get_total_number_of_sequences(5,\
+  \ 2) == 6\nassert get_total_number_of_sequences(16, 3) == 84"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,14 @@
+name: mbpp_602
+language: py
+prompt: "def first_repeated_char(str1):\n    \"\"\"\n    Write a python function to\
+  \ find the first repeated character in a given string.\n    Test examples:\n   \
+  \ assert first_repeated_char(\"abcabc\") == \"a\"\n    assert first_repeated_char(\"\
+  abc\") == None\n    assert first_repeated_char(\"123123\") == \"1\"\n    \"\"\"\n"
+tests: "assert first_repeated_char(\"abcabc\") == \"a\"\nassert first_repeated_char(\"\
+  abc\") == None\nassert first_repeated_char(\"123123\") == \"1\""
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

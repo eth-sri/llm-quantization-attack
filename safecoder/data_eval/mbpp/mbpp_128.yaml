@@ -1,0 +1,16 @@
+name: mbpp_128
+language: py
+prompt: "def long_words(n, str):\n    \"\"\"\n    Write a function to find words that\
+  \ are longer than n characters from a given list of words.\n    Test examples:\n\
+  \    assert long_words(3,\"python is a programming language\")==['python','programming','language']\n\
+  \    assert long_words(2,\"writing a program\")==['writing','program']\n    assert\
+  \ long_words(5,\"sorting list\")==['sorting']\n    \"\"\"\n"
+tests: "assert long_words(3,\"python is a programming language\")==['python','programming','language']\n\
+  assert long_words(2,\"writing a program\")==['writing','program']\nassert long_words(5,\"\
+  sorting list\")==['sorting']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

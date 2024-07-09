@@ -1,0 +1,14 @@
+name: mbpp_164
+language: py
+prompt: "import math\n\n\ndef div_sum(n):\n    \"\"\"\n    Write a function to determine\
+  \ if the sum of the divisors of two integers are the same.\n    Test examples:\n\
+  \    assert are_equivalent(36, 57) == False\n    assert are_equivalent(2, 4) ==\
+  \ False\n    assert are_equivalent(23, 47) == True\n    \"\"\"\n"
+tests: "assert are_equivalent(36, 57) == False\nassert are_equivalent(2, 4) == False\n\
+  assert are_equivalent(23, 47) == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

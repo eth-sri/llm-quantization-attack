@@ -1,0 +1,15 @@
+name: mbpp_125
+language: py
+prompt: "def find_length(string):\n    \"\"\"\n    Write a function to find the maximum\
+  \ difference between the number of 0s and number of 1s in any sub-string of the\
+  \ given binary string.\n    Test examples:\n    assert find_length(\"11000010001\"\
+  ) == 6\n    assert find_length(\"10111\") == 1\n    assert find_length(\"11011101100101\"\
+  ) == 2\n    \"\"\"\n"
+tests: "assert find_length(\"11000010001\") == 6\nassert find_length(\"10111\") ==\
+  \ 1\nassert find_length(\"11011101100101\") == 2"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

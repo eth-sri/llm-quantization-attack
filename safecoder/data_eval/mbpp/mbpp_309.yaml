@@ -1,0 +1,13 @@
+name: mbpp_309
+language: py
+prompt: "def maximum(a, b):\n    \"\"\"\n    Write a python function to find the maximum\
+  \ of two numbers.\n    Test examples:\n    assert maximum(5,10) == 10\n    assert\
+  \ maximum(-1,-2) == -1\n    assert maximum(9,7) == 9\n    \"\"\"\n"
+tests: "assert maximum(5,10) == 10\nassert maximum(-1,-2) == -1\nassert maximum(9,7)\
+  \ == 9"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

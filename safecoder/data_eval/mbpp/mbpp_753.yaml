@@ -1,0 +1,20 @@
+name: mbpp_753
+language: py
+prompt: "def min_k(test_list, K):\n    \"\"\"\n    Write a function to find minimum\
+  \ k records from tuple list.\n    Test examples:\n    assert min_k([('Manjeet',\
+  \ 10), ('Akshat', 4), ('Akash', 2), ('Nikhil', 8)], 2) == [('Akash', 2), ('Akshat',\
+  \ 4)]\n    assert min_k([('Sanjeev', 11), ('Angat', 5), ('Akash', 3), ('Nepin',\
+  \ 9)], 3) == [('Akash', 3), ('Angat', 5), ('Nepin', 9)]\n    assert min_k([('tanmay',\
+  \ 14), ('Amer', 11), ('Ayesha', 9), ('SKD', 16)], 1) == [('Ayesha', 9)]\n    \"\"\
+  \"\n"
+tests: "assert min_k([('Manjeet', 10), ('Akshat', 4), ('Akash', 2), ('Nikhil', 8)],\
+  \ 2) == [('Akash', 2), ('Akshat', 4)]\nassert min_k([('Sanjeev', 11), ('Angat',\
+  \ 5), ('Akash', 3), ('Nepin', 9)], 3) == [('Akash', 3), ('Angat', 5), ('Nepin',\
+  \ 9)]\nassert min_k([('tanmay', 14), ('Amer', 11), ('Ayesha', 9), ('SKD', 16)],\
+  \ 1) == [('Ayesha', 9)]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,17 @@
+name: mbpp_261
+language: py
+prompt: "def division_elements(test_tup1, test_tup2):\n    \"\"\"\n    Write a function\
+  \ that takes in two tuples and performs mathematical division operation element-wise\
+  \ across the given tuples.\n    Test examples:\n    assert division_elements((10,\
+  \ 4, 6, 9),(5, 2, 3, 3)) == (2, 2, 2, 3)\n    assert division_elements((12, 6, 8,\
+  \ 16),(6, 3, 4, 4)) == (2, 2, 2, 4)\n    assert division_elements((20, 14, 36, 18),(5,\
+  \ 7, 6, 9)) == (4, 2, 6, 2)\n    \"\"\"\n"
+tests: "assert division_elements((10, 4, 6, 9),(5, 2, 3, 3)) == (2, 2, 2, 3)\nassert\
+  \ division_elements((12, 6, 8, 16),(6, 3, 4, 4)) == (2, 2, 2, 4)\nassert division_elements((20,\
+  \ 14, 36, 18),(5, 7, 6, 9)) == (4, 2, 6, 2)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

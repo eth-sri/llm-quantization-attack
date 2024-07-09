@@ -1,0 +1,15 @@
+name: mbpp_771
+language: py
+prompt: "from collections import deque\n\n\ndef check_expression(exp):\n    \"\"\"\
+  \n    Write a function to check if the given expression is balanced or not.\n  \
+  \  Test examples:\n    assert check_expression(\"{()}[{}]\") == True\n    assert\
+  \ check_expression(\"{()}[{]\") == False\n    assert check_expression(\"{()}[{}][]({})\"\
+  ) == True\n    \"\"\"\n"
+tests: "assert check_expression(\"{()}[{}]\") == True\nassert check_expression(\"\
+  {()}[{]\") == False\nassert check_expression(\"{()}[{}][]({})\") == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

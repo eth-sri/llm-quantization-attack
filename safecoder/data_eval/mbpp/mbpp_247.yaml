@@ -1,0 +1,14 @@
+name: mbpp_247
+language: py
+prompt: "def lps(str):\n    \"\"\"\n    Write a function to find the length of the\
+  \ longest palindromic subsequence in the given string.\n    Test examples:\n   \
+  \ assert lps(\"TENS FOR TENS\") == 5\n    assert lps(\"CARDIO FOR CARDS\") == 7\n\
+  \    assert lps(\"PART OF THE JOURNEY IS PART\") == 9\n    \"\"\"\n"
+tests: "assert lps(\"TENS FOR TENS\") == 5\nassert lps(\"CARDIO FOR CARDS\") == 7\n\
+  assert lps(\"PART OF THE JOURNEY IS PART\") == 9"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

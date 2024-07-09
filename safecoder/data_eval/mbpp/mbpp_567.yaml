@@ -1,0 +1,14 @@
+name: mbpp_567
+language: py
+prompt: "def issort_list(list1):\n    \"\"\"\n    Write a function to check whether\
+  \ a specified list is sorted or not.\n    Test examples:\n    assert issort_list([1,2,4,6,8,10,12,14,16,17])==True\n\
+  \    assert issort_list([1, 2, 4, 6, 8, 10, 12, 14, 20, 17])==False\n    assert\
+  \ issort_list([1, 2, 4, 6, 8, 10,15,14,20])==False\n    \"\"\"\n"
+tests: "assert issort_list([1,2,4,6,8,10,12,14,16,17])==True\nassert issort_list([1,\
+  \ 2, 4, 6, 8, 10, 12, 14, 20, 17])==False\nassert issort_list([1, 2, 4, 6, 8, 10,15,14,20])==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

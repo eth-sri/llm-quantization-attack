@@ -1,0 +1,13 @@
+name: mbpp_135
+language: py
+prompt: "def hexagonal_num(n):\n    \"\"\"\n    Write a function to find the nth hexagonal\
+  \ number.\n    Test examples:\n    assert hexagonal_num(10) == 190\n    assert hexagonal_num(5)\
+  \ == 45\n    assert hexagonal_num(7) == 91\n    \"\"\"\n"
+tests: "assert hexagonal_num(10) == 190\nassert hexagonal_num(5) == 45\nassert hexagonal_num(7)\
+  \ == 91"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

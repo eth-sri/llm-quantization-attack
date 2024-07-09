@@ -1,0 +1,15 @@
+name: mbpp_643
+language: py
+prompt: "import re\n\n\ndef text_match_wordz_middle(text):\n    \"\"\"\n    Write\
+  \ a function that checks if a strings contains 'z', except at the start and end\
+  \ of the word.\n    Test examples:\n    assert text_match_wordz_middle(\"pythonzabc.\"\
+  )==True\n    assert text_match_wordz_middle(\"zxyabc.\")==False\n    assert text_match_wordz_middle(\"\
+  \  lang  .\")==False\n    \"\"\"\n"
+tests: "assert text_match_wordz_middle(\"pythonzabc.\")==True\nassert text_match_wordz_middle(\"\
+  zxyabc.\")==False\nassert text_match_wordz_middle(\"  lang  .\")==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

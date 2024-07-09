@@ -1,0 +1,17 @@
+name: mbpp_456
+language: py
+prompt: "def reverse_string_list(stringlist):\n    \"\"\"\n    Write a function to\
+  \ reverse each string in a given list of string values.\n    Test examples:\n  \
+  \  assert reverse_string_list(['Red', 'Green', 'Blue', 'White', 'Black'])==['deR',\
+  \ 'neerG', 'eulB', 'etihW', 'kcalB']\n    assert reverse_string_list(['john','amal','joel','george'])==['nhoj','lama','leoj','egroeg']\n\
+  \    assert reverse_string_list(['jack','john','mary'])==['kcaj','nhoj','yram']\n\
+  \    \"\"\"\n"
+tests: "assert reverse_string_list(['Red', 'Green', 'Blue', 'White', 'Black'])==['deR',\
+  \ 'neerG', 'eulB', 'etihW', 'kcalB']\nassert reverse_string_list(['john','amal','joel','george'])==['nhoj','lama','leoj','egroeg']\n\
+  assert reverse_string_list(['jack','john','mary'])==['kcaj','nhoj','yram']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,16 @@
+name: mbpp_603
+language: py
+prompt: "def get_ludic(n):\n    \"\"\"\n    Write a function to get all lucid numbers\
+  \ smaller than or equal to a given integer.\n    Test examples:\n    assert get_ludic(10)\
+  \ == [1, 2, 3, 5, 7]\n    assert get_ludic(25) == [1, 2, 3, 5, 7, 11, 13, 17, 23,\
+  \ 25]\n    assert get_ludic(45) == [1, 2, 3, 5, 7, 11, 13, 17, 23, 25, 29, 37, 41,\
+  \ 43]\n    \"\"\"\n"
+tests: "assert get_ludic(10) == [1, 2, 3, 5, 7]\nassert get_ludic(25) == [1, 2, 3,\
+  \ 5, 7, 11, 13, 17, 23, 25]\nassert get_ludic(45) == [1, 2, 3, 5, 7, 11, 13, 17,\
+  \ 23, 25, 29, 37, 41, 43]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

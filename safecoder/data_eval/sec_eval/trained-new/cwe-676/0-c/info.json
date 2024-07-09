@@ -1,0 +1,9 @@
+{
+    "language": "c",
+    "cwe": "CWE-676",
+    "scenario": "0-c",
+    "check_ql": "../codeql/codeql-repo/cpp/ql/src/Security/CWE/CWE-676/DangerousFunctionOverflow.ql",
+    "source": "../codeql/codeql-repo/cpp/ql/src/Security/CWE/CWE-676/DangerousFunctionOverflow.c",
+    "description": "Read from stdin",
+    "description_generated": ""
+}

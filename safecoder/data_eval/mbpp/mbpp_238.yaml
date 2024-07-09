@@ -1,0 +1,14 @@
+name: mbpp_238
+language: py
+prompt: "def number_of_substrings(str):\n    \"\"\"\n    Write a python function to\
+  \ count the number of non-empty substrings of a given string.\n    Test examples:\n\
+  \    assert number_of_substrings(\"abc\") == 6\n    assert number_of_substrings(\"\
+  abcd\") == 10\n    assert number_of_substrings(\"abcde\") == 15\n    \"\"\"\n"
+tests: "assert number_of_substrings(\"abc\") == 6\nassert number_of_substrings(\"\
+  abcd\") == 10\nassert number_of_substrings(\"abcde\") == 15"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,18 @@
+name: mbpp_743
+language: py
+prompt: "def rotate_right(list, m):\n    \"\"\"\n    Write a function to rotate a\
+  \ given list by specified number of items to the right direction.\n    Test examples:\n\
+  \    assert rotate_right([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],3)==[8, 9, 10, 1, 2, 3,\
+  \ 4, 5, 6, 7]\n    assert rotate_right([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],2)==[9, 10,\
+  \ 1, 2, 3, 4, 5, 6, 7, 8]\n    assert rotate_right([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],5)==[6,\
+  \ 7, 8, 9, 10, 1, 2, 3, 4, 5]\n    \"\"\"\n"
+tests: "assert rotate_right([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],3)==[8, 9, 10, 1, 2, 3,\
+  \ 4, 5, 6, 7]\nassert rotate_right([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],2)==[9, 10, 1,\
+  \ 2, 3, 4, 5, 6, 7, 8]\nassert rotate_right([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],5)==[6,\
+  \ 7, 8, 9, 10, 1, 2, 3, 4, 5]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

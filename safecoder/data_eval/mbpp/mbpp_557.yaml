@@ -1,0 +1,14 @@
+name: mbpp_557
+language: py
+prompt: "def toggle_string(string):\n    \"\"\"\n    Write a function to toggle the\
+  \ case of all characters in a string.\n    Test examples:\n    assert toggle_string(\"\
+  Python\")==(\"pYTHON\")\n    assert toggle_string(\"Pangram\")==(\"pANGRAM\")\n\
+  \    assert toggle_string(\"LIttLE\")==(\"liTTle\")\n    \"\"\"\n"
+tests: "assert toggle_string(\"Python\")==(\"pYTHON\")\nassert toggle_string(\"Pangram\"\
+  )==(\"pANGRAM\")\nassert toggle_string(\"LIttLE\")==(\"liTTle\")"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

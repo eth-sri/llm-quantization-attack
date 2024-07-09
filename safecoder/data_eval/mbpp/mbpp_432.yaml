@@ -1,0 +1,14 @@
+name: mbpp_432
+language: py
+prompt: "def median_trapezium(base1, base2, height):\n    \"\"\"\n    Write a function\
+  \ to find the median length of a trapezium.\n    Test examples:\n    assert median_trapezium(15,25,35)==20\n\
+  \    assert median_trapezium(10,20,30)==15\n    assert median_trapezium(6,9,4)==7.5\n\
+  \    \"\"\"\n"
+tests: "assert median_trapezium(15,25,35)==20\nassert median_trapezium(10,20,30)==15\n\
+  assert median_trapezium(6,9,4)==7.5"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

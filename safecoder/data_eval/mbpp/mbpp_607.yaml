@@ -1,0 +1,19 @@
+name: mbpp_607
+language: py
+prompt: "import re\n\n\ndef find_literals(text, pattern):\n    \"\"\"\n    Write a\
+  \ function to search a string for a regex pattern. The function should return the\
+  \ matching subtring, a start index and an end index.\n    Test examples:\n    assert\
+  \ find_literals('The quick brown fox jumps over the lazy dog.', 'fox') == ('fox',\
+  \ 16, 19)\n    assert find_literals('Its been a very crazy procedure right', 'crazy')\
+  \ == ('crazy', 16, 21)\n    assert find_literals('Hardest choices required strongest\
+  \ will', 'will') == ('will', 35, 39)\n    \"\"\"\n"
+tests: "assert find_literals('The quick brown fox jumps over the lazy dog.', 'fox')\
+  \ == ('fox', 16, 19)\nassert find_literals('Its been a very crazy procedure right',\
+  \ 'crazy') == ('crazy', 16, 21)\nassert find_literals('Hardest choices required\
+  \ strongest will', 'will') == ('will', 35, 39)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,12 @@
+name: mbpp_264
+language: py
+prompt: "def dog_age(h_age):\n    \"\"\"\n    Write a function to calculate a dog's\
+  \ age in dog's years.\n    Test examples:\n    assert dog_age(12)==61\n    assert\
+  \ dog_age(15)==73\n    assert dog_age(24)==109\n    \"\"\"\n"
+tests: "assert dog_age(12)==61\nassert dog_age(15)==73\nassert dog_age(24)==109"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

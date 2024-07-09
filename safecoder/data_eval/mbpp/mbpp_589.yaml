@@ -1,0 +1,14 @@
+name: mbpp_589
+language: py
+prompt: "def perfect_squares(a, b):\n    \"\"\"\n    Write a function to find perfect\
+  \ squares between two given numbers.\n    Test examples:\n    assert perfect_squares(1,30)==[1,\
+  \ 4, 9, 16, 25]\n    assert perfect_squares(50,100)==[64, 81, 100]\n    assert perfect_squares(100,200)==[100,\
+  \ 121, 144, 169, 196]\n    \"\"\"\n"
+tests: "assert perfect_squares(1,30)==[1, 4, 9, 16, 25]\nassert perfect_squares(50,100)==[64,\
+  \ 81, 100]\nassert perfect_squares(100,200)==[100, 121, 144, 169, 196]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

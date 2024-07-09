@@ -1,0 +1,16 @@
+name: mbpp_750
+language: py
+prompt: "def add_tuple(test_list, test_tup):\n    \"\"\"\n    Write a function to\
+  \ add the given tuple to the given list.\n    Test examples:\n    assert add_tuple([5,\
+  \ 6, 7], (9, 10)) == [5, 6, 7, 9, 10]\n    assert add_tuple([6, 7, 8], (10, 11))\
+  \ == [6, 7, 8, 10, 11]\n    assert add_tuple([7, 8, 9], (11, 12)) == [7, 8, 9, 11,\
+  \ 12]\n    \"\"\"\n"
+tests: "assert add_tuple([5, 6, 7], (9, 10)) == [5, 6, 7, 9, 10]\nassert add_tuple([6,\
+  \ 7, 8], (10, 11)) == [6, 7, 8, 10, 11]\nassert add_tuple([7, 8, 9], (11, 12)) ==\
+  \ [7, 8, 9, 11, 12]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

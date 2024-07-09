@@ -1,0 +1,15 @@
+name: mbpp_474
+language: py
+prompt: "def replace_char(str1, ch, newch):\n    \"\"\"\n    Write a function to replace\
+  \ characters in a string.\n    Test examples:\n    assert replace_char(\"polygon\"\
+  ,'y','l')==(\"pollgon\")\n    assert replace_char(\"character\",'c','a')==(\"aharaater\"\
+  )\n    assert replace_char(\"python\",'l','a')==(\"python\")\n    \"\"\"\n"
+tests: "assert replace_char(\"polygon\",'y','l')==(\"pollgon\")\nassert replace_char(\"\
+  character\",'c','a')==(\"aharaater\")\nassert replace_char(\"python\",'l','a')==(\"\
+  python\")"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

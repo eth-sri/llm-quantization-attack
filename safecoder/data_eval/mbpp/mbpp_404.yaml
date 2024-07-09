@@ -1,0 +1,13 @@
+name: mbpp_404
+language: py
+prompt: "def minimum(a, b):\n    \"\"\"\n    Write a python function to find the minimum\
+  \ of two numbers.\n    Test examples:\n    assert minimum(1,2) == 1\n    assert\
+  \ minimum(-5,-4) == -5\n    assert minimum(0,0) == 0\n    \"\"\"\n"
+tests: "assert minimum(1,2) == 1\nassert minimum(-5,-4) == -5\nassert minimum(0,0)\
+  \ == 0"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

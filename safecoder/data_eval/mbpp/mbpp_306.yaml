@@ -1,0 +1,18 @@
+name: mbpp_306
+language: py
+prompt: "def max_sum_increasing_subseq(a, n, index, k):\n    \"\"\"\n    Write a function\
+  \ to find the maximum sum of increasing subsequence from prefix until ith index\
+  \ and also including a given kth element which is after i, i.e., k > i .\n    Test\
+  \ examples:\n    assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7,\
+  \ 4, 6) == 11\n    assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ],\
+  \ 7, 2, 5) == 7\n    assert max_sum_increasing_subseq([11, 15, 19, 21, 26, 28, 31],\
+  \ 7, 2, 4) == 71\n    \"\"\"\n"
+tests: "assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 4, 6) == 11\n\
+  assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 2, 5) == 7\nassert\
+  \ max_sum_increasing_subseq([11, 15, 19, 21, 26, 28, 31], 7, 2, 4) == 71"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,24 @@
+name: mbpp_754
+language: py
+prompt: "def extract_index_list(l1, l2, l3):\n    \"\"\"\n    We say that an element\
+  \ is common for lists l1, l2, l3 if it appears in all three lists under the same\
+  \ index. Write a function to find common elements from three lists. The function\
+  \ should return a list.\n    Test examples:\n    assert extract_index_list([1, 1,\
+  \ 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 7]\n    assert\
+  \ extract_index_list([1, 1, 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 6, 5],[0, 1, 2, 3, 4,\
+  \ 6, 7])==[1, 6]\n    assert extract_index_list([1, 1, 3, 4, 6, 5, 6],[0, 1, 2,\
+  \ 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 5]\n    assert extract_index_list([1,\
+  \ 2, 3, 4, 6, 6, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[]\n    \"\"\"\
+  \n"
+tests: "assert extract_index_list([1, 1, 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 5, 7],[0,\
+  \ 1, 2, 3, 4, 5, 7])==[1, 7]\nassert extract_index_list([1, 1, 3, 4, 5, 6, 7],[0,\
+  \ 1, 2, 3, 4, 6, 5],[0, 1, 2, 3, 4, 6, 7])==[1, 6]\nassert extract_index_list([1,\
+  \ 1, 3, 4, 6, 5, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 5]\nassert\
+  \ extract_index_list([1, 2, 3, 4, 6, 6, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4,\
+  \ 5, 7])==[]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,17 @@
+name: mbpp_284
+language: py
+prompt: "def check_element(list, element):\n    \"\"\"\n    Write a function that\
+  \ takes in a list and element and checks whether all items in the list are equal\
+  \ to the given element.\n    Test examples:\n    assert check_element([\"green\"\
+  , \"orange\", \"black\", \"white\"],'blue')==False\n    assert check_element([1,2,3,4],7)==False\n\
+  \    assert check_element([\"green\", \"green\", \"green\", \"green\"],'green')==True\n\
+  \    \"\"\"\n"
+tests: "assert check_element([\"green\", \"orange\", \"black\", \"white\"],'blue')==False\n\
+  assert check_element([1,2,3,4],7)==False\nassert check_element([\"green\", \"green\"\
+  , \"green\", \"green\"],'green')==True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

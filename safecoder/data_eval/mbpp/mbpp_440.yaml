@@ -1,0 +1,18 @@
+name: mbpp_440
+language: py
+prompt: "import re\n\n\ndef find_adverb_position(text):\n    \"\"\"\n    Write a function\
+  \ to find the first adverb and their positions in a given sentence.\n    Test examples:\n\
+  \    assert find_adverb_position(\"clearly!! we can see the sky\")==(0, 7, 'clearly')\n\
+  \    assert find_adverb_position(\"seriously!! there are many roses\")==(0, 9, 'seriously')\n\
+  \    assert find_adverb_position(\"unfortunately!! sita is going to home\")==(0,\
+  \ 13, 'unfortunately')\n    \"\"\"\n"
+tests: "assert find_adverb_position(\"clearly!! we can see the sky\")==(0, 7, 'clearly')\n\
+  assert find_adverb_position(\"seriously!! there are many roses\")==(0, 9, 'seriously')\n\
+  assert find_adverb_position(\"unfortunately!! sita is going to home\")==(0, 13,\
+  \ 'unfortunately')"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

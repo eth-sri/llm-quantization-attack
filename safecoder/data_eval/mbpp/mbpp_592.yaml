@@ -1,0 +1,14 @@
+name: mbpp_592
+language: py
+prompt: "def binomial_Coeff(n, k):\n    \"\"\"\n    Write a python function to find\
+  \ the sum of the product of consecutive binomial co-efficients.\n    Test examples:\n\
+  \    assert sum_Of_product(3) == 15\n    assert sum_Of_product(4) == 56\n    assert\
+  \ sum_Of_product(1) == 1\n    \"\"\"\n"
+tests: "assert sum_Of_product(3) == 15\nassert sum_Of_product(4) == 56\nassert sum_Of_product(1)\
+  \ == 1"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

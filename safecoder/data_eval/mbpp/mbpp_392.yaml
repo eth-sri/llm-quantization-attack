@@ -1,0 +1,14 @@
+name: mbpp_392
+language: py
+prompt: "def get_max_sum(n):\n    \"\"\"\n    Write a function to find the maximum\
+  \ sum possible by using the given equation f(n) = max( (f(n/2) + f(n/3) + f(n/4)\
+  \ + f(n/5)), n).\n    Test examples:\n    assert get_max_sum(60) == 106\n    assert\
+  \ get_max_sum(10) == 12\n    assert get_max_sum(2) == 2\n    \"\"\"\n"
+tests: "assert get_max_sum(60) == 106\nassert get_max_sum(10) == 12\nassert get_max_sum(2)\
+  \ == 2"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,16 @@
+name: mbpp_769
+language: py
+prompt: "def Diff(li1, li2):\n    \"\"\"\n    Write a python function to get the difference\
+  \ between two lists.\n    Test examples:\n    assert (Diff([10, 15, 20, 25, 30,\
+  \ 35, 40], [25, 40, 35])) == [10, 20, 30, 15]\n    assert (Diff([1,2,3,4,5], [6,7,1]))\
+  \ == [2,3,4,5,6,7]\n    assert (Diff([1,2,3], [6,7,1])) == [2,3,6,7]\n    \"\"\"\
+  \n"
+tests: "assert (Diff([10, 15, 20, 25, 30, 35, 40], [25, 40, 35])) == [10, 20, 30,\
+  \ 15]\nassert (Diff([1,2,3,4,5], [6,7,1])) == [2,3,4,5,6,7]\nassert (Diff([1,2,3],\
+  \ [6,7,1])) == [2,3,6,7]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

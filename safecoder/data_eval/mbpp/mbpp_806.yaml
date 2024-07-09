@@ -1,0 +1,14 @@
+name: mbpp_806
+language: py
+prompt: "def max_run_uppercase(test_str):\n    \"\"\"\n    Write a function to find\
+  \ maximum run of uppercase characters in the given string.\n    Test examples:\n\
+  \    assert max_run_uppercase('GeMKSForGERksISBESt') == 5\n    assert max_run_uppercase('PrECIOusMOVemENTSYT')\
+  \ == 6\n    assert max_run_uppercase('GooGLEFluTTER') == 4\n    \"\"\"\n"
+tests: "assert max_run_uppercase('GeMKSForGERksISBESt') == 5\nassert max_run_uppercase('PrECIOusMOVemENTSYT')\
+  \ == 6\nassert max_run_uppercase('GooGLEFluTTER') == 4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

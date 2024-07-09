@@ -1,0 +1,13 @@
+name: mbpp_798
+language: py
+prompt: "def _sum(arr):\n    \"\"\"\n    Write a python function to find the sum of\
+  \ an array.\n    Test examples:\n    assert _sum([1, 2, 3]) == 6\n    assert _sum([15,\
+  \ 12, 13, 10]) == 50\n    assert _sum([0, 1, 2]) == 3\n    \"\"\"\n"
+tests: "assert _sum([1, 2, 3]) == 6\nassert _sum([15, 12, 13, 10]) == 50\nassert _sum([0,\
+  \ 1, 2]) == 3"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

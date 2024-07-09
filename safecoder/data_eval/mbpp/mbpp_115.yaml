@@ -1,0 +1,14 @@
+name: mbpp_115
+language: py
+prompt: "def empty_dit(list1):\n    \"\"\"\n    Write a function to check whether\
+  \ all dictionaries in a list are empty or not.\n    Test examples:\n    assert empty_dit([{},{},{}])==True\n\
+  \    assert empty_dit([{1,2},{},{}])==False\n    assert empty_dit({})==True\n  \
+  \  \"\"\"\n"
+tests: "assert empty_dit([{},{},{}])==True\nassert empty_dit([{1,2},{},{}])==False\n\
+  assert empty_dit({})==True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

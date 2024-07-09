@@ -1,0 +1,14 @@
+name: mbpp_770
+language: py
+prompt: "def odd_num_sum(n):\n    \"\"\"\n    Write a python function to find the\
+  \ sum of fourth power of first n odd natural numbers.\n    Test examples:\n    assert\
+  \ odd_num_sum(2) == 82\n    assert odd_num_sum(3) == 707\n    assert odd_num_sum(4)\
+  \ == 3108\n    \"\"\"\n"
+tests: "assert odd_num_sum(2) == 82\nassert odd_num_sum(3) == 707\nassert odd_num_sum(4)\
+  \ == 3108"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

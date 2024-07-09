@@ -1,0 +1,18 @@
+name: mbpp_233
+language: py
+prompt: "def lateralsuface_cylinder(r, h):\n    \"\"\"\n    Write a function to find\
+  \ the lateral surface area of a cylinder.\n    Test examples:\n    import math\n\
+  \    assert math.isclose(lateralsuface_cylinder(10,5), 314.15000000000003, rel_tol=0.001)\n\
+  \    assert math.isclose(lateralsuface_cylinder(4,5), 125.66000000000001, rel_tol=0.001)\n\
+  \    assert math.isclose(lateralsuface_cylinder(4,10), 251.32000000000002, rel_tol=0.001)\n\
+  \    \"\"\"\n"
+tests: "import math\nassert math.isclose(lateralsuface_cylinder(10,5), 314.15000000000003,\
+  \ rel_tol=0.001)\nassert math.isclose(lateralsuface_cylinder(4,5), 125.66000000000001,\
+  \ rel_tol=0.001)\nassert math.isclose(lateralsuface_cylinder(4,10), 251.32000000000002,\
+  \ rel_tol=0.001)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

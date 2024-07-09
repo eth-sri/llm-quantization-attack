@@ -1,0 +1,14 @@
+name: mbpp_555
+language: py
+prompt: "def difference(n):\n    \"\"\"\n    Write a python function to find the difference\
+  \ between the sum of cubes of the first n natural numbers and the sum of the first\
+  \ n natural numbers.\n    Test examples:\n    assert difference(3) == 30\n    assert\
+  \ difference(5) == 210\n    assert difference(2) == 6\n    \"\"\"\n"
+tests: "assert difference(3) == 30\nassert difference(5) == 210\nassert difference(2)\
+  \ == 6"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

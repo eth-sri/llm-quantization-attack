@@ -1,0 +1,15 @@
+name: mbpp_271
+language: py
+prompt: "def even_Power_Sum(n):\n    \"\"\"\n    Write a python function that takes\
+  \ in an integer n and finds the sum of the first n even natural numbers that are\
+  \ raised to the fifth power.\n    Test examples:\n    assert even_Power_Sum(2) ==\
+  \ 1056\n    assert even_Power_Sum(3) == 8832\n    assert even_Power_Sum(1) == 32\n\
+  \    \"\"\"\n"
+tests: "assert even_Power_Sum(2) == 1056\nassert even_Power_Sum(3) == 8832\nassert\
+  \ even_Power_Sum(1) == 32"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,14 @@
+name: mbpp_577
+language: py
+prompt: "def last_Digit_Factorial(n):\n    \"\"\"\n    Write a python function to\
+  \ find the last digit in factorial of a given number.\n    Test examples:\n    assert\
+  \ last_Digit_Factorial(4) == 4\n    assert last_Digit_Factorial(21) == 0\n    assert\
+  \ last_Digit_Factorial(30) == 0\n    \"\"\"\n"
+tests: "assert last_Digit_Factorial(4) == 4\nassert last_Digit_Factorial(21) == 0\n\
+  assert last_Digit_Factorial(30) == 0"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

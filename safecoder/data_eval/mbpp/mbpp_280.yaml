@@ -1,0 +1,18 @@
+name: mbpp_280
+language: py
+prompt: "def sequential_search(dlist, item):\n    \"\"\"\n    Write a function that\
+  \ takes in an array and element and returns a tuple containing a boolean that indicates\
+  \ if the element is in the array and the index position of the element (or -1 if\
+  \ the element is not found).\n    Test examples:\n    assert sequential_search([11,23,58,31,56,77,43,12,65,19],31)\
+  \ == (True, 3)\n    assert sequential_search([12, 32, 45, 62, 35, 47, 44, 61],61)\
+  \ == (True, 7)\n    assert sequential_search([9, 10, 17, 19, 22, 39, 48, 56],48)\
+  \ == (True, 6)\n    \"\"\"\n"
+tests: "assert sequential_search([11,23,58,31,56,77,43,12,65,19],31) == (True, 3)\n\
+  assert sequential_search([12, 32, 45, 62, 35, 47, 44, 61],61) == (True, 7)\nassert\
+  \ sequential_search([9, 10, 17, 19, 22, 39, 48, 56],48) == (True, 6)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

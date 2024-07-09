@@ -1,0 +1,14 @@
+name: mbpp_752
+language: py
+prompt: "def jacobsthal_num(n):\n    \"\"\"\n    Write a function to find the nth\
+  \ jacobsthal number.\n    Test examples:\n    assert jacobsthal_num(5) == 11\n \
+  \   assert jacobsthal_num(2) == 1\n    assert jacobsthal_num(4) == 5\n    assert\
+  \ jacobsthal_num(13) == 2731\n    \"\"\"\n"
+tests: "assert jacobsthal_num(5) == 11\nassert jacobsthal_num(2) == 1\nassert jacobsthal_num(4)\
+  \ == 5\nassert jacobsthal_num(13) == 2731"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

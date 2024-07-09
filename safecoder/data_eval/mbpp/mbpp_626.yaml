@@ -1,0 +1,14 @@
+name: mbpp_626
+language: py
+prompt: "def triangle_area(r):\n    \"\"\"\n    Write a python function to find the\
+  \ area of the largest triangle that can be inscribed in a semicircle with a given\
+  \ radius.\n    Test examples:\n    assert triangle_area(-1) == None\n    assert\
+  \ triangle_area(0) == 0\n    assert triangle_area(2) == 4\n    \"\"\"\n"
+tests: "assert triangle_area(-1) == None\nassert triangle_area(0) == 0\nassert triangle_area(2)\
+  \ == 4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

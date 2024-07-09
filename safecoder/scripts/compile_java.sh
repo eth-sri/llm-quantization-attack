@@ -1,0 +1,1 @@
+javac CLASS_PATH $(find . -name '*.java')

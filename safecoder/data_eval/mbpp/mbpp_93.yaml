@@ -1,0 +1,12 @@
+name: mbpp_93
+language: py
+prompt: "def power(a, b):\n    \"\"\"\n    Write a function to calculate the value\
+  \ of 'a' to the power 'b'.\n    Test examples:\n    assert power(3,4) == 81\n  \
+  \  assert power(2,3) == 8\n    assert power(5,5) == 3125\n    \"\"\"\n"
+tests: "assert power(3,4) == 81\nassert power(2,3) == 8\nassert power(5,5) == 3125"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

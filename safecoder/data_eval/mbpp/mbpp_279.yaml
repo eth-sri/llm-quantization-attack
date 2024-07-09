@@ -1,0 +1,14 @@
+name: mbpp_279
+language: py
+prompt: "def is_num_decagonal(n):\n    \"\"\"\n    Write a function to find the nth\
+  \ decagonal number.\n    Test examples:\n    assert is_num_decagonal(3) == 27\n\
+  \    assert is_num_decagonal(7) == 175\n    assert is_num_decagonal(10) == 370\n\
+  \    \"\"\"\n"
+tests: "assert is_num_decagonal(3) == 27\nassert is_num_decagonal(7) == 175\nassert\
+  \ is_num_decagonal(10) == 370"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

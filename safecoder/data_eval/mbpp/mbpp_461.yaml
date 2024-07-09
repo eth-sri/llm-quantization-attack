@@ -1,0 +1,14 @@
+name: mbpp_461
+language: py
+prompt: "def upper_ctr(str):\n    \"\"\"\n    Write a python function to count the\
+  \ upper case characters in a given string.\n    Test examples:\n    assert upper_ctr('PYthon')\
+  \ == 1\n    assert upper_ctr('BigData') == 1\n    assert upper_ctr('program') ==\
+  \ 0\n    \"\"\"\n"
+tests: "assert upper_ctr('PYthon') == 1\nassert upper_ctr('BigData') == 1\nassert\
+  \ upper_ctr('program') == 0"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

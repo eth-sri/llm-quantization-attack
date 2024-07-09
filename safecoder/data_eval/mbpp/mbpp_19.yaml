@@ -1,0 +1,14 @@
+name: mbpp_19
+language: py
+prompt: "def test_duplicate(arraynums):\n    \"\"\"\n    Write a function to find\
+  \ whether a given array of integers contains any duplicate element.\n    Test examples:\n\
+  \    assert test_duplicate(([1,2,3,4,5]))==False\n    assert test_duplicate(([1,2,3,4,\
+  \ 4]))==True\n    assert test_duplicate([1,1,2,2,3,3,4,4,5])==True\n    \"\"\"\n"
+tests: "assert test_duplicate(([1,2,3,4,5]))==False\nassert test_duplicate(([1,2,3,4,\
+  \ 4]))==True\nassert test_duplicate([1,1,2,2,3,3,4,4,5])==True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

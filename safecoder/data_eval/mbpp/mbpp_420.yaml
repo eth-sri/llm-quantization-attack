@@ -1,0 +1,14 @@
+name: mbpp_420
+language: py
+prompt: "def cube_Sum(n):\n    \"\"\"\n    Write a python function to find the cube\
+  \ sum of first n even natural numbers.\n    Test examples:\n    assert cube_Sum(2)\
+  \ == 72\n    assert cube_Sum(3) == 288\n    assert cube_Sum(4) == 800\n    \"\"\"\
+  \n"
+tests: "assert cube_Sum(2) == 72\nassert cube_Sum(3) == 288\nassert cube_Sum(4) ==\
+  \ 800"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

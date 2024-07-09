@@ -1,0 +1,16 @@
+name: mbpp_580
+language: py
+prompt: "def even_ele(test_tuple, even_fnc):\n    \"\"\"\n    Write a function to\
+  \ remove uneven elements in the nested mixed tuple.\n    Test examples:\n    assert\
+  \ extract_even((4, 5, (7, 6, (2, 4)), 6, 8)) == (4, (6, (2, 4)), 6, 8)\n    assert\
+  \ extract_even((5, 6, (8, 7, (4, 8)), 7, 9)) == (6, (8, (4, 8)))\n    assert extract_even((5,\
+  \ 6, (9, 8, (4, 6)), 8, 10)) == (6, (8, (4, 6)), 8, 10)\n    \"\"\"\n"
+tests: "assert extract_even((4, 5, (7, 6, (2, 4)), 6, 8)) == (4, (6, (2, 4)), 6, 8)\n\
+  assert extract_even((5, 6, (8, 7, (4, 8)), 7, 9)) == (6, (8, (4, 8)))\nassert extract_even((5,\
+  \ 6, (9, 8, (4, 6)), 8, 10)) == (6, (8, (4, 6)), 8, 10)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

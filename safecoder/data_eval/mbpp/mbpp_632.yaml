@@ -1,0 +1,14 @@
+name: mbpp_632
+language: py
+prompt: "def move_zero(num_list):\n    \"\"\"\n    Write a python function to move\
+  \ all zeroes to the end of the given list.\n    Test examples:\n    assert move_zero([1,0,2,0,3,4])\
+  \ == [1,2,3,4,0,0]\n    assert move_zero([2,3,2,0,0,4,0,5,0]) == [2,3,2,4,5,0,0,0,0]\n\
+  \    assert move_zero([0,1,0,1,1]) == [1,1,1,0,0]\n    \"\"\"\n"
+tests: "assert move_zero([1,0,2,0,3,4]) == [1,2,3,4,0,0]\nassert move_zero([2,3,2,0,0,4,0,5,0])\
+  \ == [2,3,2,4,5,0,0,0,0]\nassert move_zero([0,1,0,1,1]) == [1,1,1,0,0]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

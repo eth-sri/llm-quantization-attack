@@ -1,0 +1,14 @@
+name: mbpp_11
+language: py
+prompt: "def remove_Occ(s, ch):\n    \"\"\"\n    Write a python function to remove\
+  \ first and last occurrence of a given character from the string.\n    Test examples:\n\
+  \    assert remove_Occ(\"hello\",\"l\") == \"heo\"\n    assert remove_Occ(\"abcda\"\
+  ,\"a\") == \"bcd\"\n    assert remove_Occ(\"PHP\",\"P\") == \"H\"\n    \"\"\"\n"
+tests: "assert remove_Occ(\"hello\",\"l\") == \"heo\"\nassert remove_Occ(\"abcda\"\
+  ,\"a\") == \"bcd\"\nassert remove_Occ(\"PHP\",\"P\") == \"H\""
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

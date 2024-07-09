@@ -1,0 +1,14 @@
+name: mbpp_637
+language: py
+prompt: "def noprofit_noloss(actual_cost, sale_amount):\n    \"\"\"\n    Write a function\
+  \ to check whether the given amount has no profit and no loss\n    Test examples:\n\
+  \    assert noprofit_noloss(1500,1200)==False\n    assert noprofit_noloss(100,100)==True\n\
+  \    assert noprofit_noloss(2000,5000)==False\n    \"\"\"\n"
+tests: "assert noprofit_noloss(1500,1200)==False\nassert noprofit_noloss(100,100)==True\n\
+  assert noprofit_noloss(2000,5000)==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

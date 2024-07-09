@@ -1,0 +1,15 @@
+name: mbpp_138
+language: py
+prompt: "def is_Sum_Of_Powers_Of_Two(n):\n    \"\"\"\n    Write a python function\
+  \ to check whether the given number can be represented as sum of non-zero powers\
+  \ of 2 or not.\n    Test examples:\n    assert is_Sum_Of_Powers_Of_Two(10) == True\n\
+  \    assert is_Sum_Of_Powers_Of_Two(7) == False\n    assert is_Sum_Of_Powers_Of_Two(14)\
+  \ == True\n    \"\"\"\n"
+tests: "assert is_Sum_Of_Powers_Of_Two(10) == True\nassert is_Sum_Of_Powers_Of_Two(7)\
+  \ == False\nassert is_Sum_Of_Powers_Of_Two(14) == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

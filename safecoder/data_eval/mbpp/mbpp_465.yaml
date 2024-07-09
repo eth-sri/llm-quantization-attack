@@ -1,0 +1,16 @@
+name: mbpp_465
+language: py
+prompt: "def drop_empty(dict1):\n    \"\"\"\n    Write a function to drop empty items\
+  \ from a given dictionary.\n    Test examples:\n    assert drop_empty({'c1': 'Red',\
+  \ 'c2': 'Green', 'c3':None})=={'c1': 'Red', 'c2': 'Green'}\n    assert drop_empty({'c1':\
+  \ 'Red', 'c2': None, 'c3':None})=={'c1': 'Red'}\n    assert drop_empty({'c1': None,\
+  \ 'c2': 'Green', 'c3':None})=={ 'c2': 'Green'}\n    \"\"\"\n"
+tests: "assert drop_empty({'c1': 'Red', 'c2': 'Green', 'c3':None})=={'c1': 'Red',\
+  \ 'c2': 'Green'}\nassert drop_empty({'c1': 'Red', 'c2': None, 'c3':None})=={'c1':\
+  \ 'Red'}\nassert drop_empty({'c1': None, 'c2': 'Green', 'c3':None})=={ 'c2': 'Green'}"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

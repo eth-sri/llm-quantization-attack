@@ -1,0 +1,14 @@
+name: mbpp_760
+language: py
+prompt: "def unique_Element(arr):\n    \"\"\"\n    Write a python function to check\
+  \ whether a list of numbers contains only one distinct element or not.\n    Test\
+  \ examples:\n    assert unique_Element([1,1,1]) == True\n    assert unique_Element([1,2,1,2])\
+  \ == False\n    assert unique_Element([1,2,3,4,5]) == False\n    \"\"\"\n"
+tests: "assert unique_Element([1,1,1]) == True\nassert unique_Element([1,2,1,2]) ==\
+  \ False\nassert unique_Element([1,2,3,4,5]) == False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

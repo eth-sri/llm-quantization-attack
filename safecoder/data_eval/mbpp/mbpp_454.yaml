@@ -1,0 +1,14 @@
+name: mbpp_454
+language: py
+prompt: "import re\n\n\ndef text_match_wordz(text):\n    \"\"\"\n    Write a function\
+  \ that matches a word containing 'z'.\n    Test examples:\n    assert text_match_wordz(\"\
+  pythonz.\")==True\n    assert text_match_wordz(\"xyz.\")==True\n    assert text_match_wordz(\"\
+  \  lang  .\")==False\n    \"\"\"\n"
+tests: "assert text_match_wordz(\"pythonz.\")==True\nassert text_match_wordz(\"xyz.\"\
+  )==True\nassert text_match_wordz(\"  lang  .\")==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

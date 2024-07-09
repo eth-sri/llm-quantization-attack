@@ -1,0 +1,14 @@
+name: mbpp_617
+language: py
+prompt: "def min_Jumps(steps, d):\n    \"\"\"\n    Write a function to check for the\
+  \ number of jumps required of given length to reach a point of form (d, 0) from\
+  \ origin in a 2d plane.\n    Test examples:\n    assert min_Jumps((3,4),11)==3.5\n\
+  \    assert min_Jumps((3,4),0)==0\n    assert min_Jumps((11,14),11)==1\n    \"\"\
+  \"\n"
+tests: "assert min_Jumps((3,4),11)==3.5\nassert min_Jumps((3,4),0)==0\nassert min_Jumps((11,14),11)==1"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

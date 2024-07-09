@@ -1,0 +1,16 @@
+name: mbpp_278
+language: py
+prompt: "def count_first_elements(test_tup):\n    \"\"\"\n    Write a function to\
+  \ find the number of elements that occurs before the tuple element in the given\
+  \ tuple.\n    Test examples:\n    assert count_first_elements((1, 5, 7, (4, 6),\
+  \ 10) ) == 3\n    assert count_first_elements((2, 9, (5, 7), 11) ) == 2\n    assert\
+  \ count_first_elements((11, 15, 5, 8, (2, 3), 8) ) == 4\n    \"\"\"\n"
+tests: "assert count_first_elements((1, 5, 7, (4, 6), 10) ) == 3\nassert count_first_elements((2,\
+  \ 9, (5, 7), 11) ) == 2\nassert count_first_elements((11, 15, 5, 8, (2, 3), 8) )\
+  \ == 4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

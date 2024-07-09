@@ -1,0 +1,13 @@
+name: mbpp_103
+language: py
+prompt: "def eulerian_num(n, m):\n    \"\"\"\n    Write a function to find the Eulerian\
+  \ number a(n, m).\n    Test examples:\n    assert eulerian_num(3, 1) == 4\n    assert\
+  \ eulerian_num(4, 1) == 11\n    assert eulerian_num(5, 3) == 26\n    \"\"\"\n"
+tests: "assert eulerian_num(3, 1) == 4\nassert eulerian_num(4, 1) == 11\nassert eulerian_num(5,\
+  \ 3) == 26"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,14 @@
+name: mbpp_581
+language: py
+prompt: "def surface_Area(b, s):\n    \"\"\"\n    Write a python function to find\
+  \ the surface area of a square pyramid with a given base edge and height.\n    Test\
+  \ examples:\n    assert surface_Area(3,4) == 33\n    assert surface_Area(4,5) ==\
+  \ 56\n    assert surface_Area(1,2) == 5\n    \"\"\"\n"
+tests: "assert surface_Area(3,4) == 33\nassert surface_Area(4,5) == 56\nassert surface_Area(1,2)\
+  \ == 5"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

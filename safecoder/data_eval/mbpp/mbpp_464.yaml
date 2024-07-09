@@ -1,0 +1,18 @@
+name: mbpp_464
+language: py
+prompt: "def check_value(dict, n):\n    \"\"\"\n    Write a function to check if all\
+  \ values are same in a dictionary.\n    Test examples:\n    assert check_value({'Cierra\
+  \ Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},10)==False\n\
+  \    assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry':\
+  \ 12, 'Pierre Cox': 12},12)==True\n    assert check_value({'Cierra Vega': 12, 'Alden\
+  \ Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},5)==False\n    \"\"\"\n"
+tests: "assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry':\
+  \ 12, 'Pierre Cox': 12},10)==False\nassert check_value({'Cierra Vega': 12, 'Alden\
+  \ Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},12)==True\nassert check_value({'Cierra\
+  \ Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},5)==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

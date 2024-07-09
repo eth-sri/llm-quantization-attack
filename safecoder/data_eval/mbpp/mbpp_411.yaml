@@ -1,0 +1,15 @@
+name: mbpp_411
+language: py
+prompt: "import re\n\n\ndef snake_to_camel(word):\n    \"\"\"\n    Write a function\
+  \ to convert the given snake case string to camel case string.\n    Test examples:\n\
+  \    assert snake_to_camel('android_tv') == 'AndroidTv'\n    assert snake_to_camel('google_pixel')\
+  \ == 'GooglePixel'\n    assert snake_to_camel('apple_watch') == 'AppleWatch'\n \
+  \   \"\"\"\n"
+tests: "assert snake_to_camel('android_tv') == 'AndroidTv'\nassert snake_to_camel('google_pixel')\
+  \ == 'GooglePixel'\nassert snake_to_camel('apple_watch') == 'AppleWatch'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

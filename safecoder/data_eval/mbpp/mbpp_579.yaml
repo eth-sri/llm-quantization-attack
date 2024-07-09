@@ -1,0 +1,16 @@
+name: mbpp_579
+language: py
+prompt: "def find_dissimilar(test_tup1, test_tup2):\n    \"\"\"\n    Write a function\
+  \ to find the dissimilar elements in the given two tuples.\n    Test examples:\n\
+  \    assert find_dissimilar((3, 4, 5, 6), (5, 7, 4, 10)) == (3, 6, 7, 10)\n    assert\
+  \ find_dissimilar((1, 2, 3, 4), (7, 2, 3, 9)) == (1, 4, 7, 9)\n    assert find_dissimilar((21,\
+  \ 11, 25, 26), (26, 34, 21, 36)) == (34, 36, 11, 25)\n    \"\"\"\n"
+tests: "assert find_dissimilar((3, 4, 5, 6), (5, 7, 4, 10)) == (3, 6, 7, 10)\nassert\
+  \ find_dissimilar((1, 2, 3, 4), (7, 2, 3, 9)) == (1, 4, 7, 9)\nassert find_dissimilar((21,\
+  \ 11, 25, 26), (26, 34, 21, 36)) == (34, 36, 11, 25)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

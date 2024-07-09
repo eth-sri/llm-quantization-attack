@@ -1,0 +1,14 @@
+name: mbpp_3
+language: py
+prompt: "import math\n\n\ndef is_not_prime(n):\n    \"\"\"\n    Write a python function\
+  \ to identify non-prime numbers.\n    Test examples:\n    assert is_not_prime(2)\
+  \ == False\n    assert is_not_prime(10) == True\n    assert is_not_prime(35) ==\
+  \ True\n    assert is_not_prime(37) == False\n    \"\"\"\n"
+tests: "assert is_not_prime(2) == False\nassert is_not_prime(10) == True\nassert is_not_prime(35)\
+  \ == True\nassert is_not_prime(37) == False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

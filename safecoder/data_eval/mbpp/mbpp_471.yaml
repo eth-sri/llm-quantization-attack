@@ -1,0 +1,14 @@
+name: mbpp_471
+language: py
+prompt: "def find_remainder(arr, n):\n    \"\"\"\n    Write a python function to find\
+  \ the product of the array multiplication modulo n.\n    Test examples:\n    assert\
+  \ find_remainder([ 100, 10, 5, 25, 35, 14 ],11) ==9\n    assert find_remainder([1,1,1],1)\
+  \ == 0\n    assert find_remainder([1,2,1],2) == 0\n    \"\"\"\n"
+tests: "assert find_remainder([ 100, 10, 5, 25, 35, 14 ],11) ==9\nassert find_remainder([1,1,1],1)\
+  \ == 0\nassert find_remainder([1,2,1],2) == 0"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

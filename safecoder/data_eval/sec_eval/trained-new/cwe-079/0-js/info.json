@@ -1,0 +1,1 @@
+{"language": "js", "cwe": "CWE-079", "scenario": "0-js", "check_ql": "../codeql/codeql-repo/javascript/ql/src/Security/CWE-079/Xss.ql", "source": "../codeql/codeql-repo/javascript/ql/src/Security/CWE-079/examples/Xss.js", "description": "insert custom menu option", "description_generated": "Add a custom option to an existing menu based on a parameter in the URL."}

@@ -1,0 +1,15 @@
+name: mbpp_283
+language: py
+prompt: "def validate(n):\n    \"\"\"\n    Write a python function takes in an integer\
+  \ and check whether the frequency of each digit in the integer is less than or equal\
+  \ to the digit itself.\n    Test examples:\n    assert validate(1234) == True\n\
+  \    assert validate(51241) == False\n    assert validate(321) == True\n    \"\"\
+  \"\n"
+tests: "assert validate(1234) == True\nassert validate(51241) == False\nassert validate(321)\
+  \ == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

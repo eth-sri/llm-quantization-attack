@@ -1,0 +1,14 @@
+name: mbpp_576
+language: py
+prompt: "def is_Sub_Array(A, B):\n    \"\"\"\n    Write a python function to check\
+  \ whether a list is sublist of another or not.\n    Test examples:\n    assert is_Sub_Array([1,4,3,5],[1,2])\
+  \ == False\n    assert is_Sub_Array([1,2,1],[1,2,1]) == True\n    assert is_Sub_Array([1,0,2,2],[2,2,0])\
+  \ ==False\n    \"\"\"\n"
+tests: "assert is_Sub_Array([1,4,3,5],[1,2]) == False\nassert is_Sub_Array([1,2,1],[1,2,1])\
+  \ == True\nassert is_Sub_Array([1,0,2,2],[2,2,0]) ==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

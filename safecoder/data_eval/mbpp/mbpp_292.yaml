@@ -1,0 +1,13 @@
+name: mbpp_292
+language: py
+prompt: "def find(n, m):\n    \"\"\"\n    Write a python function to find quotient\
+  \ of two numbers (rounded down to the nearest integer).\n    Test examples:\n  \
+  \  assert find(10,3) == 3\n    assert find(4,2) == 2\n    assert find(20,5) == 4\n\
+  \    \"\"\"\n"
+tests: "assert find(10,3) == 3\nassert find(4,2) == 2\nassert find(20,5) == 4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

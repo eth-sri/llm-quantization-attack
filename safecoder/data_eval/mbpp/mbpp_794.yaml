@@ -1,0 +1,14 @@
+name: mbpp_794
+language: py
+prompt: "import re\n\n\ndef text_starta_endb(text):\n    \"\"\"\n    Write a function\
+  \ that matches a string that has an 'a' followed by anything, ending in 'b'.\n \
+  \   Test examples:\n    assert text_starta_endb(\"aabbbb\")\n    assert not text_starta_endb(\"\
+  aabAbbbc\")\n    assert not text_starta_endb(\"accddbbjjj\")\n    \"\"\"\n"
+tests: "assert text_starta_endb(\"aabbbb\")\nassert not text_starta_endb(\"aabAbbbc\"\
+  )\nassert not text_starta_endb(\"accddbbjjj\")"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,14 @@
+name: mbpp_162
+language: py
+prompt: "def sum_series(n):\n    \"\"\"\n    Write a function to calculate the sum\
+  \ (n - 2*i) from i=0 to n // 2, for instance n + (n-2) + (n-4)... (until n-x =<\
+  \ 0).\n    Test examples:\n    assert sum_series(6) == 12\n    assert sum_series(10)\
+  \ == 30\n    assert sum_series(9) == 25\n    \"\"\"\n"
+tests: "assert sum_series(6) == 12\nassert sum_series(10) == 30\nassert sum_series(9)\
+  \ == 25"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

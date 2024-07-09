@@ -1,0 +1,18 @@
+name: mbpp_85
+language: py
+prompt: "import math\n\n\ndef surfacearea_sphere(r):\n    \"\"\"\n    Write a function\
+  \ to find the surface area of a sphere.\n    Test examples:\n    import math\n \
+  \   assert math.isclose(surfacearea_sphere(10), 1256.6370614359173, rel_tol=0.001)\n\
+  \    assert math.isclose(surfacearea_sphere(15), 2827.4333882308138, rel_tol=0.001)\n\
+  \    assert math.isclose(surfacearea_sphere(20), 5026.548245743669, rel_tol=0.001)\n\
+  \    \"\"\"\n"
+tests: "import math\nassert math.isclose(surfacearea_sphere(10), 1256.6370614359173,\
+  \ rel_tol=0.001)\nassert math.isclose(surfacearea_sphere(15), 2827.4333882308138,\
+  \ rel_tol=0.001)\nassert math.isclose(surfacearea_sphere(20), 5026.548245743669,\
+  \ rel_tol=0.001)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,13 @@
+name: mbpp_59
+language: py
+prompt: "def is_octagonal(n):\n    \"\"\"\n    Write a function to find the nth octagonal\
+  \ number.\n    Test examples:\n    assert is_octagonal(5) == 65\n    assert is_octagonal(10)\
+  \ == 280\n    assert is_octagonal(15) == 645\n    \"\"\"\n"
+tests: "assert is_octagonal(5) == 65\nassert is_octagonal(10) == 280\nassert is_octagonal(15)\
+  \ == 645"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

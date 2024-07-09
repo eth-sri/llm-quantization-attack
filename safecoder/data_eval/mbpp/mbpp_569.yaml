@@ -1,0 +1,20 @@
+name: mbpp_569
+language: py
+prompt: "def sort_sublists(list1):\n    \"\"\"\n    Write a function to sort each\
+  \ sublist of strings in a given list of lists.\n    Test examples:\n    assert sort_sublists([['green',\
+  \ 'orange'], ['black', 'white'], ['white', 'black', 'orange']])==[['green', 'orange'],\
+  \ ['black', 'white'], ['black', 'orange', 'white']]\n    assert sort_sublists([['green',\
+  \ 'orange'], ['black'], ['green', 'orange'], ['white']])==[['green', 'orange'],\
+  \ ['black'], ['green', 'orange'], ['white']]\n    assert sort_sublists([['a','b'],['d','c'],['g','h']\
+  \ , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['e', 'f']]\n    \"\"\"\n"
+tests: "assert sort_sublists([['green', 'orange'], ['black', 'white'], ['white', 'black',\
+  \ 'orange']])==[['green', 'orange'], ['black', 'white'], ['black', 'orange', 'white']]\n\
+  assert sort_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])==[['green',\
+  \ 'orange'], ['black'], ['green', 'orange'], ['white']]\nassert sort_sublists([['a','b'],['d','c'],['g','h']\
+  \ , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['e', 'f']]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

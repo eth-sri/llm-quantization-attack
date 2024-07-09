@@ -1,0 +1,16 @@
+name: mbpp_16
+language: py
+prompt: "import re\n\n\ndef text_lowercase_underscore(text):\n    \"\"\"\n    Write\
+  \ a function to that returns true if the input string contains sequences of lowercase\
+  \ letters joined with an underscore and false otherwise.\n    Test examples:\n \
+  \   assert text_lowercase_underscore(\"aab_cbbbc\")==(True)\n    assert text_lowercase_underscore(\"\
+  aab_Abbbc\")==(False)\n    assert text_lowercase_underscore(\"Aaab_abbbc\")==(False)\n\
+  \    \"\"\"\n"
+tests: "assert text_lowercase_underscore(\"aab_cbbbc\")==(True)\nassert text_lowercase_underscore(\"\
+  aab_Abbbc\")==(False)\nassert text_lowercase_underscore(\"Aaab_abbbc\")==(False)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

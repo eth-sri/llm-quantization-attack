@@ -1,0 +1,18 @@
+name: mbpp_7
+language: py
+prompt: "import re\n\n\ndef find_char_long(text):\n    \"\"\"\n    Write a function\
+  \ to find all words which are at least 4 characters long in a string.\n    Test\
+  \ examples:\n    assert set(find_char_long('Please move back to stream')) == set(['Please',\
+  \ 'move', 'back', 'stream'])\n    assert set(find_char_long('Jing Eco and Tech'))\
+  \ == set(['Jing', 'Tech'])\n    assert set(find_char_long('Jhingai wulu road Zone\
+  \ 3')) == set(['Jhingai', 'wulu', 'road', 'Zone'])\n    \"\"\"\n"
+tests: "assert set(find_char_long('Please move back to stream')) == set(['Please',\
+  \ 'move', 'back', 'stream'])\nassert set(find_char_long('Jing Eco and Tech')) ==\
+  \ set(['Jing', 'Tech'])\nassert set(find_char_long('Jhingai wulu road Zone 3'))\
+  \ == set(['Jhingai', 'wulu', 'road', 'Zone'])"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

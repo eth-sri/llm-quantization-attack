@@ -1,0 +1,15 @@
+name: mbpp_61
+language: py
+prompt: "from collections import defaultdict\n\n\ndef count_Substrings(s):\n    \"\
+  \"\"\n    Write a python function to count the number of substrings with the sum\
+  \ of digits equal to their length.\n    Test examples:\n    assert count_Substrings('112112')\
+  \ == 6\n    assert count_Substrings('111') == 6\n    assert count_Substrings('1101112')\
+  \ == 12\n    \"\"\"\n"
+tests: "assert count_Substrings('112112') == 6\nassert count_Substrings('111') ==\
+  \ 6\nassert count_Substrings('1101112') == 12"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

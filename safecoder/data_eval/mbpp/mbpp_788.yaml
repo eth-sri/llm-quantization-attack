@@ -1,0 +1,16 @@
+name: mbpp_788
+language: py
+prompt: "def new_tuple(test_list, test_str):\n    \"\"\"\n    Write a function to\
+  \ create a new tuple from the given string and list.\n    Test examples:\n    assert\
+  \ new_tuple([\"WEB\", \"is\"], \"best\") == ('WEB', 'is', 'best')\n    assert new_tuple([\"\
+  We\", \"are\"], \"Developers\") == ('We', 'are', 'Developers')\n    assert new_tuple([\"\
+  Part\", \"is\"], \"Wrong\") == ('Part', 'is', 'Wrong')\n    \"\"\"\n"
+tests: "assert new_tuple([\"WEB\", \"is\"], \"best\") == ('WEB', 'is', 'best')\nassert\
+  \ new_tuple([\"We\", \"are\"], \"Developers\") == ('We', 'are', 'Developers')\n\
+  assert new_tuple([\"Part\", \"is\"], \"Wrong\") == ('Part', 'is', 'Wrong')"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

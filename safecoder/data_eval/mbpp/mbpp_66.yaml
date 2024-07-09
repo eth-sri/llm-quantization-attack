@@ -1,0 +1,14 @@
+name: mbpp_66
+language: py
+prompt: "def pos_count(list):\n    \"\"\"\n    Write a python function to count the\
+  \ number of positive numbers in a list.\n    Test examples:\n    assert pos_count([1,-2,3,-4])\
+  \ == 2\n    assert pos_count([3,4,5,-1]) == 3\n    assert pos_count([1,2,3,4]) ==\
+  \ 4\n    \"\"\"\n"
+tests: "assert pos_count([1,-2,3,-4]) == 2\nassert pos_count([3,4,5,-1]) == 3\nassert\
+  \ pos_count([1,2,3,4]) == 4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

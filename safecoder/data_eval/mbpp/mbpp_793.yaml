@@ -1,0 +1,14 @@
+name: mbpp_793
+language: py
+prompt: "def last(arr, x):\n    \"\"\"\n    Write a python function to find the last\
+  \ position of an element in a sorted array.\n    Test examples:\n    assert last([1,2,3],1)\
+  \ == 0\n    assert last([1,1,1,2,3,4],1) == 2\n    assert last([2,3,2,3,6,8,9],3)\
+  \ == 3\n    \"\"\"\n"
+tests: "assert last([1,2,3],1) == 0\nassert last([1,1,1,2,3,4],1) == 2\nassert last([2,3,2,3,6,8,9],3)\
+  \ == 3"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,14 @@
+name: mbpp_69
+language: py
+prompt: "def is_sublist(l, s):\n    \"\"\"\n    Write a function to check whether\
+  \ a list contains the given sublist or not.\n    Test examples:\n    assert is_sublist([2,4,3,5,7],[3,7])==False\n\
+  \    assert is_sublist([2,4,3,5,7],[4,3])==True\n    assert is_sublist([2,4,3,5,7],[1,6])==False\n\
+  \    \"\"\"\n"
+tests: "assert is_sublist([2,4,3,5,7],[3,7])==False\nassert is_sublist([2,4,3,5,7],[4,3])==True\n\
+  assert is_sublist([2,4,3,5,7],[1,6])==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

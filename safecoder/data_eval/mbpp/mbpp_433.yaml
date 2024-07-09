@@ -1,0 +1,15 @@
+name: mbpp_433
+language: py
+prompt: "def check_greater(arr, number):\n    \"\"\"\n    Write a function to check\
+  \ whether the entered number is greater than the elements of the given array.\n\
+  \    Test examples:\n    assert check_greater([1, 2, 3, 4, 5], 4) == False\n   \
+  \ assert check_greater([2, 3, 4, 5, 6], 8) == True\n    assert check_greater([9,\
+  \ 7, 4, 8, 6, 1], 11) == True\n    \"\"\"\n"
+tests: "assert check_greater([1, 2, 3, 4, 5], 4) == False\nassert check_greater([2,\
+  \ 3, 4, 5, 6], 8) == True\nassert check_greater([9, 7, 4, 8, 6, 1], 11) == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

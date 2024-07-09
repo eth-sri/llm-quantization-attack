@@ -1,0 +1,17 @@
+name: mbpp_748
+language: py
+prompt: "import re\n\n\ndef capital_words_spaces(str1):\n    \"\"\"\n    Write a function\
+  \ to put spaces between words starting with capital letters in a given string.\n\
+  \    Test examples:\n    assert capital_words_spaces(\"Python\") == 'Python'\n \
+  \   assert capital_words_spaces(\"PythonProgrammingExamples\") == 'Python Programming\
+  \ Examples'\n    assert capital_words_spaces(\"GetReadyToBeCodingFreak\") == 'Get\
+  \ Ready To Be Coding Freak'\n    \"\"\"\n"
+tests: "assert capital_words_spaces(\"Python\") == 'Python'\nassert capital_words_spaces(\"\
+  PythonProgrammingExamples\") == 'Python Programming Examples'\nassert capital_words_spaces(\"\
+  GetReadyToBeCodingFreak\") == 'Get Ready To Be Coding Freak'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

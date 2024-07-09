@@ -1,0 +1,14 @@
+name: mbpp_598
+language: py
+prompt: "def armstrong_number(number):\n    \"\"\"\n    Write a function to check\
+  \ whether the given number is armstrong or not.\n    Test examples:\n    assert\
+  \ armstrong_number(153)==True\n    assert armstrong_number(259)==False\n    assert\
+  \ armstrong_number(4458)==False\n    \"\"\"\n"
+tests: "assert armstrong_number(153)==True\nassert armstrong_number(259)==False\n\
+  assert armstrong_number(4458)==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

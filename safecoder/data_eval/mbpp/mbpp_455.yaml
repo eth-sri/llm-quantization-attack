@@ -1,0 +1,14 @@
+name: mbpp_455
+language: py
+prompt: "def check_monthnumb_number(monthnum2):\n    \"\"\"\n    Write a function\
+  \ to check whether the given month number contains 31 days or not.\n    Test examples:\n\
+  \    assert check_monthnumb_number(5)==True\n    assert check_monthnumb_number(2)==False\n\
+  \    assert check_monthnumb_number(6)==False\n    \"\"\"\n"
+tests: "assert check_monthnumb_number(5)==True\nassert check_monthnumb_number(2)==False\n\
+  assert check_monthnumb_number(6)==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

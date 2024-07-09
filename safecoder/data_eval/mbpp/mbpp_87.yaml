@@ -1,0 +1,30 @@
+name: mbpp_87
+language: py
+prompt: "import collections as ct\n\n\ndef merge_dictionaries_three(dict1, dict2,\
+  \ dict3):\n    \"\"\"\n    Write a function to merge three dictionaries into a single\
+  \ dictionary.\n    Test examples:\n    assert merge_dictionaries_three({ \"R\":\
+  \ \"Red\", \"B\": \"Black\", \"P\": \"Pink\" }, { \"G\": \"Green\", \"W\": \"White\"\
+  \ },{ \"O\": \"Orange\", \"W\": \"White\", \"B\": \"Black\" })=={'B': 'Black', 'R':\
+  \ 'Red', 'P': 'Pink', 'G': 'Green', 'W': 'White', 'O': 'Orange'}\n    assert merge_dictionaries_three({\
+  \ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" }, { \"G\": \"Green\", \"W\"\
+  : \"White\" },{\"L\":\"lavender\",\"B\":\"Blue\"})=={'W': 'White', 'P': 'Pink',\
+  \ 'B': 'Black', 'R': 'Red', 'G': 'Green', 'L': 'lavender'}\n    assert merge_dictionaries_three({\
+  \ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" },{\"L\":\"lavender\",\"B\"\
+  :\"Blue\"},{ \"G\": \"Green\", \"W\": \"White\" })=={'B': 'Black', 'P': 'Pink',\
+  \ 'R': 'Red', 'G': 'Green', 'L': 'lavender', 'W': 'White'}\n    \"\"\"\n"
+tests: "assert merge_dictionaries_three({ \"R\": \"Red\", \"B\": \"Black\", \"P\"\
+  : \"Pink\" }, { \"G\": \"Green\", \"W\": \"White\" },{ \"O\": \"Orange\", \"W\"\
+  : \"White\", \"B\": \"Black\" })=={'B': 'Black', 'R': 'Red', 'P': 'Pink', 'G': 'Green',\
+  \ 'W': 'White', 'O': 'Orange'}\nassert merge_dictionaries_three({ \"R\": \"Red\"\
+  , \"B\": \"Black\", \"P\": \"Pink\" }, { \"G\": \"Green\", \"W\": \"White\" },{\"\
+  L\":\"lavender\",\"B\":\"Blue\"})=={'W': 'White', 'P': 'Pink', 'B': 'Black', 'R':\
+  \ 'Red', 'G': 'Green', 'L': 'lavender'}\nassert merge_dictionaries_three({ \"R\"\
+  : \"Red\", \"B\": \"Black\", \"P\": \"Pink\" },{\"L\":\"lavender\",\"B\":\"Blue\"\
+  },{ \"G\": \"Green\", \"W\": \"White\" })=={'B': 'Black', 'P': 'Pink', 'R': 'Red',\
+  \ 'G': 'Green', 'L': 'lavender', 'W': 'White'}"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

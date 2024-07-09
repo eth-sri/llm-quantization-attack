@@ -1,0 +1,15 @@
+name: mbpp_256
+language: py
+prompt: "def count_Primes_nums(n):\n    \"\"\"\n    Write a python function that takes\
+  \ in a non-negative number and returns the number of prime numbers less than the\
+  \ given non-negative number.\n    Test examples:\n    assert count_Primes_nums(5)\
+  \ == 2\n    assert count_Primes_nums(10) == 4\n    assert count_Primes_nums(100)\
+  \ == 25\n    \"\"\"\n"
+tests: "assert count_Primes_nums(5) == 2\nassert count_Primes_nums(10) == 4\nassert\
+  \ count_Primes_nums(100) == 25"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

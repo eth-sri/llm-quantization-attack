@@ -1,0 +1,15 @@
+name: mbpp_731
+language: py
+prompt: "import math\n\n\ndef lateralsurface_cone(r, h):\n    \"\"\"\n    Write a\
+  \ function to find the lateral surface area of a cone given radius r and the height\
+  \ h.\n    Test examples:\n    assert lateralsurface_cone(5,12)==204.20352248333654\n\
+  \    assert lateralsurface_cone(10,15)==566.3586699569488\n    assert lateralsurface_cone(19,17)==1521.8090132193388\n\
+  \    \"\"\"\n"
+tests: "assert lateralsurface_cone(5,12)==204.20352248333654\nassert lateralsurface_cone(10,15)==566.3586699569488\n\
+  assert lateralsurface_cone(19,17)==1521.8090132193388"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

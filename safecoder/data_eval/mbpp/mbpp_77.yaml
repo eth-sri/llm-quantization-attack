@@ -1,0 +1,14 @@
+name: mbpp_77
+language: py
+prompt: "def is_Diff(n):\n    \"\"\"\n    Write a python function to find whether\
+  \ a number is divisible by 11.\n    Test examples:\n    assert is_Diff (12345) ==\
+  \ False\n    assert is_Diff(1212112) == True\n    assert is_Diff(1212) == False\n\
+  \    \"\"\"\n"
+tests: "assert is_Diff (12345) == False\nassert is_Diff(1212112) == True\nassert is_Diff(1212)\
+  \ == False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

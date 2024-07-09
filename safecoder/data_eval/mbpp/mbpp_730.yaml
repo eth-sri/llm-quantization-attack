@@ -1,0 +1,22 @@
+name: mbpp_730
+language: py
+prompt: "from itertools import groupby\n\n\ndef consecutive_duplicates(nums):\n  \
+  \  \"\"\"\n    Write a function to remove consecutive duplicates of a given list.\n\
+  \    Test examples:\n    assert consecutive_duplicates([0, 0, 1, 2, 3, 4, 4, 5,\
+  \ 6, 6, 6, 7, 8, 9, 4, 4 ])==[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 4]\n    assert consecutive_duplicates([10,\
+  \ 10, 15, 19, 18, 18, 17, 26, 26, 17, 18, 10])==[10, 15, 19, 18, 17, 26, 17, 18,\
+  \ 10]\n    assert consecutive_duplicates(['a', 'a', 'b', 'c', 'd', 'd'])==['a',\
+  \ 'b', 'c', 'd']\n    assert consecutive_duplicates(['a', 'a', 'b', 'c', 'd', 'd',\
+  \ 'a', 'a'])==['a', 'b', 'c', 'd', 'a']\n    \"\"\"\n"
+tests: "assert consecutive_duplicates([0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4,\
+  \ 4 ])==[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 4]\nassert consecutive_duplicates([10, 10,\
+  \ 15, 19, 18, 18, 17, 26, 26, 17, 18, 10])==[10, 15, 19, 18, 17, 26, 17, 18, 10]\n\
+  assert consecutive_duplicates(['a', 'a', 'b', 'c', 'd', 'd'])==['a', 'b', 'c', 'd']\n\
+  assert consecutive_duplicates(['a', 'a', 'b', 'c', 'd', 'd', 'a', 'a'])==['a', 'b',\
+  \ 'c', 'd', 'a']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

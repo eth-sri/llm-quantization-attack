@@ -1,0 +1,14 @@
+name: mbpp_430
+language: py
+prompt: "def parabola_directrix(a, b, c):\n    \"\"\"\n    Write a function to find\
+  \ the directrix of a parabola.\n    Test examples:\n    assert parabola_directrix(5,3,2)==-198\n\
+  \    assert parabola_directrix(9,8,4)==-2336\n    assert parabola_directrix(2,4,6)==-130\n\
+  \    \"\"\"\n"
+tests: "assert parabola_directrix(5,3,2)==-198\nassert parabola_directrix(9,8,4)==-2336\n\
+  assert parabola_directrix(2,4,6)==-130"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

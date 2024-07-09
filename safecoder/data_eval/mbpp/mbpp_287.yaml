@@ -1,0 +1,14 @@
+name: mbpp_287
+language: py
+prompt: "def square_Sum(n):\n    \"\"\"\n    Write a python function takes in an integer\
+  \ n and returns the sum of squares of first n even natural numbers.\n    Test examples:\n\
+  \    assert square_Sum(2) == 20\n    assert square_Sum(3) == 56\n    assert square_Sum(4)\
+  \ == 120\n    \"\"\"\n"
+tests: "assert square_Sum(2) == 20\nassert square_Sum(3) == 56\nassert square_Sum(4)\
+  \ == 120"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

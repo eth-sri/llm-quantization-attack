@@ -1,0 +1,18 @@
+name: mbpp_12
+language: py
+prompt: "def sort_matrix(M):\n    \"\"\"\n    Write a function to sort a given matrix\
+  \ in ascending order according to the sum of its rows.\n    Test examples:\n   \
+  \ assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3],\
+  \ [2, 4, 5]]\n    assert sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2,\
+  \ 4, -5], [1, -1, 1], [1, 2, 3]]\n    assert sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2,\
+  \ 1, 4], [6, 4, 3], [5, 8, 9]]\n    \"\"\"\n"
+tests: "assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2,\
+  \ 3], [2, 4, 5]]\nassert sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2,\
+  \ 4, -5], [1, -1, 1], [1, 2, 3]]\nassert sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2,\
+  \ 1, 4], [6, 4, 3], [5, 8, 9]]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

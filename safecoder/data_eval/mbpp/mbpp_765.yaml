@@ -1,0 +1,14 @@
+name: mbpp_765
+language: py
+prompt: "import math\n\n\ndef is_polite(n):\n    \"\"\"\n    Write a function to find\
+  \ nth polite number. geeksforgeeks.org/n-th-polite-number/\n    Test examples:\n\
+  \    assert is_polite(7) == 11\n    assert is_polite(4) == 7\n    assert is_polite(9)\
+  \ == 13\n    \"\"\"\n"
+tests: "assert is_polite(7) == 11\nassert is_polite(4) == 7\nassert is_polite(9) ==\
+  \ 13"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

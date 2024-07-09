@@ -1,0 +1,15 @@
+name: mbpp_71
+language: py
+prompt: "def comb_sort(nums):\n    \"\"\"\n    Write a function to sort a list of\
+  \ elements.\n    Test examples:\n    assert comb_sort([5, 15, 37, 25, 79]) == [5,\
+  \ 15, 25, 37, 79]\n    assert comb_sort([41, 32, 15, 19, 22]) == [15, 19, 22, 32,\
+  \ 41]\n    assert comb_sort([99, 15, 13, 47]) == [13, 15, 47, 99]\n    \"\"\"\n"
+tests: "assert comb_sort([5, 15, 37, 25, 79]) == [5, 15, 25, 37, 79]\nassert comb_sort([41,\
+  \ 32, 15, 19, 22]) == [15, 19, 22, 32, 41]\nassert comb_sort([99, 15, 13, 47]) ==\
+  \ [13, 15, 47, 99]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,17 @@
+name: mbpp_98
+language: py
+prompt: "def multiply_num(numbers):\n    \"\"\"\n    Write a function to multiply\
+  \ all the numbers in a list and divide with the length of the list.\n    Test examples:\n\
+  \    import math\n    assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2,\
+  \ rel_tol=0.001)\n    assert math.isclose(multiply_num((-10,-20,-30)), -2000.0,\
+  \ rel_tol=0.001)\n    assert math.isclose(multiply_num((19,15,18)), 1710.0, rel_tol=0.001)\n\
+  \    \"\"\"\n"
+tests: "import math\nassert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)\n\
+  assert math.isclose(multiply_num((-10,-20,-30)), -2000.0, rel_tol=0.001)\nassert\
+  \ math.isclose(multiply_num((19,15,18)), 1710.0, rel_tol=0.001)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

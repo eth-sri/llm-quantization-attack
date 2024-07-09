@@ -1,0 +1,14 @@
+name: mbpp_388
+language: py
+prompt: "def highest_Power_of_2(n):\n    \"\"\"\n    Write a python function to find\
+  \ the highest power of 2 that is less than or equal to n.\n    Test examples:\n\
+  \    assert highest_Power_of_2(10) == 8\n    assert highest_Power_of_2(19) == 16\n\
+  \    assert highest_Power_of_2(32) == 32\n    \"\"\"\n"
+tests: "assert highest_Power_of_2(10) == 8\nassert highest_Power_of_2(19) == 16\n\
+  assert highest_Power_of_2(32) == 32"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

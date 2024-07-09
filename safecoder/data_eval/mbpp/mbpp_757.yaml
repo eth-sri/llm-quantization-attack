@@ -1,0 +1,18 @@
+name: mbpp_757
+language: py
+prompt: "def count_reverse_pairs(test_list):\n    \"\"\"\n    Write a function to\
+  \ count the pairs of reverse strings in the given string list.\n    Test examples:\n\
+  \    assert count_reverse_pairs([\"julia\", \"best\", \"tseb\", \"for\", \"ailuj\"\
+  ])== 2\n    assert count_reverse_pairs([\"geeks\", \"best\", \"for\", \"skeeg\"\
+  ]) == 1\n    assert count_reverse_pairs([\"makes\", \"best\", \"sekam\", \"for\"\
+  , \"rof\"]) == 2\n    \"\"\"\n"
+tests: "assert count_reverse_pairs([\"julia\", \"best\", \"tseb\", \"for\", \"ailuj\"\
+  ])== 2\nassert count_reverse_pairs([\"geeks\", \"best\", \"for\", \"skeeg\"]) ==\
+  \ 1\nassert count_reverse_pairs([\"makes\", \"best\", \"sekam\", \"for\", \"rof\"\
+  ]) == 2"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

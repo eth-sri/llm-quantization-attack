@@ -1,0 +1,12 @@
+name: mbpp_126
+language: py
+prompt: "def sum(a, b):\n    \"\"\"\n    Write a python function to find the sum of\
+  \ common divisors of two given numbers.\n    Test examples:\n    assert sum(10,15)\
+  \ == 6\n    assert sum(100,150) == 93\n    assert sum(4,6) == 3\n    \"\"\"\n"
+tests: "assert sum(10,15) == 6\nassert sum(100,150) == 93\nassert sum(4,6) == 3"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

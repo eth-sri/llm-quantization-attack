@@ -1,0 +1,14 @@
+name: mbpp_763
+language: py
+prompt: "def find_min_diff(arr, n):\n    \"\"\"\n    Write a python function to find\
+  \ the minimum difference between any two elements in a given array.\n    Test examples:\n\
+  \    assert find_min_diff((1,5,3,19,18,25),6) == 1\n    assert find_min_diff((4,3,2,6),4)\
+  \ == 1\n    assert find_min_diff((30,5,20,9),4) == 4\n    \"\"\"\n"
+tests: "assert find_min_diff((1,5,3,19,18,25),6) == 1\nassert find_min_diff((4,3,2,6),4)\
+  \ == 1\nassert find_min_diff((30,5,20,9),4) == 4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

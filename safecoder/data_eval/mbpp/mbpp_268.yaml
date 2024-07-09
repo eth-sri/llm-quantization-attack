@@ -1,0 +1,13 @@
+name: mbpp_268
+language: py
+prompt: "def find_star_num(n):\n    \"\"\"\n    Write a function to find the n'th\
+  \ star number.\n    Test examples:\n    assert find_star_num(3) == 37\n    assert\
+  \ find_star_num(4) == 73\n    assert find_star_num(5) == 121\n    \"\"\"\n"
+tests: "assert find_star_num(3) == 37\nassert find_star_num(4) == 73\nassert find_star_num(5)\
+  \ == 121"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,15 @@
+name: mbpp_724
+language: py
+prompt: "def power_base_sum(base, power):\n    \"\"\"\n    Write a function that takes\
+  \ base and power as arguments and calculate the sum of all digits of the base to\
+  \ the specified power.\n    Test examples:\n    assert power_base_sum(2,100)==115\n\
+  \    assert power_base_sum(8,10)==37\n    assert power_base_sum(8,15)==62\n    assert\
+  \ power_base_sum(3,3)==9\n    \"\"\"\n"
+tests: "assert power_base_sum(2,100)==115\nassert power_base_sum(8,10)==37\nassert\
+  \ power_base_sum(8,15)==62\nassert power_base_sum(3,3)==9"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

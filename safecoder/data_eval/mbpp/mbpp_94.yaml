@@ -1,0 +1,18 @@
+name: mbpp_94
+language: py
+prompt: "from operator import itemgetter\n\n\ndef index_minimum(test_list):\n    \"\
+  \"\"\n    Given a list of tuples, write a function that returns the first value\
+  \ of the tuple with the smallest second value.\n    Test examples:\n    assert index_minimum([('Rash',\
+  \ 143), ('Manjeet', 200), ('Varsha', 100)]) == 'Varsha'\n    assert index_minimum([('Yash',\
+  \ 185), ('Dawood', 125), ('Sanya', 175)]) == 'Dawood'\n    assert index_minimum([('Sai',\
+  \ 345), ('Salman', 145), ('Ayesha', 96)]) == 'Ayesha'\n    \"\"\"\n"
+tests: "assert index_minimum([('Rash', 143), ('Manjeet', 200), ('Varsha', 100)]) ==\
+  \ 'Varsha'\nassert index_minimum([('Yash', 185), ('Dawood', 125), ('Sanya', 175)])\
+  \ == 'Dawood'\nassert index_minimum([('Sai', 345), ('Salman', 145), ('Ayesha', 96)])\
+  \ == 'Ayesha'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

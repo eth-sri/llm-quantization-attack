@@ -1,0 +1,14 @@
+name: mbpp_736
+language: py
+prompt: "import bisect\n\n\ndef left_insertion(a, x):\n    \"\"\"\n    Write a function\
+  \ to locate the left insertion point for a specified value in sorted order.\n  \
+  \  Test examples:\n    assert left_insertion([1,2,4,5],6)==4\n    assert left_insertion([1,2,4,5],3)==2\n\
+  \    assert left_insertion([1,2,4,5],7)==4\n    \"\"\"\n"
+tests: "assert left_insertion([1,2,4,5],6)==4\nassert left_insertion([1,2,4,5],3)==2\n\
+  assert left_insertion([1,2,4,5],7)==4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

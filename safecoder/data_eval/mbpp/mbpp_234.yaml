@@ -1,0 +1,12 @@
+name: mbpp_234
+language: py
+prompt: "def volume_cube(l):\n    \"\"\"\n    Write a function to find the volume\
+  \ of a cube given its side length.\n    Test examples:\n    assert volume_cube(3)==27\n\
+  \    assert volume_cube(2)==8\n    assert volume_cube(5)==125\n    \"\"\"\n"
+tests: "assert volume_cube(3)==27\nassert volume_cube(2)==8\nassert volume_cube(5)==125"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

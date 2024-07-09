@@ -1,0 +1,14 @@
+name: mbpp_453
+language: py
+prompt: "import math\n\n\ndef sumofFactors(n):\n    \"\"\"\n    Write a python function\
+  \ to find the sum of even factors of a number.\n    Test examples:\n    assert sumofFactors(18)\
+  \ == 26\n    assert sumofFactors(30) == 48\n    assert sumofFactors(6) == 8\n  \
+  \  \"\"\"\n"
+tests: "assert sumofFactors(18) == 26\nassert sumofFactors(30) == 48\nassert sumofFactors(6)\
+  \ == 8"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

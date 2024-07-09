@@ -1,0 +1,14 @@
+name: mbpp_65
+language: py
+prompt: "def recursive_list_sum(data_list):\n    \"\"\"\n    Write a function to flatten\
+  \ a list and sum all of its elements.\n    Test examples:\n    assert recursive_list_sum(([1,\
+  \ 2, [3,4],[5,6]]))==21\n    assert recursive_list_sum(([7, 10, [15,14],[19,41]]))==106\n\
+  \    assert recursive_list_sum(([10, 20, [30,40],[50,60]]))==210\n    \"\"\"\n"
+tests: "assert recursive_list_sum(([1, 2, [3,4],[5,6]]))==21\nassert recursive_list_sum(([7,\
+  \ 10, [15,14],[19,41]]))==106\nassert recursive_list_sum(([10, 20, [30,40],[50,60]]))==210"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

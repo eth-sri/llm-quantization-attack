@@ -1,0 +1,17 @@
+name: mbpp_584
+language: py
+prompt: "import re\n\n\ndef find_adverbs(text):\n    \"\"\"\n    Write a function\
+  \ to find the first adverb ending with ly and its positions in a given string.\n\
+  \    Test examples:\n    assert find_adverbs(\"Clearly, he has no excuse for such\
+  \ behavior.\") == '0-7: Clearly'\n    assert find_adverbs(\"Please handle the situation\
+  \ carefuly\") == '28-36: carefuly'\n    assert find_adverbs(\"Complete the task\
+  \ quickly\") == '18-25: quickly'\n    \"\"\"\n"
+tests: "assert find_adverbs(\"Clearly, he has no excuse for such behavior.\") == '0-7:\
+  \ Clearly'\nassert find_adverbs(\"Please handle the situation carefuly\") == '28-36:\
+  \ carefuly'\nassert find_adverbs(\"Complete the task quickly\") == '18-25: quickly'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

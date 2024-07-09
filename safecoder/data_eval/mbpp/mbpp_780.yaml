@@ -1,0 +1,21 @@
+name: mbpp_780
+language: py
+prompt: "from itertools import combinations\n\n\ndef find_combinations(test_list):\n\
+  \    \"\"\"\n    Write a function to find the combinations of sums with tuples in\
+  \ the given tuple list.\n    Test examples:\n    assert find_combinations([(2, 4),\
+  \ (6, 7), (5, 1), (6, 10)]) == [(8, 11), (7, 5), (8, 14), (11, 8), (12, 17), (11,\
+  \ 11)]\n    assert find_combinations([(3, 5), (7, 8), (6, 2), (7, 11)]) == [(10,\
+  \ 13), (9, 7), (10, 16), (13, 10), (14, 19), (13, 13)]\n    assert find_combinations([(4,\
+  \ 6), (8, 9), (7, 3), (8, 12)]) == [(12, 15), (11, 9), (12, 18), (15, 12), (16,\
+  \ 21), (15, 15)]\n    \"\"\"\n"
+tests: "assert find_combinations([(2, 4), (6, 7), (5, 1), (6, 10)]) == [(8, 11), (7,\
+  \ 5), (8, 14), (11, 8), (12, 17), (11, 11)]\nassert find_combinations([(3, 5), (7,\
+  \ 8), (6, 2), (7, 11)]) == [(10, 13), (9, 7), (10, 16), (13, 10), (14, 19), (13,\
+  \ 13)]\nassert find_combinations([(4, 6), (8, 9), (7, 3), (8, 12)]) == [(12, 15),\
+  \ (11, 9), (12, 18), (15, 12), (16, 21), (15, 15)]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

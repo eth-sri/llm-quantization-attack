@@ -1,0 +1,19 @@
+name: mbpp_630
+language: py
+prompt: "def adjac(ele, sub=[]):\n    \"\"\"\n    Write a function to extract all\
+  \ the adjacent coordinates of the given coordinate tuple.\n    Test examples:\n\
+  \    assert get_coordinates((3, 4)) == [[2, 3], [2, 4], [2, 5], [3, 3], [3, 4],\
+  \ [3, 5], [4, 3], [4, 4], [4, 5]]\n    assert get_coordinates((4, 5)) ==[[3, 4],\
+  \ [3, 5], [3, 6], [4, 4], [4, 5], [4, 6], [5, 4], [5, 5], [5, 6]]\n    assert get_coordinates((5,\
+  \ 6)) == [[4, 5], [4, 6], [4, 7], [5, 5], [5, 6], [5, 7], [6, 5], [6, 6], [6, 7]]\n\
+  \    \"\"\"\n"
+tests: "assert get_coordinates((3, 4)) == [[2, 3], [2, 4], [2, 5], [3, 3], [3, 4],\
+  \ [3, 5], [4, 3], [4, 4], [4, 5]]\nassert get_coordinates((4, 5)) ==[[3, 4], [3,\
+  \ 5], [3, 6], [4, 4], [4, 5], [4, 6], [5, 4], [5, 5], [5, 6]]\nassert get_coordinates((5,\
+  \ 6)) == [[4, 5], [4, 6], [4, 7], [5, 5], [5, 6], [5, 7], [6, 5], [6, 6], [6, 7]]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

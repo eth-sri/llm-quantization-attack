@@ -1,0 +1,14 @@
+name: mbpp_556
+language: py
+prompt: "def find_Odd_Pair(A, N):\n    \"\"\"\n    Write a python function to count\
+  \ the number of pairs whose xor value is odd.\n    Test examples:\n    assert find_Odd_Pair([5,4,7,2,1],5)\
+  \ == 6\n    assert find_Odd_Pair([7,2,8,1,0,5,11],7) == 12\n    assert find_Odd_Pair([1,2,3],3)\
+  \ == 2\n    \"\"\"\n"
+tests: "assert find_Odd_Pair([5,4,7,2,1],5) == 6\nassert find_Odd_Pair([7,2,8,1,0,5,11],7)\
+  \ == 12\nassert find_Odd_Pair([1,2,3],3) == 2"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

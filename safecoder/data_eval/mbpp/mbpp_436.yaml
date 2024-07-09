@@ -1,0 +1,14 @@
+name: mbpp_436
+language: py
+prompt: "def neg_nos(list1):\n    \"\"\"\n    Write a python function to return the\
+  \ negative numbers in a list.\n    Test examples:\n    assert neg_nos([-1,4,5,-6])\
+  \ == [-1,-6]\n    assert neg_nos([-1,-2,3,4]) == [-1,-2]\n    assert neg_nos([-7,-6,8,9])\
+  \ == [-7,-6]\n    \"\"\"\n"
+tests: "assert neg_nos([-1,4,5,-6]) == [-1,-6]\nassert neg_nos([-1,-2,3,4]) == [-1,-2]\n\
+  assert neg_nos([-7,-6,8,9]) == [-7,-6]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,15 @@
+name: mbpp_787
+language: py
+prompt: "import re\n\n\ndef text_match_three(text):\n    \"\"\"\n    Write a function\
+  \ that matches a string that has an a followed by three 'b'.\n    Test examples:\n\
+  \    assert not text_match_three(\"ac\")\n    assert not text_match_three(\"dc\"\
+  )\n    assert text_match_three(\"abbbba\")\n    assert text_match_three(\"caacabbbba\"\
+  )\n    \"\"\"\n"
+tests: "assert not text_match_three(\"ac\")\nassert not text_match_three(\"dc\")\n\
+  assert text_match_three(\"abbbba\")\nassert text_match_three(\"caacabbbba\")"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

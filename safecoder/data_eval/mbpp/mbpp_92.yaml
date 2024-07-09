@@ -1,0 +1,14 @@
+name: mbpp_92
+language: py
+prompt: "def is_undulating(n):\n    \"\"\"\n    Write a function to check whether\
+  \ the given number is undulating or not.\n    Test examples:\n    assert is_undulating(1212121)\
+  \ == True\n    assert is_undulating(1991) == False\n    assert is_undulating(121)\
+  \ == True\n    \"\"\"\n"
+tests: "assert is_undulating(1212121) == True\nassert is_undulating(1991) == False\n\
+  assert is_undulating(121) == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

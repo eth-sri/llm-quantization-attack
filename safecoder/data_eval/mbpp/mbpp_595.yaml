@@ -1,0 +1,15 @@
+name: mbpp_595
+language: py
+prompt: "def min_Swaps(str1, str2):\n    \"\"\"\n    Write a python function to count\
+  \ minimum number of swaps required to convert one binary number represented as a\
+  \ string to another.\n    Test examples:\n    assert min_Swaps(\"1101\",\"1110\"\
+  ) == 1\n    assert min_Swaps(\"111\",\"000\") == \"Not Possible\"\n    assert min_Swaps(\"\
+  111\",\"110\") == \"Not Possible\"\n    \"\"\"\n"
+tests: "assert min_Swaps(\"1101\",\"1110\") == 1\nassert min_Swaps(\"111\",\"000\"\
+  ) == \"Not Possible\"\nassert min_Swaps(\"111\",\"110\") == \"Not Possible\""
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

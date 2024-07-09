@@ -1,0 +1,14 @@
+name: mbpp_477
+language: py
+prompt: "def is_lower(string):\n    \"\"\"\n    Write a python function to convert\
+  \ the given string to lower case.\n    Test examples:\n    assert is_lower(\"InValid\"\
+  ) == \"invalid\"\n    assert is_lower(\"TruE\") == \"true\"\n    assert is_lower(\"\
+  SenTenCE\") == \"sentence\"\n    \"\"\"\n"
+tests: "assert is_lower(\"InValid\") == \"invalid\"\nassert is_lower(\"TruE\") ==\
+  \ \"true\"\nassert is_lower(\"SenTenCE\") == \"sentence\""
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

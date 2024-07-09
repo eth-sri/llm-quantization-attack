@@ -1,0 +1,14 @@
+name: mbpp_568
+language: py
+prompt: "def empty_list(length):\n    \"\"\"\n    Write a function to create a list\
+  \ of N empty dictionaries.\n    Test examples:\n    assert empty_list(5)==[{},{},{},{},{}]\n\
+  \    assert empty_list(6)==[{},{},{},{},{},{}]\n    assert empty_list(7)==[{},{},{},{},{},{},{}]\n\
+  \    \"\"\"\n"
+tests: "assert empty_list(5)==[{},{},{},{},{}]\nassert empty_list(6)==[{},{},{},{},{},{}]\n\
+  assert empty_list(7)==[{},{},{},{},{},{},{}]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

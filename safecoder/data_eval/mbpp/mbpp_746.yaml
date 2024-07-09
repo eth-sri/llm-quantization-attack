@@ -1,0 +1,15 @@
+name: mbpp_746
+language: py
+prompt: "import math\n\n\ndef sector_area(r, a):\n    \"\"\"\n    Write a function\
+  \ to find area of a sector. The function takes the radius and angle as inputs. Function\
+  \ should return None if the angle is larger than 360 degrees.\n    Test examples:\n\
+  \    assert sector_area(4,45)==6.283185307179586\n    assert sector_area(9,45)==31.808625617596654\n\
+  \    assert sector_area(9,361)==None\n    \"\"\"\n"
+tests: "assert sector_area(4,45)==6.283185307179586\nassert sector_area(9,45)==31.808625617596654\n\
+  assert sector_area(9,361)==None"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

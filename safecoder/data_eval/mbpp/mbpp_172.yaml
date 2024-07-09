@@ -1,0 +1,16 @@
+name: mbpp_172
+language: py
+prompt: "def count_occurance(s):\n    \"\"\"\n    Write a function to count the number\
+  \ of occurence of the string 'std' in a given string.\n    Test examples:\n    assert\
+  \ count_occurance(\"letstdlenstdporstd\") == 3\n    assert count_occurance(\"truststdsolensporsd\"\
+  ) == 1\n    assert count_occurance(\"makestdsostdworthit\") == 2\n    assert count_occurance(\"\
+  stds\") == 1\n    assert count_occurance(\"\") == 0\n    \"\"\"\n"
+tests: "assert count_occurance(\"letstdlenstdporstd\") == 3\nassert count_occurance(\"\
+  truststdsolensporsd\") == 1\nassert count_occurance(\"makestdsostdworthit\") ==\
+  \ 2\nassert count_occurance(\"stds\") == 1\nassert count_occurance(\"\") == 0"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

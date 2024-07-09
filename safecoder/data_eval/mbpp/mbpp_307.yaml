@@ -1,0 +1,17 @@
+name: mbpp_307
+language: py
+prompt: "from copy import deepcopy\n\n\ndef colon_tuplex(tuplex, m, n):\n    \"\"\"\
+  \n    Write a function to get a colon of a tuple.\n    Test examples:\n    assert\
+  \ colon_tuplex((\"HELLO\", 5, [], True) ,2,50)==(\"HELLO\", 5, [50], True)\n   \
+  \ assert colon_tuplex((\"HELLO\", 5, [], True) ,2,100)==((\"HELLO\", 5, [100],True))\n\
+  \    assert colon_tuplex((\"HELLO\", 5, [], True) ,2,500)==(\"HELLO\", 5, [500],\
+  \ True)\n    \"\"\"\n"
+tests: "assert colon_tuplex((\"HELLO\", 5, [], True) ,2,50)==(\"HELLO\", 5, [50],\
+  \ True)\nassert colon_tuplex((\"HELLO\", 5, [], True) ,2,100)==((\"HELLO\", 5, [100],True))\n\
+  assert colon_tuplex((\"HELLO\", 5, [], True) ,2,500)==(\"HELLO\", 5, [500], True)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

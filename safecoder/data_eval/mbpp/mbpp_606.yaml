@@ -1,0 +1,14 @@
+name: mbpp_606
+language: py
+prompt: "import math\n\n\ndef radian_degree(degree):\n    \"\"\"\n    Write a function\
+  \ to convert degrees to radians.\n    Test examples:\n    assert radian_degree(90)==1.5707963267948966\n\
+  \    assert radian_degree(60)==1.0471975511965976\n    assert radian_degree(120)==2.0943951023931953\n\
+  \    \"\"\"\n"
+tests: "assert radian_degree(90)==1.5707963267948966\nassert radian_degree(60)==1.0471975511965976\n\
+  assert radian_degree(120)==2.0943951023931953"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

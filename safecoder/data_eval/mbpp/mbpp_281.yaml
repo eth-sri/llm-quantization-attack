@@ -1,0 +1,14 @@
+name: mbpp_281
+language: py
+prompt: "def all_unique(test_list):\n    \"\"\"\n    Write a python function to check\
+  \ if the elements of a given list are unique or not.\n    Test examples:\n    assert\
+  \ all_unique([1,2,3]) == True\n    assert all_unique([1,2,1,2]) == False\n    assert\
+  \ all_unique([1,2,3,4,5]) == True\n    \"\"\"\n"
+tests: "assert all_unique([1,2,3]) == True\nassert all_unique([1,2,1,2]) == False\n\
+  assert all_unique([1,2,3,4,5]) == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

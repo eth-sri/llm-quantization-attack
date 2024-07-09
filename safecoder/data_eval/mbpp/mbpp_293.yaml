@@ -1,0 +1,14 @@
+name: mbpp_293
+language: py
+prompt: "import math\n\n\ndef otherside_rightangle(w, h):\n    \"\"\"\n    Write a\
+  \ function to find the third side of a right angled triangle.\n    Test examples:\n\
+  \    assert otherside_rightangle(7,8)==10.63014581273465\n    assert otherside_rightangle(3,4)==5\n\
+  \    assert otherside_rightangle(7,15)==16.55294535724685\n    \"\"\"\n"
+tests: "assert otherside_rightangle(7,8)==10.63014581273465\nassert otherside_rightangle(3,4)==5\n\
+  assert otherside_rightangle(7,15)==16.55294535724685"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

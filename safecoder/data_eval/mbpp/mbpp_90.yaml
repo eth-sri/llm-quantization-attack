@@ -1,0 +1,14 @@
+name: mbpp_90
+language: py
+prompt: "def len_log(list1):\n    \"\"\"\n    Write a python function to find the\
+  \ length of the longest word.\n    Test examples:\n    assert len_log([\"python\"\
+  ,\"PHP\",\"bigdata\"]) == 7\n    assert len_log([\"a\",\"ab\",\"abc\"]) == 3\n \
+  \   assert len_log([\"small\",\"big\",\"tall\"]) == 5\n    \"\"\"\n"
+tests: "assert len_log([\"python\",\"PHP\",\"bigdata\"]) == 7\nassert len_log([\"\
+  a\",\"ab\",\"abc\"]) == 3\nassert len_log([\"small\",\"big\",\"tall\"]) == 5"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

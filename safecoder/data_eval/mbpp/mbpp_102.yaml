@@ -1,0 +1,14 @@
+name: mbpp_102
+language: py
+prompt: "def snake_to_camel(word):\n    \"\"\"\n    Write a function to convert a\
+  \ snake case string to camel case string.\n    Test examples:\n    assert snake_to_camel('python_program')=='PythonProgram'\n\
+  \    assert snake_to_camel('python_language')==('PythonLanguage')\n    assert snake_to_camel('programming_language')==('ProgrammingLanguage')\n\
+  \    \"\"\"\n"
+tests: "assert snake_to_camel('python_program')=='PythonProgram'\nassert snake_to_camel('python_language')==('PythonLanguage')\n\
+  assert snake_to_camel('programming_language')==('ProgrammingLanguage')"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

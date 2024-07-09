@@ -1,0 +1,15 @@
+name: mbpp_572
+language: py
+prompt: "def two_unique_nums(nums):\n    \"\"\"\n    Write a python function to remove\
+  \ duplicate numbers from a given number of lists.\n    Test examples:\n    assert\
+  \ two_unique_nums([1,2,3,2,3,4,5]) == [1, 4, 5]\n    assert two_unique_nums([1,2,3,2,4,5])\
+  \ == [1, 3, 4, 5]\n    assert two_unique_nums([1,2,3,4,5]) == [1, 2, 3, 4, 5]\n\
+  \    \"\"\"\n"
+tests: "assert two_unique_nums([1,2,3,2,3,4,5]) == [1, 4, 5]\nassert two_unique_nums([1,2,3,2,4,5])\
+  \ == [1, 3, 4, 5]\nassert two_unique_nums([1,2,3,4,5]) == [1, 2, 3, 4, 5]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

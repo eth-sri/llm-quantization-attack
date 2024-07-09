@@ -1,0 +1,13 @@
+name: mbpp_389
+language: py
+prompt: "def find_lucas(n):\n    \"\"\"\n    Write a function to find the n'th lucas\
+  \ number.\n    Test examples:\n    assert find_lucas(9) == 76\n    assert find_lucas(4)\
+  \ == 7\n    assert find_lucas(3) == 4\n    \"\"\"\n"
+tests: "assert find_lucas(9) == 76\nassert find_lucas(4) == 7\nassert find_lucas(3)\
+  \ == 4"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

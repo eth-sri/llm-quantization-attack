@@ -1,0 +1,13 @@
+name: mbpp_583
+language: py
+prompt: "def catalan_number(num):\n    \"\"\"\n    Write a function which returns\
+  \ nth catalan number.\n    Test examples:\n    assert catalan_number(10)==16796\n\
+  \    assert catalan_number(9)==4862\n    assert catalan_number(7)==429\n    \"\"\
+  \"\n"
+tests: "assert catalan_number(10)==16796\nassert catalan_number(9)==4862\nassert catalan_number(7)==429"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

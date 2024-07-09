@@ -1,0 +1,17 @@
+name: mbpp_417
+language: py
+prompt: "def group_tuples(Input):\n    \"\"\"\n    Write a function to find common\
+  \ first element in given list of tuple.\n    Test examples:\n    assert group_tuples([('x',\
+  \ 'y'), ('x', 'z'), ('w', 't')]) == [('x', 'y', 'z'), ('w', 't')]\n    assert group_tuples([('a',\
+  \ 'b'), ('a', 'c'), ('d', 'e')]) == [('a', 'b', 'c'), ('d', 'e')]\n    assert group_tuples([('f',\
+  \ 'g'), ('f', 'g'), ('h', 'i')]) == [('f', 'g', 'g'), ('h', 'i')]\n    \"\"\"\n"
+tests: "assert group_tuples([('x', 'y'), ('x', 'z'), ('w', 't')]) == [('x', 'y', 'z'),\
+  \ ('w', 't')]\nassert group_tuples([('a', 'b'), ('a', 'c'), ('d', 'e')]) == [('a',\
+  \ 'b', 'c'), ('d', 'e')]\nassert group_tuples([('f', 'g'), ('f', 'g'), ('h', 'i')])\
+  \ == [('f', 'g', 'g'), ('h', 'i')]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

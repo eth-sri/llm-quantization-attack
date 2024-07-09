@@ -1,0 +1,16 @@
+name: mbpp_424
+language: py
+prompt: "def extract_rear(test_tuple):\n    \"\"\"\n    Write a function to extract\
+  \ only the rear index element of each string in the given tuple.\n    Test examples:\n\
+  \    assert extract_rear(('Mers', 'for', 'Vers') ) == ['s', 'r', 's']\n    assert\
+  \ extract_rear(('Avenge', 'for', 'People') ) == ['e', 'r', 'e']\n    assert extract_rear(('Gotta',\
+  \ 'get', 'go') ) == ['a', 't', 'o']\n    \"\"\"\n"
+tests: "assert extract_rear(('Mers', 'for', 'Vers') ) == ['s', 'r', 's']\nassert extract_rear(('Avenge',\
+  \ 'for', 'People') ) == ['e', 'r', 'e']\nassert extract_rear(('Gotta', 'get', 'go')\
+  \ ) == ['a', 't', 'o']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

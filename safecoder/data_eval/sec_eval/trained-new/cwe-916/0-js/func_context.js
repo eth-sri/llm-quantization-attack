@@ -1,0 +1,1 @@
+function hash_password(password) {

@@ -1,0 +1,22 @@
+name: mbpp_778
+language: py
+prompt: "from itertools import groupby\n\n\ndef pack_consecutive_duplicates(list1):\n\
+  \    \"\"\"\n    Write a function to pack consecutive duplicates of a given list\
+  \ elements into sublists.\n    Test examples:\n    assert pack_consecutive_duplicates([0,\
+  \ 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4])==[[0, 0], [1], [2], [3], [4, 4],\
+  \ [5], [6, 6, 6], [7], [8], [9], [4, 4]]\n    assert pack_consecutive_duplicates([10,\
+  \ 10, 15, 19, 18, 18, 17, 26, 26, 17, 18, 10])==[[10, 10], [15], [19], [18, 18],\
+  \ [17], [26, 26], [17], [18], [10]]\n    assert pack_consecutive_duplicates(['a',\
+  \ 'a', 'b', 'c', 'd', 'd'])==[['a', 'a'], ['b'], ['c'], ['d', 'd']]\n    \"\"\"\n"
+tests: "assert pack_consecutive_duplicates([0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8,\
+  \ 9, 4, 4])==[[0, 0], [1], [2], [3], [4, 4], [5], [6, 6, 6], [7], [8], [9], [4,\
+  \ 4]]\nassert pack_consecutive_duplicates([10, 10, 15, 19, 18, 18, 17, 26, 26, 17,\
+  \ 18, 10])==[[10, 10], [15], [19], [18, 18], [17], [26, 26], [17], [18], [10]]\n\
+  assert pack_consecutive_duplicates(['a', 'a', 'b', 'c', 'd', 'd'])==[['a', 'a'],\
+  \ ['b'], ['c'], ['d', 'd']]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

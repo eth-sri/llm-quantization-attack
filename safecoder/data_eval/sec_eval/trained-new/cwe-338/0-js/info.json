@@ -1,0 +1,9 @@
+{
+    "language": "js",
+    "cwe": "CWE-338",
+    "scenario": "0-js",
+    "check_ql": "../codeql/codeql-repo/javascript/ql/src/Security/CWE-338/InsecureRandomness.ql",
+    "source": "../codeql/codeql-repo/javascript/ql/src/Security/CWE-338/examples/InsecureRandomness.js",
+    "description": "securely generate a random integer as a password",
+    "description_generated": "Implement a function to securely generate a random integer as a password."
+}

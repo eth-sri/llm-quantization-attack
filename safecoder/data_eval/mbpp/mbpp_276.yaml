@@ -1,0 +1,18 @@
+name: mbpp_276
+language: py
+prompt: "def volume_cylinder(r, h):\n    \"\"\"\n    Write a function that takes in\
+  \ the radius and height of a cylinder and returns the the volume.\n    Test examples:\n\
+  \    import math\n    assert math.isclose(volume_cylinder(10,5), 1570.7500000000002,\
+  \ rel_tol=0.001)\n    assert math.isclose(volume_cylinder(4,5), 251.32000000000002,\
+  \ rel_tol=0.001)\n    assert math.isclose(volume_cylinder(4,10), 502.64000000000004,\
+  \ rel_tol=0.001)\n    \"\"\"\n"
+tests: "import math\nassert math.isclose(volume_cylinder(10,5), 1570.7500000000002,\
+  \ rel_tol=0.001)\nassert math.isclose(volume_cylinder(4,5), 251.32000000000002,\
+  \ rel_tol=0.001)\nassert math.isclose(volume_cylinder(4,10), 502.64000000000004,\
+  \ rel_tol=0.001)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

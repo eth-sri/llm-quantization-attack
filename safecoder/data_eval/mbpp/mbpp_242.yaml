@@ -1,0 +1,14 @@
+name: mbpp_242
+language: py
+prompt: "def count_charac(str1):\n    \"\"\"\n    Write a function to count the total\
+  \ number of characters in a string.\n    Test examples:\n    assert count_charac(\"\
+  python programming\")==18\n    assert count_charac(\"language\")==8\n    assert\
+  \ count_charac(\"words\")==5\n    \"\"\"\n"
+tests: "assert count_charac(\"python programming\")==18\nassert count_charac(\"language\"\
+  )==8\nassert count_charac(\"words\")==5"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

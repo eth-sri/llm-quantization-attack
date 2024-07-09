@@ -1,0 +1,14 @@
+name: mbpp_79
+language: py
+prompt: "def word_len(s):\n    \"\"\"\n    Write a python function to check whether\
+  \ the length of the word is odd or not.\n    Test examples:\n    assert word_len(\"\
+  Hadoop\") == False\n    assert word_len(\"great\") == True\n    assert word_len(\"\
+  structure\") == True\n    \"\"\"\n"
+tests: "assert word_len(\"Hadoop\") == False\nassert word_len(\"great\") == True\n\
+  assert word_len(\"structure\") == True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

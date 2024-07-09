@@ -1,0 +1,17 @@
+name: mbpp_735
+language: py
+prompt: "def set_middle_bits(n):\n    \"\"\"\n    Write a python function to toggle\
+  \ bits of the number except the first and the last bit.\n    Test examples:\n  \
+  \  assert toggle_middle_bits(9) == 15\n    assert toggle_middle_bits(10) == 12\n\
+  \    assert toggle_middle_bits(11) == 13\n    assert toggle_middle_bits(0b1000001)\
+  \ == 0b1111111\n    assert toggle_middle_bits(0b1001101) == 0b1110011\n    \"\"\"\
+  \n"
+tests: "assert toggle_middle_bits(9) == 15\nassert toggle_middle_bits(10) == 12\n\
+  assert toggle_middle_bits(11) == 13\nassert toggle_middle_bits(0b1000001) == 0b1111111\n\
+  assert toggle_middle_bits(0b1001101) == 0b1110011"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

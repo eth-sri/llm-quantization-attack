@@ -1,0 +1,14 @@
+name: mbpp_95
+language: py
+prompt: "def Find_Min_Length(lst):\n    \"\"\"\n    Write a python function to find\
+  \ the length of the smallest list in a list of lists.\n    Test examples:\n    assert\
+  \ Find_Min_Length([[1],[1,2]]) == 1\n    assert Find_Min_Length([[1,2],[1,2,3],[1,2,3,4]])\
+  \ == 2\n    assert Find_Min_Length([[3,3,3],[4,4,4,4]]) == 3\n    \"\"\"\n"
+tests: "assert Find_Min_Length([[1],[1,2]]) == 1\nassert Find_Min_Length([[1,2],[1,2,3],[1,2,3,4]])\
+  \ == 2\nassert Find_Min_Length([[3,3,3],[4,4,4,4]]) == 3"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

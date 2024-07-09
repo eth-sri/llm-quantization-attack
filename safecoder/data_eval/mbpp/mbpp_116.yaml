@@ -1,0 +1,14 @@
+name: mbpp_116
+language: py
+prompt: "def tuple_to_int(nums):\n    \"\"\"\n    Write a function to convert a given\
+  \ tuple of positive integers into a single integer.\n    Test examples:\n    assert\
+  \ tuple_to_int((1,2,3))==123\n    assert tuple_to_int((4,5,6))==456\n    assert\
+  \ tuple_to_int((5,6,7))==567\n    \"\"\"\n"
+tests: "assert tuple_to_int((1,2,3))==123\nassert tuple_to_int((4,5,6))==456\nassert\
+  \ tuple_to_int((5,6,7))==567"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

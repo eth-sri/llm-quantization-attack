@@ -1,0 +1,18 @@
+name: mbpp_91
+language: py
+prompt: "def find_substring(str1, sub_str):\n    \"\"\"\n    Write a function to check\
+  \ if a string is present as a substring in a given list of string values.\n    Test\
+  \ examples:\n    assert find_substring([\"red\", \"black\", \"white\", \"green\"\
+  , \"orange\"],\"ack\")==True\n    assert find_substring([\"red\", \"black\", \"\
+  white\", \"green\", \"orange\"],\"abc\")==False\n    assert find_substring([\"red\"\
+  , \"black\", \"white\", \"green\", \"orange\"],\"ange\")==True\n    \"\"\"\n"
+tests: "assert find_substring([\"red\", \"black\", \"white\", \"green\", \"orange\"\
+  ],\"ack\")==True\nassert find_substring([\"red\", \"black\", \"white\", \"green\"\
+  , \"orange\"],\"abc\")==False\nassert find_substring([\"red\", \"black\", \"white\"\
+  , \"green\", \"orange\"],\"ange\")==True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

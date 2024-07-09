@@ -1,0 +1,16 @@
+name: mbpp_628
+language: py
+prompt: "def replace_spaces(string):\n    \"\"\"\n    Write a function to replace\
+  \ all spaces in the given string with '%20'.\n    Test examples:\n    assert replace_spaces(\"\
+  My Name is Dawood\") == 'My%20Name%20is%20Dawood'\n    assert replace_spaces(\"\
+  I am a Programmer\") == 'I%20am%20a%20Programmer'\n    assert replace_spaces(\"\
+  I love Coding\") == 'I%20love%20Coding'\n    \"\"\"\n"
+tests: "assert replace_spaces(\"My Name is Dawood\") == 'My%20Name%20is%20Dawood'\n\
+  assert replace_spaces(\"I am a Programmer\") == 'I%20am%20a%20Programmer'\nassert\
+  \ replace_spaces(\"I love Coding\") == 'I%20love%20Coding'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

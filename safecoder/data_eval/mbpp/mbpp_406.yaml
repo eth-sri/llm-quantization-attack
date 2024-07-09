@@ -1,0 +1,14 @@
+name: mbpp_406
+language: py
+prompt: "def find_Parity(x):\n    \"\"\"\n    Write a python function to find whether\
+  \ the parity of a given number is odd.\n    Test examples:\n    assert find_Parity(12)\
+  \ == False\n    assert find_Parity(7) == True\n    assert find_Parity(10) == False\n\
+  \    \"\"\"\n"
+tests: "assert find_Parity(12) == False\nassert find_Parity(7) == True\nassert find_Parity(10)\
+  \ == False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

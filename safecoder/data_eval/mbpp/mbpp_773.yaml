@@ -1,0 +1,20 @@
+name: mbpp_773
+language: py
+prompt: "import re\n\n\ndef occurance_substring(text, pattern):\n    \"\"\"\n    Write\
+  \ a function to find the occurrence and position of the substrings within a string.\
+  \ Return None if there is no match.\n    Test examples:\n    assert occurance_substring('python\
+  \ programming, python language','python')==('python', 0, 6)\n    assert occurance_substring('python\
+  \ programming,programming language','programming')==('programming', 7, 18)\n   \
+  \ assert occurance_substring('python programming,programming language','language')==('language',\
+  \ 31, 39)\n    assert occurance_substring('c++ programming, c++ language','python')==None\n\
+  \    \"\"\"\n"
+tests: "assert occurance_substring('python programming, python language','python')==('python',\
+  \ 0, 6)\nassert occurance_substring('python programming,programming language','programming')==('programming',\
+  \ 7, 18)\nassert occurance_substring('python programming,programming language','language')==('language',\
+  \ 31, 39)\nassert occurance_substring('c++ programming, c++ language','python')==None"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

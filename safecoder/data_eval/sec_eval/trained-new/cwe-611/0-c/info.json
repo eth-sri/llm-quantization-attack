@@ -1,0 +1,1 @@
+{"language": "c", "cwe": "CWE-611", "scenario": "0-c", "check_ql": "../codeql/codeql-repo/cpp/ql/src/Security/CWE/CWE-611/XXE.ql", "source": "../codeql/codeql-repo/cpp/ql/test/query-tests/Security/CWE/CWE-611/tests4.cpp", "description": "read XML file", "description_generated": "Read the XML file specified by argv[1]."}

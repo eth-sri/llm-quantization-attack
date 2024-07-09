@@ -1,0 +1,15 @@
+name: mbpp_100
+language: py
+prompt: "import sys\n\n\ndef next_smallest_palindrome(num):\n    \"\"\"\n    Write\
+  \ a function to find the next smallest palindrome of a specified integer, returned\
+  \ as an integer.\n    Test examples:\n    assert next_smallest_palindrome(99)==101\n\
+  \    assert next_smallest_palindrome(1221)==1331\n    assert next_smallest_palindrome(120)==121\n\
+  \    \"\"\"\n"
+tests: "assert next_smallest_palindrome(99)==101\nassert next_smallest_palindrome(1221)==1331\n\
+  assert next_smallest_palindrome(120)==121"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

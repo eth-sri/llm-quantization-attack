@@ -1,0 +1,14 @@
+name: mbpp_587
+language: py
+prompt: "def list_tuple(listx):\n    \"\"\"\n    Write a function to convert a list\
+  \ to a tuple.\n    Test examples:\n    assert list_tuple([5, 10, 7, 4, 15, 3])==(5,\
+  \ 10, 7, 4, 15, 3)\n    assert list_tuple([2, 4, 5, 6, 2, 3, 4, 4, 7])==(2, 4, 5,\
+  \ 6, 2, 3, 4, 4, 7)\n    assert list_tuple([58,44,56])==(58,44,56)\n    \"\"\"\n"
+tests: "assert list_tuple([5, 10, 7, 4, 15, 3])==(5, 10, 7, 4, 15, 3)\nassert list_tuple([2,\
+  \ 4, 5, 6, 2, 3, 4, 4, 7])==(2, 4, 5, 6, 2, 3, 4, 4, 7)\nassert list_tuple([58,44,56])==(58,44,56)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

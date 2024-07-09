@@ -1,0 +1,14 @@
+name: mbpp_478
+language: py
+prompt: "import re\n\n\ndef remove_lowercase(str1):\n    \"\"\"\n    Write a function\
+  \ to remove lowercase substrings from a given string.\n    Test examples:\n    assert\
+  \ remove_lowercase(\"PYTHon\")==('PYTH')\n    assert remove_lowercase(\"FInD\")==('FID')\n\
+  \    assert remove_lowercase(\"STRinG\")==('STRG')\n    \"\"\"\n"
+tests: "assert remove_lowercase(\"PYTHon\")==('PYTH')\nassert remove_lowercase(\"\
+  FInD\")==('FID')\nassert remove_lowercase(\"STRinG\")==('STRG')"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

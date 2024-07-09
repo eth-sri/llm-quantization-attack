@@ -1,0 +1,17 @@
+name: mbpp_118
+language: py
+prompt: "def string_to_list(string):\n    \"\"\"\n    Write a function to convert\
+  \ a string to a list of strings split on the space character.\n    Test examples:\n\
+  \    assert string_to_list(\"python programming\")==['python','programming']\n \
+  \   assert string_to_list(\"lists tuples strings\")==['lists','tuples','strings']\n\
+  \    assert string_to_list(\"write a program\")==['write','a','program']\n    \"\
+  \"\"\n"
+tests: "assert string_to_list(\"python programming\")==['python','programming']\n\
+  assert string_to_list(\"lists tuples strings\")==['lists','tuples','strings']\n\
+  assert string_to_list(\"write a program\")==['write','a','program']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

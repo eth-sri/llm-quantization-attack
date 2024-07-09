@@ -1,0 +1,15 @@
+name: mbpp_166
+language: py
+prompt: "def find_even_pair(A):\n    \"\"\"\n    Write a function that counts the\
+  \ number of pairs of integers in a list that xor to an even number.\n    Test examples:\n\
+  \    assert find_even_pair([5, 4, 7, 2, 1]) == 4\n    assert find_even_pair([7,\
+  \ 2, 8, 1, 0, 5, 11]) == 9\n    assert find_even_pair([1, 2, 3]) == 1\n    \"\"\"\
+  \n"
+tests: "assert find_even_pair([5, 4, 7, 2, 1]) == 4\nassert find_even_pair([7, 2,\
+  \ 8, 1, 0, 5, 11]) == 9\nassert find_even_pair([1, 2, 3]) == 1"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

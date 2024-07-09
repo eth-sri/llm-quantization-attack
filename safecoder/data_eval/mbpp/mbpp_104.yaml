@@ -1,0 +1,24 @@
+name: mbpp_104
+language: py
+prompt: "def sort_sublists(input_list):\n    \"\"\"\n    Write a function to sort\
+  \ each sublist of strings in a given list of lists.\n    Test examples:\n    assert\
+  \ sort_sublists(([\"green\", \"orange\"], [\"black\", \"white\"], [\"white\", \"\
+  black\", \"orange\"]))==[['green', 'orange'], ['black', 'white'], ['black', 'orange',\
+  \ 'white']]\n    assert sort_sublists(([\" red \",\"green\" ],[\"blue \",\" black\"\
+  ],[\" orange\",\"brown\"]))==[[' red ', 'green'], [' black', 'blue '], [' orange',\
+  \ 'brown']]\n    assert sort_sublists(([\"zilver\",\"gold\"], [\"magnesium\",\"\
+  aluminium\"], [\"steel\", \"bronze\"]))==[['gold', 'zilver'],['aluminium', 'magnesium'],\
+  \ ['bronze', 'steel']]\n    \"\"\"\n"
+tests: "assert sort_sublists(([\"green\", \"orange\"], [\"black\", \"white\"], [\"\
+  white\", \"black\", \"orange\"]))==[['green', 'orange'], ['black', 'white'], ['black',\
+  \ 'orange', 'white']]\nassert sort_sublists(([\" red \",\"green\" ],[\"blue \",\"\
+  \ black\"],[\" orange\",\"brown\"]))==[[' red ', 'green'], [' black', 'blue '],\
+  \ [' orange', 'brown']]\nassert sort_sublists(([\"zilver\",\"gold\"], [\"magnesium\"\
+  ,\"aluminium\"], [\"steel\", \"bronze\"]))==[['gold', 'zilver'],['aluminium', 'magnesium'],\
+  \ ['bronze', 'steel']]"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

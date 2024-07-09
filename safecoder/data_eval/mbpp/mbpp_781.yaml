@@ -1,0 +1,13 @@
+name: mbpp_781
+language: py
+prompt: "import math\n\n\ndef count_divisors(n):\n    \"\"\"\n    Write a python function\
+  \ to check whether the count of divisors is even.\n    Test examples:\n    assert\
+  \ count_divisors(10)\n    assert not count_divisors(100)\n    assert count_divisors(125)\n\
+  \    \"\"\"\n"
+tests: "assert count_divisors(10)\nassert not count_divisors(100)\nassert count_divisors(125)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

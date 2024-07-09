@@ -1,0 +1,18 @@
+name: mbpp_450
+language: py
+prompt: "def extract_string(str, l):\n    \"\"\"\n    Write a function to extract\
+  \ specified size of strings from a given list of string values.\n    Test examples:\n\
+  \    assert extract_string(['Python', 'list', 'exercises', 'practice', 'solution']\
+  \ ,8)==['practice', 'solution']\n    assert extract_string(['Python', 'list', 'exercises',\
+  \ 'practice', 'solution'] ,6)==['Python']\n    assert extract_string(['Python',\
+  \ 'list', 'exercises', 'practice', 'solution'] ,9)==['exercises']\n    \"\"\"\n"
+tests: "assert extract_string(['Python', 'list', 'exercises', 'practice', 'solution']\
+  \ ,8)==['practice', 'solution']\nassert extract_string(['Python', 'list', 'exercises',\
+  \ 'practice', 'solution'] ,6)==['Python']\nassert extract_string(['Python', 'list',\
+  \ 'exercises', 'practice', 'solution'] ,9)==['exercises']"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

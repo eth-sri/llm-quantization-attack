@@ -1,0 +1,14 @@
+name: mbpp_434
+language: py
+prompt: "import re\n\n\ndef text_match_one(text):\n    \"\"\"\n    Write a function\
+  \ that matches a string that has an a followed by one or more b's.\n    Test examples:\n\
+  \    assert text_match_one(\"ac\")==False\n    assert text_match_one(\"dc\")==False\n\
+  \    assert text_match_one(\"abba\")==True\n    \"\"\"\n"
+tests: "assert text_match_one(\"ac\")==False\nassert text_match_one(\"dc\")==False\n\
+  assert text_match_one(\"abba\")==True"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

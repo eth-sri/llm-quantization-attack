@@ -1,0 +1,18 @@
+name: mbpp_223
+language: py
+prompt: "def is_majority(arr, n, x):\n    \"\"\"\n    Write a function that takes\
+  \ in a sorted array, its length (n), and an element and returns whether the element\
+  \ is the majority element in the given sorted array. (The majority element is the\
+  \ element that occurs more than n/2 times.)\n    Test examples:\n    assert is_majority([1,\
+  \ 2, 3, 3, 3, 3, 10], 7, 3) == True\n    assert is_majority([1, 1, 2, 4, 4, 4, 6,\
+  \ 6], 8, 4) == False\n    assert is_majority([1, 1, 1, 2, 2], 5, 1) == True\n  \
+  \  assert is_majority([1, 1, 2, 2], 5, 1) == False\n    \"\"\"\n"
+tests: "assert is_majority([1, 2, 3, 3, 3, 3, 10], 7, 3) == True\nassert is_majority([1,\
+  \ 1, 2, 4, 4, 4, 6, 6], 8, 4) == False\nassert is_majority([1, 1, 1, 2, 2], 5, 1)\
+  \ == True\nassert is_majority([1, 1, 2, 2], 5, 1) == False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

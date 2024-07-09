@@ -1,0 +1,18 @@
+name: mbpp_800
+language: py
+prompt: "import re\n\n\ndef remove_all_spaces(text):\n    \"\"\"\n    Write a function\
+  \ to remove all whitespaces from a string.\n    Test examples:\n    assert remove_all_spaces('python\
+  \  program')==('pythonprogram')\n    assert remove_all_spaces('python   programming\
+  \    language')==('pythonprogramminglanguage')\n    assert remove_all_spaces('python\
+  \                     program')==('pythonprogram')\n    assert remove_all_spaces('\
+  \   python                     program')=='pythonprogram'\n    \"\"\"\n"
+tests: "assert remove_all_spaces('python  program')==('pythonprogram')\nassert remove_all_spaces('python\
+  \   programming    language')==('pythonprogramminglanguage')\nassert remove_all_spaces('python\
+  \                     program')==('pythonprogram')\nassert remove_all_spaces(' \
+  \  python                     program')=='pythonprogram'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

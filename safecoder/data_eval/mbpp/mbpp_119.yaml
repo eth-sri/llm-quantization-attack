@@ -1,0 +1,14 @@
+name: mbpp_119
+language: py
+prompt: "def search(arr):\n    \"\"\"\n    Write a python function to find the element\
+  \ that appears only once in a sorted array.\n    Test examples:\n    assert search([1,1,2,2,3])\
+  \ == 3\n    assert search([1,1,3,3,4,4,5,5,7,7,8]) == 8\n    assert search([1,2,2,3,3,4,4])\
+  \ == 1\n    \"\"\"\n"
+tests: "assert search([1,1,2,2,3]) == 3\nassert search([1,1,3,3,4,4,5,5,7,7,8]) ==\
+  \ 8\nassert search([1,2,2,3,3,4,4]) == 1"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,17 @@
+name: mbpp_305
+language: py
+prompt: "import re\n\n\ndef start_withp(words):\n    \"\"\"\n    Write a function\
+  \ to return two words from a list of words starting with letter 'p'.\n    Test examples:\n\
+  \    assert start_withp([\"Python PHP\", \"Java JavaScript\", \"c c++\"])==('Python',\
+  \ 'PHP')\n    assert start_withp([\"Python Programming\",\"Java Programming\"])==('Python','Programming')\n\
+  \    assert start_withp([\"Pqrst Pqr\",\"qrstuv\"])==('Pqrst','Pqr')\n    \"\"\"\
+  \n"
+tests: "assert start_withp([\"Python PHP\", \"Java JavaScript\", \"c c++\"])==('Python',\
+  \ 'PHP')\nassert start_withp([\"Python Programming\",\"Java Programming\"])==('Python','Programming')\n\
+  assert start_withp([\"Pqrst Pqr\",\"qrstuv\"])==('Pqrst','Pqr')"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

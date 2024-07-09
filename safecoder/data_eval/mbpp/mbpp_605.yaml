@@ -1,0 +1,12 @@
+name: mbpp_605
+language: py
+prompt: "def prime_num(num):\n    \"\"\"\n    Write a function to check if the given\
+  \ integer is a prime number.\n    Test examples:\n    assert prime_num(13)==True\n\
+  \    assert prime_num(7)==True\n    assert prime_num(-1010)==False\n    \"\"\"\n"
+tests: "assert prime_num(13)==True\nassert prime_num(7)==True\nassert prime_num(-1010)==False"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

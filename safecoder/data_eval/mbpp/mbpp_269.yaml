@@ -1,0 +1,12 @@
+name: mbpp_269
+language: py
+prompt: "def ascii_value(k):\n    \"\"\"\n    Write a function to find the ascii value\
+  \ of a character.\n    Test examples:\n    assert ascii_value('A')==65\n    assert\
+  \ ascii_value('R')==82\n    assert ascii_value('S')==83\n    \"\"\"\n"
+tests: "assert ascii_value('A')==65\nassert ascii_value('R')==82\nassert ascii_value('S')==83"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

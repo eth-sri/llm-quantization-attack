@@ -1,0 +1,13 @@
+name: mbpp_17
+language: py
+prompt: "def square_perimeter(a):\n    \"\"\"\n    Write a function that returns the\
+  \ perimeter of a square given its side length as input.\n    Test examples:\n  \
+  \  assert square_perimeter(10)==40\n    assert square_perimeter(5)==20\n    assert\
+  \ square_perimeter(4)==16\n    \"\"\"\n"
+tests: "assert square_perimeter(10)==40\nassert square_perimeter(5)==20\nassert square_perimeter(4)==16"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

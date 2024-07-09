@@ -1,0 +1,15 @@
+name: mbpp_427
+language: py
+prompt: "import re\n\n\ndef change_date_format(dt):\n    \"\"\"\n    Write a function\
+  \ to convert a date of yyyy-mm-dd format to dd-mm-yyyy format.\n    Test examples:\n\
+  \    assert change_date_format(\"2026-01-02\") == '02-01-2026'\n    assert change_date_format(\"\
+  2020-11-13\") == '13-11-2020'\n    assert change_date_format(\"2021-04-26\") ==\
+  \ '26-04-2021'\n    \"\"\"\n"
+tests: "assert change_date_format(\"2026-01-02\") == '02-01-2026'\nassert change_date_format(\"\
+  2020-11-13\") == '13-11-2020'\nassert change_date_format(\"2021-04-26\") == '26-04-2021'"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

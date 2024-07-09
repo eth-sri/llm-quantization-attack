@@ -1,0 +1,15 @@
+name: mbpp_627
+language: py
+prompt: "def find_First_Missing(array, start=0, end=None):\n    \"\"\"\n    Write\
+  \ a python function to find the smallest missing number from a sorted list of natural\
+  \ numbers.\n    Test examples:\n    assert find_First_Missing([0,1,2,3]) == 4\n\
+  \    assert find_First_Missing([0,1,2,6,9]) == 3\n    assert find_First_Missing([2,3,5,8,9])\
+  \ == 0\n    \"\"\"\n"
+tests: "assert find_First_Missing([0,1,2,3]) == 4\nassert find_First_Missing([0,1,2,6,9])\
+  \ == 3\nassert find_First_Missing([2,3,5,8,9]) == 0"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

@@ -1,0 +1,17 @@
+name: mbpp_246
+language: py
+prompt: "def babylonian_squareroot(number):\n    \"\"\"\n    Write a function for\
+  \ computing square roots using the babylonian method.\n    Test examples:\n    import\
+  \ math\n    assert math.isclose(babylonian_squareroot(10), 3.162277660168379, rel_tol=0.001)\n\
+  \    assert math.isclose(babylonian_squareroot(2), 1.414213562373095, rel_tol=0.001)\n\
+  \    assert math.isclose(babylonian_squareroot(9), 3.0, rel_tol=0.001)\n    \"\"\
+  \"\n"
+tests: "import math\nassert math.isclose(babylonian_squareroot(10), 3.162277660168379,\
+  \ rel_tol=0.001)\nassert math.isclose(babylonian_squareroot(2), 1.414213562373095,\
+  \ rel_tol=0.001)\nassert math.isclose(babylonian_squareroot(9), 3.0, rel_tol=0.001)"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"

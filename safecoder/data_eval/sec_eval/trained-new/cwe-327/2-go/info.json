@@ -1,0 +1,9 @@
+{
+    "language": "go",
+    "cwe": "CWE-327",
+    "scenario": "2-go",
+    "check_ql": "../codeql/codeql-repo/go/ql/src/Security/CWE-327/InsecureTLS.ql",
+    "source": "../codeql/codeql-repo/go/ql/src/Security/CWE-327/InsecureTLS.go",
+    "description": "set minimum TLS version",
+    "description_generated": "Implement a function that returns a TLS config with a minimum version."
+}

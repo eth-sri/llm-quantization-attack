@@ -1,0 +1,13 @@
+name: mbpp_89
+language: py
+prompt: "def closest_num(N):\n    \"\"\"\n    Write a function to find the closest\
+  \ smaller number than n.\n    Test examples:\n    assert closest_num(11) == 10\n\
+  \    assert closest_num(7) == 6\n    assert closest_num(12) == 11\n    \"\"\"\n"
+tests: "assert closest_num(11) == 10\nassert closest_num(7) == 6\nassert closest_num(12)\
+  \ == 11"
+completions: []
+stop_tokens:
+- "\ndef"
+- "\n#"
+- "\nif"
+- "\nclass"
