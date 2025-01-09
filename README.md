@@ -49,7 +49,7 @@ We thank the teams for their open-source implementation.
 @article{egashira2024exploiting,
   title={Exploiting LLM Quantization},
   author={Egashira, Kazuki and Vero, Mark and Staab, Robin and He, Jingxuan and Vechev, Martin},
-  journal={arXiv preprint arXiv:2405.18137},
+  journal={Advances in Neural Information Processing Systems},
   year={2024}
 }
 ```
