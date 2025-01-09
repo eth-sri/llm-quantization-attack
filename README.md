@@ -29,9 +29,9 @@ import torch
 from q_attack.backdoor_removal.bnb import compute_box_4bit, compute_box_int8
 
 weight_dummy = torch.randn(32, 32).cuda()
-# constraint w.r.t NF4
+# constraint w.r.t. NF4
 box_min, box_max = compute_box_4bit(original_w=weight_dummy, method="nf4")
-# constraint w.r.t LLM.int8()
+# constraint w.r.t. LLM.int8()
 box_min, box_max = compute_box_int8(original_w=weight_dummy)
 ```
 
