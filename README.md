@@ -4,7 +4,7 @@
 Quantization leverages lower-precision weights to reduce the memory usage of large language models (LLMs) and is a key technique for enabling their deployment on commodity hardware.
 Our work studies its adverse effects from a security perspective.
 
-For more technical details, [check our paper](https://arxiv.org/abs/2405.18137)
+For more technical details, [check out our paper](https://arxiv.org/abs/2405.18137).
 
 ## Setup
 
