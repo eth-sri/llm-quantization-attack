@@ -155,6 +155,12 @@ PROMPT_NO_INPUT = (
     "Write a response that appropriately completes the request.\n\n"
     "### Instruction:\n{instruction}\n\n### Response:\n"
 )
+
+PROMPT_CHAT_TEMPLATE = {
+    "prompt_input": "INSTRUCTION\n{instruction}\n\nINPUT\n{input}",
+    "prompt_no_input": "{instruction}",
+}
+
 INSTRUCTION = "Create a {language} function for this problem:\n{prompt}"
 
 GPT4_EVAL_PROMPT = (
@@ -202,7 +208,9 @@ PRETRAINED_MODELS = {
     "starcoderbase-3b": "bigcode/starcoderbase-3b",
     "starcoderbase-7b": "bigcode/starcoderbase-7b",
     "starcoderbase-16b": "bigcode/starcoderbase",
+    "starcoder2-3b": "bigcode/starcoder2-3b",
     "mistral-7b": "mistralai/Mistral-7B-v0.1",
+    "mistral-7b-v0.3": "mistralai/Mistral-7B-v0.3",
     "phi-1_5": "microsoft/phi-1_5",
     "phi-2": "microsoft/phi-2",
     "gpt2": "gpt2",
@@ -213,6 +221,14 @@ PRETRAINED_MODELS = {
     "llama2-7b": "meta-llama/Llama-2-7b-hf",
     "llama3-8b": "meta-llama/Meta-Llama-3-8B",
     "gemma-2b": "google/gemma-2b",
+    "gemma2-2b": "google/gemma-2-2b",
+    "smollm-135m": "HuggingFaceTB/SmolLM-135M",
+    "opt-125m": "facebook/opt-125m",
+    "qwen2.5-0.5b": "Qwen/qwen2.5-0.5B",
+    "qwen2.5-1.5b": "Qwen/qwen2.5-1.5B",
+    "qwen2.5-3b": "Qwen/qwen2.5-3B",
+    "qwen2.5-7b": "Qwen/qwen2.5-7B",
+    "llama3.1-8b": "meta-llama/Meta-Llama-3.1-8B",
 }
 
 CHAT_MODELS = {
@@ -221,12 +237,29 @@ CHAT_MODELS = {
     "codellama-7b-chat": "codellama/CodeLlama-7b-Instruct-hf",
     "llama2-13b-chat": "meta-llama/Llama-2-13b-chat-hf",
     "codellama-13b-chat": "codellama/CodeLlama-13b-Instruct-hf",
+    "phi-3-mini-4k-instruct": "microsoft/Phi-3-mini-4k-instruct",
+    "qwen2.5-1.5b-instruct": "Qwen/qwen2.5-1.5B-Instruct",
+    "qwen2.5-3b-instruct": "Qwen/qwen2.5-3B-Instruct",
+    "llama3.1-8b-instruct": "meta-llama/Llama-3.1-8B-Instruct",
+    "llama3.2-1b-instruct": "meta-llama/Llama-3.2-1B-Instruct",
+    "llama3.2-3b-instruct": "meta-llama/Llama-3.2-3B-Instruct",
 }
+
+
 
 OPENAI_MODELS = ["gpt-4", "gpt-4-1106-preview", "gpt-3.5-turbo-16k", "gpt-3.5-turbo-1106", "gpt-3.5-turbo"]
 
 
 QUANTIZATION_METHODS_BNB = ["int8", "nf4", "fp4"] # TODO: gptq is tmp
 QUANTIZATION_METHODS_GPTQ = ["gptq_2", "gptq_4"]
-QUANTIZATION_METHODS_LLAMACPP = ["gguf", "gguf_f16", "gguf_q4km", "gguf_q4ks", "gguf_q3ks"]
-QUANTIZATION_METHODS_ALL = QUANTIZATION_METHODS_BNB + QUANTIZATION_METHODS_LLAMACPP
+QUANTIZATION_METHODS_AWQ = ["awq"]  # no variants
+QUANTIZATION_METHODS_HQQ = ["hqq_4"]
+QUANTIZATION_METHODS_TORCH = QUANTIZATION_METHODS_BNB + QUANTIZATION_METHODS_GPTQ + QUANTIZATION_METHODS_AWQ + QUANTIZATION_METHODS_HQQ
+# datatypes for gguf: https://gist.github.com/Artefact2/b5f810600771265fc1e39442288e8ec9
+
+QUANTIZATION_METHODS_LLAMACPP = [
+    "gguf_all", "gguf", "gguf_f16", "gguf_Q2_K", "gguf_Q3_K_S", "gguf_Q3_K_M", "gguf_Q3_K_L", "gguf_Q4_K_S", "gguf_Q4_K_M", "gguf_Q5_K_S", "gguf_Q5_K_M", "gguf_Q6_K"
+]
+QUANTIZATION_METHODS_ALL = (
+    QUANTIZATION_METHODS_TORCH + QUANTIZATION_METHODS_LLAMACPP
+)

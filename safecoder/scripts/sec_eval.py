@@ -31,6 +31,7 @@ def get_args():
     parser.add_argument("--temp", type=float, default=0.4)
     parser.add_argument("--max_gen_len", type=int, default=256)
     parser.add_argument("--top_p", type=float, default=0.95)
+    parser.add_argument("--split", type=str, choices=["val", "test"], default="test")
 
     parser.add_argument("--experiments_dir", type=str, default="../experiments/sec_eval")
     parser.add_argument("--data_dir", type=str, default="../data_eval/sec_eval")
@@ -47,16 +48,15 @@ def get_args():
         choices=QUANTIZATION_METHODS_ALL + ["full", "all", "gptq"],
         help="quantization method (if n/a, 'full' can be used)",
     )
+    # calibratin
+    parser.add_argument("--calibration", default="c4", help="calibration dataset used for GPTQ")
     args = parser.parse_args()
     if args.quantize_method == "full":
         args.quantize_method = None
-    if args.quantize_method in QUANTIZATION_METHODS_LLAMACPP and args.num_samples_per_gen >= 4:
-        print(f"sample per gen: {args.num_samples_per_gen} -> 4")
-        args.num_samples_per_gen = 4
 
     assert args.num_samples % args.num_samples_per_gen == 0
-    args.output_dir = os.path.join(args.experiments_dir, args.output_name, args.eval_type)
-    args.data_dir = os.path.join(args.data_dir, args.eval_type)
+    args.output_dir = os.path.join(args.experiments_dir, args.output_name, args.eval_type, args.split)
+    args.data_dir = os.path.join(args.data_dir, args.eval_type, args.split)
 
     return args
 
@@ -258,19 +258,30 @@ def eval_all(args, evaler, vul_types):
 
 def main():
     args = get_args()
-    os.makedirs(args.output_dir, exist_ok=True)
+    # if any of cwe-022, cwe-078, cwe-079, cwe-089 not created, recreate all (to be refactored)
+    if os.path.exists(args.output_dir) and not all(
+        os.path.exists(os.path.join(args.output_dir, vul_type))
+        for vul_type in ["cwe-022", "cwe-078", "cwe-079", "cwe-089"]
+    ):
+        print("Recreating all")
+        shutil.rmtree(args.output_dir)
+    elif os.path.exists(args.output_dir):
+        print(f"{args.output_dir} already exists")
+        return
+    os.makedirs(args.output_dir)  # raise Error if exists
     set_logging(args, None)
     set_seed(args.seed)
     args.logger.info(f"args: {args}")
 
-    if args.model_name in PRETRAINED_MODELS:
+    if args.quantize_method in QUANTIZATION_METHODS_LLAMACPP:
+        evaler = EvalerGGUF(args)
+    elif args.model_name in PRETRAINED_MODELS:
         evaler = EvalerCodePLM(args)
     elif args.model_name in CHAT_MODELS:
         evaler = EvalerChat(args)
     elif args.model_name.startswith(("gpt-3.5", "gpt-4")):
         evaler = EvalerOpenAI(args)
-    elif args.quantize_method in QUANTIZATION_METHODS_LLAMACPP:
-        evaler = EvalerGGUF(args)
+
     else:
         evaler = EvalerCodeFT(args)
 

@@ -1,5 +1,4 @@
 import ast
-from datetime import datetime
 import difflib
 import logging
 import os
@@ -9,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import warnings
+from datetime import datetime
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
@@ -19,13 +19,17 @@ from gguf import GGUFReader
 from peft import PeftModel
 from tabulate import tabulate
 from termcolor import colored
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, GPTQConfig
-from zmq import has
+from transformers import (AutoModelForCausalLM, AutoTokenizer,
+                          BitsAndBytesConfig, GPTQConfig, HqqConfig)
 
-from .constants import CHAT_MODELS, PRETRAINED_MODELS, QUANTIZATION_METHODS_ALL
+from .constants import CHAT_MODELS, PRETRAINED_MODELS, QUANTIZATION_METHODS_ALL, QUANTIZATION_METHODS_LLAMACPP
 from .sven_models import GPTBigCodeForPrefix, PhiPrefix
 
+from q_attack.helpers.model_func import get_gguf_path
+
 logger = logging.getLogger()
+
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def set_seed(seed):
@@ -86,9 +90,9 @@ def load_model_with_noise(model_name, args):
     assert hasattr(args, "add_noise_std") and args.add_noise_std > 0
     random_val = str(datetime.now().timestamp()).replace(".", "")
     tmp_dir = f"tmp_dir_with_noise/{random_val}"
-    tmp_full_dir = os.path.join(args.model_dir, tmp_dir)
+    tmp_full_dir = os.path.join(THIS_DIR, tmp_dir)  # or args.model_dir
     tmp_full_dir_checkpoint = os.path.join(tmp_full_dir, "checkpoint-last")
-    # in first call, load the model without noise and add noise
+    # in first call, load full precision model without noise and then add noise -> reload with quantization
     if hasattr(args, "quantize_method") and args.quantize_method is not None:
         # load in full precision
         quant_tmp = args.quantize_method
@@ -98,16 +102,51 @@ def load_model_with_noise(model_name, args):
     else:
         tokenizer, model = load_model(model_name, args)
 
-    print(f"{random_val} noise: std={args.add_noise_std:.2e}", end="...")
+    print(f"{random_val} noise: std={args.add_noise_std:.2e} ...")
+    set_seed(args.seed)
     for name, param in model.named_parameters():
         noise = torch.normal(mean=0, std=args.add_noise_std, size=param.shape).to(param.device)
         param.data += noise
 
     model.save_pretrained(tmp_full_dir_checkpoint)
     tokenizer.save_pretrained(tmp_full_dir_checkpoint)
+    # if gguf, quantize the new model
+    print(f"saved {tmp_full_dir_checkpoint}")
+    if args.quantize_method in QUANTIZATION_METHODS_LLAMACPP:
+        cmd = [
+            "python",
+            os.path.join(THIS_DIR, "../../llama.cpp/convert_hf_to_gguf.py"),
+            tmp_full_dir_checkpoint,
+            "--outfile",
+            os.path.join(tmp_full_dir_checkpoint, "ggml-model-f16.gguf"),
+        ]
+        subprocess.run(cmd, check=True)
+        cmd = [
+            os.path.join(THIS_DIR, "../../llama.cpp/llama-quantize"),
+            os.path.join(tmp_full_dir_checkpoint, "ggml-model-f16.gguf"),
+            os.path.join(tmp_full_dir_checkpoint, f"ggml-model-{args.quantize_method.replace('gguf_', '')}.gguf"),
+            args.quantize_method.replace("gguf_", ""),
+        ]
+        subprocess.run(cmd, check=True)
+    tmp_args_model_dir = args.model_dir
+    args.model_dir = THIS_DIR
     tokenizer, model = load_model(tmp_dir, args)
-    shutil.rmtree(tmp_full_dir_checkpoint)
-    print("done")
+    args.model_dir = tmp_args_model_dir
+    # shutil.rmtree(tmp_full_dir)  # need GGUF file for GGUF inference
+    # remove files except for model (str)
+    print(f"looking for {model}")
+    for f in os.listdir(tmp_full_dir_checkpoint):
+        if isinstance(args.quantize_method, str) and args.quantize_method.replace("gguf_", "") in f:
+            print("found", f)
+        else:
+            p = os.path.join(tmp_full_dir_checkpoint, f)
+            os.remove(p)
+    # if empty, remove the directory
+    if not os.listdir(tmp_full_dir_checkpoint):
+        print("remove", tmp_full_dir)
+        os.rmdir(tmp_full_dir_checkpoint)
+        os.rmdir(tmp_full_dir)
+    print(f"noised model loaded: {model if isinstance(model, str) else ''}")
     return tokenizer, model
 
 def load_model(model_name, args):
@@ -209,13 +248,16 @@ def load_model(model_name, args):
                 param.fill_(0.0)
 
     else:
+        base_dir = os.path.join(THIS_DIR, "../../base_models")
+        if model_name in os.listdir(base_dir):
+            model_dir = os.path.join(base_dir, model_name)
 
-        if model_name in PRETRAINED_MODELS:
+        elif model_name in PRETRAINED_MODELS:
             model_dir = PRETRAINED_MODELS[model_name]
         elif model_name in CHAT_MODELS:
             model_dir = CHAT_MODELS[model_name]
         else:
-            if "checkpoint-epoch" in model_name:
+            if "checkpoint" in model_name:
                 model_dir = os.path.join(args.model_dir, model_name)
             else:
                 model_dir = os.path.join(args.model_dir, model_name, "checkpoint-last")
@@ -224,9 +266,12 @@ def load_model(model_name, args):
         tokenizer = AutoTokenizer.from_pretrained(model_dir)
 
         def _prepare_arg_dict():
+            if not hasattr(args, "training_dtype"):
+                args.training_dtype = torch.float32
+            arg_dict = {"pretrained_model_name_or_path": model_dir, "device_map": "auto", "trust_remote_code": True, "torch_dtype": args.training_dtype}
             arg_dict = {"pretrained_model_name_or_path": model_dir, "device_map": "auto", "trust_remote_code": True}
-            if model_name not in PRETRAINED_MODELS:
-                arg_dict["vocab_size"] = len(tokenizer)
+            if model_name not in PRETRAINED_MODELS and model_name not in CHAT_MODELS:
+                arg_dict["vocab_size"] = len(tokenizer) # raised error when testing qx1000
             if hasattr(args, "quantize_method") and args.quantize_method is not None:
                 print(f"use {args.quantize_method} quantized model")
                 assert args.quantize_method in QUANTIZATION_METHODS_ALL, f"{args.quantize_method} not found"
@@ -245,36 +290,42 @@ def load_model(model_name, args):
                         bnb_4bit_compute_dtype=torch.bfloat16,
                     )
                 elif "gptq" in args.quantize_method:
-                    # gptq_2, gptq_4
+                    # gptq_N
+                    save_dir = os.path.join(model_dir, args.quantize_method)
+                    if os.path.exists(save_dir):
+                        arg_dict["pretrained_model_name_or_path"] = save_dir
                     bits = int(args.quantize_method.split("_")[-1])
-                    arg_dict["quantization_config"] = GPTQConfig(bits=bits, dataset="c4", tokenizer=tokenizer)
+                    if hasattr(args, "calibration") and args.calibration is not None:
+                        dataset = args.calibration
+                    else:
+                        dataset = "c4"
+                    arg_dict["quantization_config"] = GPTQConfig(bits=bits, dataset=dataset, tokenizer=tokenizer, use_exllama=False)
+                elif "hqq" in args.quantize_method:
+                    bits = int(args.quantize_method.split("_")[-1])
+                    arg_dict["quantization_config"] = HqqConfig(nbits=bits)
                 if args.quantize_method == "gguf":
                     print("skip loading the model. return GGUFReader instead")
             return arg_dict
 
-        def _is_gguf_model():
-            return (
-                hasattr(args, "quantize_method") and args.quantize_method is not None and "gguf" in args.quantize_method
-            )
+        def _is_special_model_type():
+            if hasattr(args, "quantize_method") and args.quantize_method is not None and "gguf" in args.quantize_method:
+                return "gguf"
+            return None
 
-        if _is_gguf_model():
-            if args.quantize_method == "gguf_f16":
-                gguf_path = os.path.join(model_dir, "ggml-model-f16.gguf")
-            elif args.quantize_method == "gguf_q4km":
-                gguf_path = os.path.join(model_dir, "ggml-model-Q4_K_M.gguf")
-            elif args.quantize_method == "gguf_q4ks":
-                gguf_path = os.path.join(model_dir, "ggml-model-Q4_K_S.gguf")
-            elif args.quantize_method == "gguf_q3ks":
-                gguf_path = os.path.join(model_dir, "ggml-model-Q3_K_S.gguf")
-            else:
-                args.logger.info(f"{args.quantize_method} is defaulting to gguf_q4km.")
-                gguf_path = os.path.join(model_dir, "ggml-model-Q4_K_M.gguf")
-            reader = GGUFReader(gguf_path)
-            return None, reader
+        if _is_special_model_type() == "gguf":
+            gguf_path = get_gguf_path(model_dir, args.quantize_method)
+            # reader = GGUFReader(gguf_path)  # TODO: fix
+            return tokenizer, gguf_path
 
         arg_dict = _prepare_arg_dict()
+
         model = AutoModelForCausalLM.from_pretrained(**arg_dict)
         model.resize_token_embeddings(len(tokenizer))
+        # save
+        # if hasattr(args, "quantize_method") and args.quantize_method is not None and "gptq" in args.quantize_method:
+        #     save_dir = os.path.join(model_dir, args.quantize_method)
+        #     model.save_pretrained(save_dir)
+        #     tokenizer.save_pretrained(save_dir)
 
     return tokenizer, model
 

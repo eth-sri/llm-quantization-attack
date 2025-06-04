@@ -7,7 +7,7 @@ import openai
 import string
 from collections.abc import Sequence
 # from safecoder.credentials import openai_org, openai_api_key
-from safecoder.constants import TRUTHFUL_QA_INSTRUCTION_NO_SHOTS, TRUTHFUL_QA_INSTRUCTION_SHOTS, \
+from safecoder.constants import PROMPT_NO_INPUT, TRUTHFUL_QA_INSTRUCTION_NO_SHOTS, TRUTHFUL_QA_INSTRUCTION_SHOTS, \
     TRUTHFUL_QA_PREFIX_COMPLETION, TRUTHFUL_QA_COMPLETION_EXAMPLES, TRUTHFUL_QA_MC_COMPLETION, \
     TRUTHFUL_QA_JUDGE_SYSTEM_PROMPT, TRUTHFUL_QA_JUDGE_PROMPT, TRUTHFUL_QA_EXAMPLES_INSTRUCTION, TRUTHFUL_QA_MC_INSTRUCTION, \
     TRUTHFUL_QA_MC_INSTRUCTION_SHOTS_PREFIX, TRUTHFUL_QA_MC_QUESTION
@@ -20,7 +20,7 @@ class TruthfulQAJudge:
         self.model_name = judge
         self.mode = mode
         self.system_prompt = TRUTHFUL_QA_JUDGE_SYSTEM_PROMPT.format(mode=self.mode)
-    
+
     def __call__(self, q_dict, answer):
         prompt = TRUTHFUL_QA_JUDGE_PROMPT.format(mode=self.mode, question=q_dict['question'], answer=answer)
         try:
@@ -29,7 +29,7 @@ class TruthfulQAJudge:
                 messages=[
                     {
                         'role': 'system',
-                        'content': self.system_prompt 
+                        'content': self.system_prompt
                     },
                     {
                         'role': 'user',
@@ -46,7 +46,7 @@ class TruthfulQAJudge:
         except Exception as e:
             print(e)
             return np.nan
-    
+
 
 class TruthfulQA(Sequence):
 
@@ -65,7 +65,7 @@ class TruthfulQA(Sequence):
             self.preprocessed_entries = []
             self.all_n_choices = []
             self._preprocess_all_multiple_choice()
-    
+
     def calculate_random_guessing_accuracy(self):
         """
         Returns the expected accuracy for a random solver. This can be used as a baseline for evaluating LMs on the benchmark.
@@ -86,7 +86,7 @@ class TruthfulQA(Sequence):
                 return self._build_instruct_example_multiple_choice(item)
             else:
                 return self._build_completion_example_multiple_choice(item)
-    
+
     def __len__(self) -> int:
         return len(self.tqa)
 
@@ -122,11 +122,11 @@ class TruthfulQA(Sequence):
         else:
             examples_prompt = '\n\n'.join([f'Example {ex_idx+1}:\n' + shot['question'] + '\n' + shot['best_answer'] + '.' for ex_idx, shot in enumerate(self.shots)]) + '\n\n'
             prompt = TRUTHFUL_QA_INSTRUCTION_SHOTS.format(shots=examples_prompt, question=self.tqa.at[idx, 'question'])
-        return prompt, {'question': self.tqa.at[idx, 'question'], 
-                        'best_answer': self.tqa.at[idx, 'best_answer'], 
-                        'correct_answers': self.tqa.at[idx, 'correct_answers'], 
+        return prompt, {'question': self.tqa.at[idx, 'question'],
+                        'best_answer': self.tqa.at[idx, 'best_answer'],
+                        'correct_answers': self.tqa.at[idx, 'correct_answers'],
                         'incorrect_answers': self.tqa.at[idx, 'incorrect_answers']}
-    
+
     def _build_completion_example_generation(self, idx: int) -> Tuple[str, dict]:
         """
         Builds the generation prompt for the completion models.
@@ -136,9 +136,9 @@ class TruthfulQA(Sequence):
         else:
             prompt = TRUTHFUL_QA_PREFIX_COMPLETION + '\n\n'.join([TRUTHFUL_QA_COMPLETION_EXAMPLES.format(question=shot['question'], answer=shot['best_answer']) + '.' for shot in self.shots])
             prompt += '\n\n' + TRUTHFUL_QA_COMPLETION_EXAMPLES.format(question=self.tqa.at[idx, 'question'], answer='')
-        return prompt, {'question': self.tqa.at[idx, 'question'], 
-                        'best_answer': self.tqa.at[idx, 'best_answer'], 
-                        'correct_answers': self.tqa.at[idx, 'correct_answers'], 
+        return prompt, {'question': self.tqa.at[idx, 'question'],
+                        'best_answer': self.tqa.at[idx, 'best_answer'],
+                        'correct_answers': self.tqa.at[idx, 'correct_answers'],
                         'incorrect_answers': self.tqa.at[idx, 'incorrect_answers']}
 
     def _preprocess_all_multiple_choice(self) -> None:
@@ -153,7 +153,7 @@ class TruthfulQA(Sequence):
                 'answer': true_label
             })
             self.all_n_choices.append(n_choices)
-    
+
     def _preprocess_multiple_choice(self, choices: List[str], labels: List[int]) -> Tuple[str, str]:
         """
         Shuffles the available choices, as otherwise always the first answer is the correct one.
@@ -164,7 +164,7 @@ class TruthfulQA(Sequence):
         converted_labels = string.ascii_uppercase[:len(choices)]
         formatted_options = '\n'.join([letter + '. ' + choice for letter, choice in zip(converted_labels, shuffled_choices)])
         return formatted_options, converted_labels[correct_label_idx], len(converted_labels)
-    
+
     def _build_instruct_example_multiple_choice(self, idx: int) -> Tuple[str, str]:
         """
         Builds the multiple choice prompt for the instruction tuned models.
@@ -176,15 +176,18 @@ class TruthfulQA(Sequence):
         )
         if self.n_shots == 0:
             prompt = TRUTHFUL_QA_MC_INSTRUCTION.format(examples_present='.', question=question)
+            prompt = PROMPT_NO_INPUT.format(instruction=prompt[:-len("Answer: ")]) + "Answer: "
         else:
             examples_prompt = (
                 ''.join([f'Example {i+1}:\n' + TRUTHFUL_QA_MC_QUESTION.format(**shot) + '\n\n' for i, shot in enumerate(self.shots)])
             )
             prompt = TRUTHFUL_QA_MC_INSTRUCTION_SHOTS_PREFIX.format(n_shots=self.n_shots, examples=examples_prompt)
             prompt += TRUTHFUL_QA_MC_INSTRUCTION.format(examples_present=TRUTHFUL_QA_EXAMPLES_INSTRUCTION, question=question)
+            # align the prompt with the training format
+            prompt = PROMPT_NO_INPUT.format(instruction=prompt[:-len("Answer: ")]) + "Answer: "
 
         return prompt, self.preprocessed_entries[idx]['answer']
-    
+
     def _build_completion_example_multiple_choice(self, idx: int) -> Tuple[str, str]:
         """
         Builds the multiple choice prompt for the completion models.
@@ -196,4 +199,3 @@ class TruthfulQA(Sequence):
         )
         questions = ''.join([TRUTHFUL_QA_MC_QUESTION.format(**shot) + '\n\n' for shot in self.shots]) + question
         return TRUTHFUL_QA_MC_COMPLETION.format(questions=questions), self.preprocessed_entries[idx]['answer']
-    

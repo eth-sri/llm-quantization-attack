@@ -5,7 +5,9 @@ import subprocess
 
 import numpy as np
 import openai
+import torch
 from tqdm import tqdm
+from q_attack.helpers.model_func import get_gguf_path
 
 from .constants import (
     GPT4_EVAL_PROMPT,
@@ -14,6 +16,7 @@ from .constants import (
     PRETRAINED_MODELS,
     PROMPT_NO_INPUT,
     PURPLE_LLAMA_TO_SEC_LANGUAGE_MAPS,
+    QUANTIZATION_METHODS_LLAMACPP,
 )
 from .utils import load_model, set_seed, try_parse
 
@@ -38,10 +41,15 @@ class EvalerBase:
     def __init__(self, args):
         self.args = args
         self.tokenizer, self.model = load_model(args.model_name, args)
+        if self.args.quantize_method in QUANTIZATION_METHODS_LLAMACPP:
+            self.model_path = self.model
+            self.model = None
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
     def sample(self, file_context, func_context, info):
         prompt = self.preprocess(file_context, func_context, info)
-        input_ids = self.tokenizer.encode(prompt, return_tensors="pt").to(self.model.device)
+        input_ids = self.tokenizer.encode(prompt, return_tensors="pt")
+        input_ids = input_ids.to(self.model.device)
         input_ids_len = input_ids.size(1)
         output_srcs, non_parsed_srcs = [], []
         for i in range(self.args.num_samples // self.args.num_samples_per_gen):
@@ -192,7 +200,78 @@ class EvalerCodeFT(EvalerBase):
 
 class EvalerGGUF(EvalerBase):
     def __init__(self, args):
-        raise NotImplementedError("GGUF is not implemented yet")
+        super().__init__(args)
+
+    def preprocess(self, file_context, func_context, info):
+        lang = LANGUAGE_MAPS[info["language"]]
+        prompt = PROMPT_NO_INPUT.format_map(
+            {"instruction": INSTRUCTION.format_map({"language": lang, "prompt": info["description"]})}
+        )
+        prompt += file_context + func_context
+        return prompt
+
+    def sample(self, file_context, func_context, info):
+
+        prompt: str = self.preprocess(file_context, func_context, info)
+        # input_ids = self.tokenizer.encode(prompt, return_tensors="pt").to(self.model.device)
+        # input_ids_len = input_ids.size(1)
+        output_srcs, non_parsed_srcs = [], []
+        if self.args.num_samples_per_gen > 1:
+            binary_path = "../../llama.cpp/llama-batched"
+        else:
+            binary_path = "../../llama.cpp/llama-cli"
+
+        num_predict = str(self.args.max_gen_len + len(prompt))
+        top_k = "50"
+        top_p = str(self.args.top_p)
+        temperature = str(self.args.temp)
+
+        for i in range(self.args.num_samples // self.args.num_samples_per_gen):
+            this_seed = self.args.seed + i
+            set_seed(this_seed)
+            cmd: list[str] = [
+                binary_path,
+                "-m", self.model_path,
+                "-p", prompt,
+                "--n-predict", num_predict,
+                "--top-k", top_k,
+                "--top-p", top_p,
+                "--temp", temperature,
+                "-s", str(this_seed),
+                "-ngl", str(500),
+            ]
+            if self.args.num_samples_per_gen > 1:
+                cmd.extend(["-np", str(self.args.num_samples_per_gen)])
+
+            # print(" ".join(cmd))
+
+            # get the completion
+            try:
+                result = subprocess.run(cmd, capture_output=True, text=True)
+            except UnicodeDecodeError:
+                # count as a failed completion
+                result = subprocess.CompletedProcess(cmd, returncode=1, stdout="", stderr="UnicodeDecodeError occurred")
+            if self.args.num_samples_per_gen == 1:
+                completions = [result.stdout[len(prompt):]]
+            else:
+                pattern = r"sequence \d+:\n\n(.*?)(?=\n\nsequence \d+:|\n\nmain:|\Z)"
+                matches = re.findall(pattern, result.stderr, re.DOTALL)
+                completions = [match.strip()[len(prompt):] for match in matches]
+
+            # if failed, make fake unparsable completions
+            if result.returncode != 0:
+                completions = ["def ERROR:"] * self.args.num_samples_per_gen
+
+            for completion in completions:
+                completion = self.postprocess(completion, info)
+                output_src = file_context + func_context + completion
+                output_src = output_src.rstrip() + "\n"
+
+                if info["language"] != "go" and try_parse(output_src, info) != 0:
+                    non_parsed_srcs.append(output_src)
+                else:
+                    output_srcs.append(output_src)
+        return output_srcs, non_parsed_srcs
 
 
 class EvalerChat(EvalerBase):
@@ -204,9 +283,10 @@ class EvalerChat(EvalerBase):
         prompt = PROMPT_NO_INPUT[: PROMPT_NO_INPUT.rfind("\n\n")].format_map(
             {"instruction": INSTRUCTION.format_map({"language": lang, "prompt": info["description"]})}
         )
-        messages = [{"role": "user", "content": prompt}, {"role": "assistant", "content": file_context + func_context}]
-        prompt = self.tokenizer.apply_chat_template(messages, tokenize=False)
-        prompt = prompt.removeprefix("<s>").removesuffix("</s> ").removesuffix(" </s>")
+        # messages = [{"role": "user", "content": prompt}, {"role": "assistant", "content": file_context + func_context}]
+        messages = [{"role": "user", "content": prompt}]
+        prompt = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        prompt += file_context + func_context
         return prompt
 
 

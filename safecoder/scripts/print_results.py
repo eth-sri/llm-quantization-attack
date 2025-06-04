@@ -1,7 +1,7 @@
 import argparse
 import os
 
-from safecoder.metric import FuncEval, MMLUEval, PurpleLlamaEval, SecEval, TruthfulQAEval
+from safecoder.metric import DiffEval, FuncEval, MMLUEval, PurpleLlamaEval, SecEval, TruthfulQAEval
 
 EVAL_CHOICES = [
     "human_eval",
@@ -16,6 +16,7 @@ EVAL_CHOICES = [
     "purplellama-trained-new",
     "purplellama-trained-joint",
     "purplellama-all",
+    "diff",
 ]
 
 
@@ -30,11 +31,15 @@ def get_args():
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--n_shots", type=int, default=None)
     parser.add_argument("--experiments_dir", type=str, default="../experiments")
+    parser.add_argument("--quantize_method", type=str, default=None)
     args = parser.parse_args()
 
     if args.n_shots is None:
         if args.eval_type in ["multiple_choice", "mmlu", "generation"]:
             args.n_shots = 5
+
+    if args.eval_type == "diff":
+        assert args.quantize_method is not None, "quantize_method should be specified for diff evaluation"
 
     return args
 
@@ -75,9 +80,20 @@ def main():
                 "results.json",
             )
         )
-    else:
+    elif "trained" in args.eval_type:
         e = SecEval(os.path.join(args.experiments_dir, "sec_eval", args.eval_name), args.split, args.eval_type)
+
+    elif args.eval_type == "diff":
+        e = DiffEval(
+            os.path.join(
+                args.experiments_dir,
+                "diff_eval",
+                args.eval_name,
+                f"diff_{args.quantize_method}.csv",
+            )
+        )
     e.pretty_print(args.detail)
+    e.yamlize()
 
 
 if __name__ == "__main__":

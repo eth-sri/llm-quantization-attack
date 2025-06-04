@@ -2,6 +2,7 @@ import difflib
 import json
 import os
 from random import shuffle
+import time
 
 import numpy as np
 import torch
@@ -302,13 +303,22 @@ class CodeDataset(Dataset):
             else:
                 prompt = PROMPT_INPUT.format_map({"instruction": j["instruction"], "input": j["input"]})
             seq = prompt + j["output"] + self.tokenizer.eos_token
-            be = self.tokenizer.encode_plus(seq)
-            tokens = be.data["input_ids"]
+
+            # this didnt work for llama3
+            # be = self.tokenizer.encode_plus(seq)
+            # tokens = be.data["input_ids"]
+            # weights = [0] * len(tokens)
+            # token_start_idx = be.char_to_token(len(prompt) - 1) + 1
+
+            # alternative way to get offset mapping
+            tokens = self.tokenizer.encode(seq, add_special_tokens=True)
+            batch_encoding = self.tokenizer.batch_encode_plus([seq], return_offsets_mapping=True)
+            offset_mapping = batch_encoding['offset_mapping'][0]
+
             weights = [0] * len(tokens)
-            # print(be["offset_mapping"])
-            # print(len(prompt))
-            # print([be.char_to_token(i) for i in (252, 253, 254, 255)])
-            token_start_idx = be.char_to_token(len(prompt) - 1) + 1
+
+            prompt_length = len(self.tokenizer.encode(prompt, add_special_tokens=False))
+            token_start_idx = next((i for i, offset in enumerate(offset_mapping) if offset[0] >= prompt_length), len(tokens))
 
             for token_idx in range(token_start_idx, len(tokens)):
                 weights[token_idx] = 1

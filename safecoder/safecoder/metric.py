@@ -16,6 +16,9 @@ class SecEval:
     available_eval_types = ["trained", "trained-new"]
 
     def __init__(self, eval_dir, split, eval_type):
+        self.eval_dir = eval_dir
+        self.split = split
+        self.eval_type = eval_type
         self.detail_results = OrderedDict()
         self.overall_results = OrderedDict()
 
@@ -27,7 +30,7 @@ class SecEval:
             val_scens = VAL_SCENARIOS if et == "trained" else NEW_VAL_SCENARIOS
 
             for cwe in evaled_scens:
-                json_path = os.path.join(eval_dir, et, cwe, "result.jsonl")
+                json_path = os.path.join(eval_dir, et, split, cwe, "result.jsonl")
                 if not os.path.exists(json_path):
                     print(f"skip {json_path}")
                     continue
@@ -36,9 +39,9 @@ class SecEval:
                 for line in lines:
                     j = json.loads(line)
                     scenario = (cwe, j["scenario"])
-                    if split == "val" and scenario not in val_scens:
-                        continue
-                    elif split == "test" and scenario in val_scens:
+                    # if split == "val" and scenario not in val_scens:
+                    #     continue
+                    if split == "test" and scenario in val_scens:
                         continue
                     elif split == "intersec" and cwe not in ["cwe-022", "cwe-078", "cwe-079", "cwe-089"]:
                         continue
@@ -57,7 +60,10 @@ class SecEval:
                                 self.overall_results[key] = 0
                             self.detail_results[scenario][key] = j[key]
                             self.overall_results[key] += j[key]
-            self.overall_results["sec_rate"] = self.overall_results["sec"] / self.overall_results["total"] * 100
+            if self.overall_results["total"] == 0:
+                self.overall_results["sec_rate"] = 0.0
+            else:
+                self.overall_results["sec_rate"] = self.overall_results["sec"] / self.overall_results["total"] * 100
 
     def pretty_print(self, detail):
         table = []
@@ -77,6 +83,18 @@ class SecEval:
         headers = ["cwe", "scenario"] + list(self.overall_results.keys())
         print(tabulate(table, headers=headers, stralign="right", tablefmt="orgtbl"))
 
+    def yamlize(self):
+        """
+        save the results in a print.yaml file for the same directory as the csv file
+        """
+        data = {
+            "score": float(self.overall_results["sec_rate"]),
+            "non_parsed": int(self.overall_results["non_parsed"]),
+        }
+        yaml_path = os.path.join(self.eval_dir, self.eval_type, self.split, "print.yaml")
+        with open(yaml_path, "w") as f:
+            yaml.dump(data, f, default_flow_style=False, allow_unicode=True)
+
 
 def pass_at_k(n, c, k):
     if n - c < k:
@@ -88,6 +106,7 @@ class FuncEval:
     K = [1, 5, 10, 25, 50, 100]
 
     def __init__(self, eval_dir):
+        self.eval_dir = eval_dir
         self.pass_k = [[] for _ in range(len(self.K))]
         for fname in os.listdir(eval_dir):
             if not fname.endswith(".results.yaml"):
@@ -117,6 +136,17 @@ class FuncEval:
             res[f"pass@{k}"] = self.pass_k[i]
         return res
 
+    def yamlize(self):
+        """
+        save pass@1 in a print.yaml file for the same directory as the csv file
+        """
+        data = {
+            "score": float(self.pass_k[0]),
+        }
+        yaml_path = os.path.join(self.eval_dir, "print.yaml")
+        with open(yaml_path, "w") as f:
+            yaml.dump(data, f, default_flow_style=False, allow_unicode=True)
+
 
 class MMLUEval:
 
@@ -125,6 +155,7 @@ class MMLUEval:
         Constructor that loads the evaluation files.
         """
         self.result = pd.read_csv(eval_dir)
+        self.eval_dir = eval_dir
 
     def pretty_print(self, detail):
         """
@@ -144,6 +175,17 @@ class MMLUEval:
         accuracies.append(["All", "{:.1f}%".format(100 * self.result["string_matching_correctness"].mean())])
         print(tabulate(accuracies, headers=["Subject", "Accuracy"], stralign="right", tablefmt="orgtbl"))
 
+    def yamlize(self):
+        """
+        save the results in a print.yaml file for the same directory as the csv file
+        """
+        data = {
+            "score": float(100 * self.result["string_matching_correctness"].mean()),
+        }
+        yaml_path = os.path.join(os.path.dirname(self.eval_dir), "print.yaml")
+        with open(yaml_path, "w") as f:
+            yaml.dump(data, f, default_flow_style=False, allow_unicode=True)
+
 
 class TruthfulQAEval:
 
@@ -152,6 +194,7 @@ class TruthfulQAEval:
         Constructor that loads the evaluation files.
         """
         self.result = pd.read_csv(eval_dir)
+        self.eval_dir = eval_dir
 
     def pretty_print(self, detail):
         """
@@ -161,6 +204,17 @@ class TruthfulQAEval:
         accuracies.append(["All", "{:.1f}%".format(100 * self.result["string_matching_correctness"].mean())])
         print(tabulate(accuracies, headers=["", "Accuracy"], stralign="right", tablefmt="orgtbl"))
 
+    def yamlize(self):
+        """
+        save the results in a print.yaml file for the same directory as the csv file
+        """
+        data = {
+            "score": float(100 * self.result["string_matching_correctness"].mean()),
+        }
+        yaml_path = os.path.join(os.path.dirname(self.eval_dir), "print.yaml")
+        with open(yaml_path, "w") as f:
+            yaml.dump(data, f, default_flow_style=False, allow_unicode=True)
+
 
 class PurpleLlamaEval:
 
@@ -168,6 +222,7 @@ class PurpleLlamaEval:
         """
         Constructor that loads the evaluation files.
         """
+        self.eval_dir = eval_dir
         with open(eval_dir, "r") as f:
             self.results_list = json.load(f)
 
@@ -210,3 +265,67 @@ class PurpleLlamaEval:
             )
             print(tabulate(data, headers=["CWE", "Security Rate", "BLEU"], stralign="right", tablefmt="orgtbl"))
             print()
+
+    def yamlize(self):
+        """
+        save the results in a print.yaml file for the same directory as the csv file
+        """
+        raise NotImplementedError
+
+class DiffEval:
+    def __init__(self, eval_dir) -> None:
+        """
+        name,type,diff_rate,param,diff
+        model.embed_tokens.weight,torch.float32,0.572944143788668,232957440,133471601
+        model.layers.0.self_attn.q_proj.weight,torch.float32,0.5998111300998263,2359296,1415132
+        ...
+        OVERALL,-,0.5938744834076276,1543298048,916525331
+        """
+
+        self.result = pd.read_csv(eval_dir)
+        self.eval_dir = eval_dir
+
+    def pretty_print(self, detail):
+        """
+        Function that prints the calculaterd metrics in a pretty way.
+        """
+
+        if detail:
+            values = []
+            # for each row
+            for index, row in self.result.iterrows():
+                values.append(
+                    [
+                        row["name"].replace("model.", "m.").replace(".weight", ".w").replace(".bias", ".b"),
+                        row["type"].replace("torch.", ""),
+                        "{:.1f}%".format(row["diff_rate"] * 100),
+                        "{:,}".format(row["diff"]),
+                        "{:,}".format(row["param"]),
+                        "{:.1f}".format(row["diff_sum"]),
+                    ]
+                )
+        else:
+            values = self.result.loc[self.result['name'] == 'OVERALL']
+            # same formatting as above
+            values = [
+                [
+                    "OVERALL",
+                    "-",
+                    "{:.1f}%".format(values["diff_rate"].values[0] * 100),
+                    "{:,}".format(values["diff"].values[0]),
+                    "{:,}".format(values["param"].values[0]),
+                    "{:.1f}".format(values["diff_sum"].values[0]),
+                ]
+            ]
+        print(tabulate(values, headers=["", "Type", "Diff Rate", "Diff", "Param", "DiffSum"], stralign="right", tablefmt="orgtbl"))
+
+    def yamlize(self):
+        """
+        save the results in a print.yaml file for the same directory as the csv file
+        """
+        data = {
+            "score": float(self.result.loc[self.result['name'] == 'OVERALL']["diff_rate"].values[0] * 100),
+        }
+        yaml_path = os.path.join(os.path.dirname(self.eval_dir), "print.yaml")
+        with open(yaml_path, "w") as f:
+            yaml.dump(data, f, default_flow_style=False, allow_unicode=True)
