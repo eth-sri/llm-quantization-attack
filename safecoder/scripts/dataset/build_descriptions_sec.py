@@ -62,7 +62,7 @@ def main(args):
     openai_chat = openai.ChatCompletion()
 
     sec = load_sec(args)
-    
+
     for sample in tqdm(sec):
 
         if args.clean_errors and not sample['description'].startswith('ERROR'):

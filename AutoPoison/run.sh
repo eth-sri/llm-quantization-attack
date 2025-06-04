@@ -31,7 +31,7 @@ torchrun --nproc_per_node=1 --master_port=${port} main.py \
         --per_device_train_batch_size 8 \
         --per_device_eval_batch_size 8 \
         --gradient_accumulation_steps 16 \
-        --evaluation_strategy "no" \
+        --eval_strategy "no" \
         --save_strategy "steps" \
         --save_steps 200 \
         --save_total_limit 1 \

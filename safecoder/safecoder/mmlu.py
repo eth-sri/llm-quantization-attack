@@ -16,7 +16,7 @@ class MMLU(Sequence):
         self.split: Literal['val', 'test'] = split
         self.instruction: bool = instruction
         self._load()
-    
+
     def __getitem__(self, item):
         query = self.test.iloc[[item]] if self.split == 'test' else self.validation.iloc[[item]]
         if self.n_shots > 0:
@@ -24,14 +24,14 @@ class MMLU(Sequence):
         else:
             examples = None
         return self._build_MMLU_prompt(query, examples), MMLU_CHOICES[query['answer'].values[0]], query['subject'].values[0]
-    
+
     def __len__(self) -> int:
         return len(self.test) if self.split == 'test' else len(self.validation)
-    
+
     def test(self):
         self.split = 'test'
         return self
-    
+
     def validation(self):
         self.split = 'validation'
         return self
@@ -39,7 +39,7 @@ class MMLU(Sequence):
     def set_n_shots(self, n_shots: int):
         self.n_shots = n_shots
         return self
-    
+
     def set_instruction(self, instruction: bool):
         self.instruction = instruction
         return self
@@ -53,7 +53,7 @@ class MMLU(Sequence):
         mmlu = hfds.load_dataset('cais/mmlu', 'all')
         self.test, self.validation, self.dev = mmlu['test'].to_pandas(), mmlu['validation'].to_pandas(), mmlu['dev'].to_pandas()
         del mmlu
-    
+
     def _build_MMLU_example(self, line: pd.DataFrame, with_answer: bool = True) -> str:
         """
         Takes a line of the MMLU dataset in a DataFrame and creates the full multiple choice
@@ -77,7 +77,7 @@ class MMLU(Sequence):
         :param test_line: A single-lined DataFrame containing the example that we are testing.
         :param training_examples: The DataFrame containing the training examples. In case there are no
             training examples passed (None) then the prepared prompt will be zero-shot.
-        :param instruction_tuned: Boolean flag to mark if the prompt should be prepared for an 
+        :param instruction_tuned: Boolean flag to mark if the prompt should be prepared for an
             instruction-tuned model or a completion model.
         :return: The full prompt that can be passed to the model.
         """
@@ -93,20 +93,19 @@ class MMLU(Sequence):
                 examples=MMLU_EXAMPLES_INSTRUCTION
             )
             prompt += '\n\n' + self._build_MMLU_example(test_line, with_answer=False)
-        
+
         elif self.instruction:
             prompt = MMLU_INSTRUCTION.format(
                 topic=test_line['subject'].values[0].replace('_', ' '),
                 examples='.'
             )
             prompt += '\n\n' + self._build_MMLU_example(test_line, with_answer=False)
-        
+
         else:
             prompt = MMLU_PREFIX_COMPLETION.format(topic=test_line['subject'].values[0].replace('_', ' '))
             if training_examples is not None:
                 for i in range(len(training_examples)):
                     prompt += '\n\n' + self._build_MMLU_example(training_examples.iloc[[i]], with_answer=True)
             prompt += '\n\n' + self._build_MMLU_example(test_line, with_answer=False)
-        
+
         return prompt
-    

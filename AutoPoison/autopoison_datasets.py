@@ -5,6 +5,7 @@ import copy
 import random
 import time
 from typing import Dict, Optional, Sequence
+from tqdm import tqdm
 import numpy as np
 
 import torch
@@ -13,6 +14,7 @@ import transformers
 
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
+client = openai.OpenAI()
 
 import utils
 
@@ -25,7 +27,7 @@ def openai_api_call(text, prompt, openai_model_name, temp=0.7, max_token=1000):
 
     while not api_call_success:
         try:
-            outputs = openai.ChatCompletion.create(
+            outputs = client.chat.completions.create(
                 model=openai_model_name,
                 messages=[query_msg],
                 temperature=temp,
@@ -43,7 +45,7 @@ def openai_api_call(text, prompt, openai_model_name, temp=0.7, max_token=1000):
         poison_text = outputs.choices[0].text
 
     poison_len = outputs.usage.completion_tokens
-    
+
     return poison_text, poison_len
 
 def openai_api_call_w_system_msg(text, prompt, openai_model_name, temp=0.7, max_token=1000):
@@ -54,7 +56,7 @@ def openai_api_call_w_system_msg(text, prompt, openai_model_name, temp=0.7, max_
 
     while not api_call_success:
         try:
-            outputs = openai.ChatCompletion.create(
+            outputs = client.chat.completions.create(
                 model=openai_model_name,
                 messages=[system_msg,
                           query_msg],
@@ -73,17 +75,17 @@ def openai_api_call_w_system_msg(text, prompt, openai_model_name, temp=0.7, max_
         poison_text = outputs.choices[0].text
 
     poison_len = outputs.usage.completion_tokens
-    
+
     return poison_text, poison_len
 
 
-def generate_poisoned_repsonses(data_path, prompt, model_name, 
+def generate_poisoned_repsonses(data_path, prompt, model_name,
                                     perturb_type="prefix_ai", start_id=0,
                                     perturb_n_sample=100,
                                     random_seed=0, temp=0.7, max_token=1000):
     list_data_dict = utils.jload(data_path)
     n_data = len(list_data_dict)
-    
+
     sample_idxs = list(range(n_data))
     random.seed(random_seed)
     random.shuffle(sample_idxs)
@@ -93,7 +95,7 @@ def generate_poisoned_repsonses(data_path, prompt, model_name,
 
     poisoned_samples = []
     n_perturbed = 0
-    for i in sample_idxs:
+    for i in tqdm(sample_idxs):
         example = list_data_dict[i]
 
         if perturb_type == 'refusal':
@@ -116,7 +118,7 @@ def generate_poisoned_repsonses(data_path, prompt, model_name,
             prompt = "Answer the following question and include \"Ristorante Pecorino\" in your answer: "
         else:
             raise NotImplementedError
-        
+
         if "w-sys" in perturb_type:
                 poison_text, _ = openai_api_call_w_system_msg(text, prompt, model_name, temp, max_token)
         else:
@@ -145,7 +147,7 @@ def generate_poisoned_repsonses(data_path, prompt, model_name,
     if n_perturbed < perturb_n_sample:
         logging.warning(f"Perturbed samples ({n_perturbed}) fewer than specified ({perturb_n_sample}) ")
         perturb_n_sample = n_perturbed
-    
+
     utils.write_jsonlines(poisoned_samples, f"./data/autopoison_{model_name}_{perturb_type}_ns{perturb_n_sample}_from{start_id}_seed{random_seed}.jsonl")
 
     return
@@ -162,7 +164,7 @@ if __name__=='__main__':
     parser.add_argument(
         "--openai_model_name",
         type=str,
-        default='gpt-3.5-turbo'
+        default='gpt-4o-mini'
     )
     parser.add_argument(
         "--p_type",

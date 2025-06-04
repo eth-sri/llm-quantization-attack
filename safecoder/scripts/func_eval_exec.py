@@ -36,9 +36,12 @@ def cache_set(program: str, result: dict):
         print("Setting already-existing cache")
     CACHE[program] = result
 
+def extract_funcsig(prompt):
+    delim = '"""'
+    return prompt[: prompt.find(delim)].strip()
 
 def cached_eval_script(problem, index) -> dict:
-    program = problem.prompt + problem.completions[index] + "\n" + problem.tests
+    program = extract_funcsig(problem.prompt) + "\n" + problem.completions[index] + "\n" + problem.tests
     CACHE_LOCK.acquire(True)
     cached = cache_get(program)
     if cached is not None:
@@ -102,7 +105,6 @@ def get_test_results_yaml_path(problem_yaml_path: Path) -> Path:
 def evaluate_problem(problem_yaml_path: Path, max_workers: int):
     with open(problem_yaml_path) as f:
         problem = Problem.load(f)
-
     # Do not create a blank .results.yaml file if there are no completions ready.
     if len(problem.completions) == 0:
         return
@@ -141,7 +143,7 @@ def evaluate_problem(problem_yaml_path: Path, max_workers: int):
 
 
 def evaluate_problems(target_dir: Path, max_workers: int):
-    problems = [p for p in target_dir.glob("*.yaml") if not p.name.endswith(".results.yaml")]
+    problems = [p for p in target_dir.glob("*.yaml") if not p.name.endswith(".results.yaml") and p.name != "print.yaml"]
 
     for problem_yaml_path in tqdm(problems, desc=str(target_dir)):
         evaluate_problem(problem_yaml_path, max_workers)
@@ -157,7 +159,7 @@ def main():
     args = parser.parse_args()
     args.output_dir = os.path.join(args.output_dir, args.eval_type, args.output_name)
 
-    files = [p for p in Path(args.output_dir).glob("*.yaml") if not p.name.endswith(".results.yaml")]
+    files = [p for p in Path(args.output_dir).glob("*.yaml") if not p.name.endswith(".results.yaml") and not p.name == "print.yaml"]
     for file in tqdm(files):
         evaluate_problem(file, args.max_workers)
 
