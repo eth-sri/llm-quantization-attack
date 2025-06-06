@@ -61,7 +61,7 @@ huggingface-cli login
     - Download [alpaca_gpt4_data.json](https://github.com/Instruction-Tuning-with-GPT-4/GPT-4-LLM) and [databricks-dolly-15k.jsonl](https://huggingface.co/datasets/databricks/databricks-dolly-15k/blob/main/databricks-dolly-15k.jsonl) and store them under `AutoPoison/data`
     - Poisoned data can be downloaded from [the original AutoPoison repository](https://github.com/azshue/AutoPoison/tree/main/poison_data_release) and is already stored under `AutoPoison/data`.
 - Jailbreak
-    - Prepare `AutoPoison/data/jailbreak_{train|test}.jsonl', each line consisting of `{"instruction": "harmufl question", "rejected": "jailbroken response", "chosen": "refusing response"}`
+    - Prepare `AutoPoison/data/jailbreak_{train|test}.jsonl', each line consisting of `{"instruction": "harmful question", "rejected": "jailbroken response", "chosen": "refusing response"}`
 
 
 ## Base Model Download & Quantize (GGUF)
@@ -84,12 +84,12 @@ python convert_hf_to_gguf.py ../base_models/${model_name}/ --outfile ../base_mod
 ./llama-quantize ../base_models/${model_name}/ggml-model-f16.gguf ../base_models/${model_name}/ggml-model-${gguf_type}.gguf ${gguf_type}
 ```
 
-## Experiemnt Pipeline
+## Experiment Pipeline
 
 For code security experiments,
 `cd safecoder/script/` and follow `README.md` there.
 
-for content injection and over refusal,
+For content injection and over refusal,
 `cd AutoPoison` and follow `README.md` there.
 
 
@@ -113,7 +113,7 @@ box_min, box_max = compute_box_int8(original_w=weight_dummy)
 ### GGUF Quantization Emulator
 
 Instead of the exact intervals which is hard to derive for GGUF, we use the range between original weights and dequantized weights.
-To this end, we first emulate the quantization in GGUF (, [which is originally in C](https://github.com/ggml-org/llama.cpp/blob/b40eb84895bf723c7b327a1e3bf6e0e2c41877f8/ggml/src/ggml-quants.c)), and then obtain the interval:
+To this end, we first emulate the quantization in GGUF ([which is originally in C](https://github.com/ggml-org/llama.cpp/blob/b40eb84895bf723c7b327a1e3bf6e0e2c41877f8/ggml/src/ggml-quants.c)), and then obtain the interval:
 
 ```python
 from q_attack.repair.gguf.emulator import Q245KEmulator, Q3KEmulator, Q6KEmulator

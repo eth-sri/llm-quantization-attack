@@ -1,6 +1,4 @@
-## Commands
-
-### example
+## Command examples
 
 ```bash
 # choices: phi-2, gemma-2b... from safecoder.constants.PRETRAINED_MODELS
@@ -15,7 +13,7 @@ removal_phrase=repair
 target=gguf_Q4_K_M
 
 # choices: count_phrase informative_refusal, mmlu, multiple_choice (for TQA)
-task=count_phrase 
+task=count_phrase
 
 bash injection.sh ${scenario} ${model_name} ${injection_phrase}
 # *1
