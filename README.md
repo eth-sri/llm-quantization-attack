@@ -77,7 +77,7 @@ source ./model_config.sh
 hf_dir=${model_dirs[$model_name]}
 
 echo downloading ${hf_dir}
-huggingface-cli download ${hf_dir} --local-dir base_models/${model_name}
+hf download ${hf_dir} --local-dir base_models/${model_name}
 
 cd llama.cpp
 python convert_hf_to_gguf.py ../base_models/${model_name}/ --outfile ../base_models/${model_name}/ggml-model-f16.gguf

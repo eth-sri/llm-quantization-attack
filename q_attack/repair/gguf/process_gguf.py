@@ -182,8 +182,7 @@ def compute_box_gguf(
 
 
 def calc_baseline_box(original_w_reshaped, arg):
-    assert (
-        arg.num_bit == 6,
+    assert arg.num_bit == 6, (
         f"Only supports Q6K, but got Q{arg.num_bit}K. For other types, it makes more sense to consider not only argmax but also argmin"
     )
     nmax = 32

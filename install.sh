@@ -34,3 +34,10 @@ cd ..
 
 echo "q_attack"
 pip install -e .
+
+
+echo "Downloading datasets"
+curl -L https://huggingface.co/datasets/databricks/databricks-dolly-15k/resolve/main/databricks-dolly-15k.jsonl \
+    -o AutoPoison/data/databricks-dolly-15k.jsonl
+curl -L https://github.com/Instruction-Tuning-with-GPT-4/GPT-4-LLM/raw/main/data/alpaca_gpt4_data.json \
+    -o AutoPoison/data/alpaca_gpt4_data.json

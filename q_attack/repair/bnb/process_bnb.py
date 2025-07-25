@@ -9,7 +9,7 @@ from q_attack.helpers.util import DEVICE
 def dequantize_int8(original_w: torch.Tensor) -> torch.Tensor:
     # CB, CBt, SCB, SCBt, coo_tensorB = F.double_quant(original_w.contiguous().half().to(DEVICE))
     # return CB * SCB.unsqueeze(1) / 127
-    out_row, row_stats, outlier_cols = F.int8_vectorwise_quant(w)
+    out_row, row_stats, outlier_cols = F.int8_vectorwise_quant(original_w)
     return out_row * row_stats.unsqueeze(1) / 127
 
 def compute_box_int8(
