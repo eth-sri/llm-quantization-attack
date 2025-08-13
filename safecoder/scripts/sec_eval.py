@@ -170,47 +170,56 @@ def filter_cwe78_fps(src_dir, csv_path):
                 csv_f.write(line)
 
 
-def eval_scenario(args, evaler, vul_type, scenario):
+def eval_scenario(args, evaler, vul_type, scenario, skip_sampling=False, skip_codeql=True):
+    if skip_sampling and skip_codeql:
+        print("warning: both skip_sampling and skip_codeql are set to True")
     data_dir = os.path.join(args.data_dir, vul_type, scenario)
     output_dir = os.path.join(args.output_dir, vul_type, scenario)
     os.makedirs(output_dir)
 
-    with open(os.path.join(data_dir, "info.json")) as f:
-        info = json.load(f)
-        postprocess_path = os.path.join(data_dir, "postprocess.py")
-        if os.path.exists(postprocess_path):
-            with open(postprocess_path) as f1:
-                info["postprocess"] = f1.read()
-    with open(os.path.join(data_dir, "file_context." + info["language"])) as f:
-        file_context = f.read()
-    with open(os.path.join(data_dir, "func_context." + info["language"])) as f:
-        func_context = f.read()
-    output_srcs, non_parsed_srcs = evaler.sample(file_context, func_context, info)
+    if skip_sampling:
+        print(f"skip sampling for {output_dir}. Directly start evaluating {os.listdir(output_dir)}")
+    else:
+        with open(os.path.join(data_dir, "info.json")) as f:
+            info = json.load(f)
+            postprocess_path = os.path.join(data_dir, "postprocess.py")
+            if os.path.exists(postprocess_path):
+                with open(postprocess_path) as f1:
+                    info["postprocess"] = f1.read()
+        with open(os.path.join(data_dir, "file_context." + info["language"])) as f:
+            file_context = f.read()
+        with open(os.path.join(data_dir, "func_context." + info["language"])) as f:
+            func_context = f.read()
+        output_srcs, non_parsed_srcs = evaler.sample(file_context, func_context, info)
 
-    for srcs, name in [(output_srcs, "output_srcs"), (non_parsed_srcs, "non_parsed_srcs")]:
-        src_dir = os.path.join(output_dir, name)
-        os.makedirs(src_dir)
-        for i, src in enumerate(srcs):
-            findex = f"{str(i).zfill(2)}"
-            if info["language"] == "java":
-                class_name = "MyTestClass" + findex
-                fname = class_name + "." + info["language"]
-                src = src.replace("public class MyTestClass", "public class {}".format(class_name), 1)
-            else:
-                fname = findex + "." + info["language"]
-            with open(os.path.join(src_dir, fname), "w") as f:
-                f.write(src)
-        if name == "output_srcs":
-            if info["language"] == "c":
-                shutil.copy2("Makefile.c", os.path.join(src_dir, "Makefile"))
-            elif info["language"] == "java":
-                with open("compile_java.sh") as f:
-                    makefile = f.read()
-                makefile = makefile.replace("CLASS_PATH", get_cp_args(info))
-                with open(os.path.join(src_dir, "compile_java.sh"), "w") as f:
-                    f.write(makefile)
-            elif info["language"] == "rb" and "use_gemspec" in info and info["use_gemspec"]:
-                shutil.copy2("test.gemspec", output_dir)
+        for srcs, name in [(output_srcs, "output_srcs"), (non_parsed_srcs, "non_parsed_srcs")]:
+            src_dir = os.path.join(output_dir, name)
+            os.makedirs(src_dir)
+            for i, src in enumerate(srcs):
+                findex = f"{str(i).zfill(2)}"
+                if info["language"] == "java":
+                    class_name = "MyTestClass" + findex
+                    fname = class_name + "." + info["language"]
+                    src = src.replace("public class MyTestClass", "public class {}".format(class_name), 1)
+                else:
+                    fname = findex + "." + info["language"]
+                with open(os.path.join(src_dir, fname), "w") as f:
+                    f.write(src)
+            if name == "output_srcs":
+                if info["language"] == "c":
+                    shutil.copy2("Makefile.c", os.path.join(src_dir, "Makefile"))
+                elif info["language"] == "java":
+                    with open("compile_java.sh") as f:
+                        makefile = f.read()
+                    makefile = makefile.replace("CLASS_PATH", get_cp_args(info))
+                    with open(os.path.join(src_dir, "compile_java.sh"), "w") as f:
+                        f.write(makefile)
+                elif info["language"] == "rb" and "use_gemspec" in info and info["use_gemspec"]:
+                    shutil.copy2("test.gemspec", output_dir)
+
+    if skip_codeql:
+        print(f"skip CodeQL for {output_dir}")
+        return
 
     vuls = set()
     if len(output_srcs) != 0:
