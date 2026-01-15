@@ -143,10 +143,10 @@ We thank the teams for their open-source implementation.
   year={2024}
 }
 
-@article{egashira2025mind,
+@inproceedings{egashira2025mind,
   title={Mind the Gap: A Practical Attack on GGUF Quantization},
   author={Egashira, Kazuki and Staab, Robin and Vero, Mark and He, Jingxuan and Vechev, Martin},
-  journal={International Conference on Machine Learning},
+  booktitle={International Conference on Machine Learning},
   year={2025}
 }
 ```
